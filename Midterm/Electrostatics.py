@@ -17,5 +17,4 @@ def pointField(x,y,q,Xq,Yq):
     k = 8.98755*10**9
     E_x = (k*q*(x-Xq))/((x-Xq)**2 + (y-Yq)**2)**(1/2.)
     E_y = (k*q*(y-Yq))/((x-Xq)**2 + (y-Yq)**2)**(1/2.)
-    return E_x
-    return E_y
+
