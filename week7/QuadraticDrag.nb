@@ -1,0 +1,1602 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[    104516,       1592]
+NotebookOptionsPosition[    104255,       1578]
+NotebookOutlinePosition[    104611,       1594]
+CellTagsIndexPosition[    104568,       1591]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData["\"\<(* Content-type: application/mathematica *)\\n\\n(*** \
+Wolfram Notebook File ***)\\n(* http://www.wolfram.com/nb *)\\n\\n(* \
+CreatedBy='Mathematica 7.0' *)\\n\\n(*CacheID: 234*)\\n(* Internal cache \
+information:\\nNotebookFileLineBreakTest\\nNotebookFileLineBreakTest\\\
+nNotebookDataPosition[       145,          7]\\nNotebookDataLength[     \
+93453,       1665]\\nNotebookOptionsPosition[     92872,       \
+1641]\\nNotebookOutlinePosition[     93226,       \
+1657]\\nCellTagsIndexPosition[     93183,       1654]\\nWindowFrame->Normal*)\
+\\n\\n(* Beginning of Notebook Content *)\\nNotebook[{\\nCell[BoxData[{\\n \
+RowBox[{\\n  RowBox[{\\n   RowBox[{\\\"g\\\", \\\"=\\\", \\\"9.8\\\"}], \\\";\
+\\\"}], \\\" \\\", \\n  RowBox[{\\\"(*\\\", \\n   RowBox[{\\\"grav\\\", \\\".\
+\\\", \\\" \\\", \\\"constant\\\"}], \\\"*)\\\"}]}], \
+\\\"\\\\[IndentingNewLine]\\\", \\n RowBox[{\\n  RowBox[{\\n   \
+RowBox[{\\\"l\\\", \\\"=\\\", \\\"0.5\\\"}], \\\";\\\"}], \\\" \\\", \\n  \
+RowBox[{\\\"(*\\\", \\n   RowBox[{\\\"length\\\", \\\" \\\", \\\"of\\\", \\\" \
+\\\", \\\"pendulum\\\"}], \\\"*)\\\"}], \\n  \
+\\\"\\\\[IndentingNewLine]\\\"}], \\\"\\\\[IndentingNewLine]\\\", \\n \
+RowBox[{\\n  RowBox[{\\\"\\\\[Theta]0\\\", \\\"=\\\", \\n   \
+RowBox[{\\\"20\\\", \\\"*\\\", \\n    RowBox[{\\\"\\\\[Pi]\\\", \\\"/\\\", \\\
+\"180\\\"}]}]}], \\\";\\\", \\\" \\\", \\n  RowBox[{\\\"(*\\\", \\n   \
+RowBox[{\\\"20\\\", \\\" \\\", \\\"degrees\\\"}], \\\"*)\\\"}], \
+\\\"\\\\[IndentingNewLine]\\\", \\n  RowBox[{\\\"\\\\[Omega]0\\\", \\\" \\\", \
+\\\"=\\\", \\\" \\\", \\\"0\\\"}], \\\";\\\", \\\" \\\", \\n  \
+RowBox[{\\\"(*\\\", \\n   RowBox[{\\\"starting\\\", \\\" \\\", \\\"from\\\", \
+\\\" \\\", \\\"rest\\\"}], \\\"*)\\\"}], \\n  \\\"\\\\[IndentingNewLine]\\\", \
+\\n  RowBox[{\\\"(*\\\", \\n   RowBox[{\\n    RowBox[{\\\"\\\\[Phi]\\\", \
+\\\"=\\\", \\\"y\\\"}], \\\";\\\", \\\"\\\\[IndentingNewLine]\\\", \\n    \
+RowBox[{\\\"t\\\", \\\"=\\\", \\\"x\\\"}], \\\";\\\"}], \\\"*)\\\"}], \
+\\\"\\\\[IndentingNewLine]\\\", \\n  RowBox[{\\\"ode1\\\", \\\"=\\\", \\n   \
+RowBox[{\\\"{\\\", \\n    RowBox[{\\n     RowBox[{\\n      RowBox[{\\n       \
+RowBox[{\\\"\\\\[Theta]\\\", \\\"''\\\"}], \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \
+\\\"\\\\[Equal]\\\", \\n      RowBox[{\\n       RowBox[{\\\"-\\\", \\n        \
+RowBox[{\\\"(\\\", \\n         RowBox[{\\\"g\\\", \\\"/\\\", \\\"l\\\"}], \
+\\\")\\\"}]}], \\\"*\\\", \\n       RowBox[{\\\"Sin\\\", \\\"[\\\", \\n       \
+ RowBox[{\\\"\\\\[Theta]\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \
+\\\"]\\\"}]}]}], \\\",\\\", \\n     RowBox[{\\n      \
+RowBox[{\\\"\\\\[Theta]\\\", \\\"[\\\", \\\"0\\\", \\\"]\\\"}], \
+\\\"\\\\[Equal]\\\", \\\"\\\\[Theta]0\\\"}], \\\",\\\", \\n     RowBox[{\\n   \
+   RowBox[{\\n       RowBox[{\\\"\\\\[Theta]\\\", \\\"'\\\"}], \\\"[\\\", \
+\\\"0\\\", \\\"]\\\"}], \\\"\\\\[Equal]\\\", \\n      \
+\\\"\\\\[Omega]0\\\"}]}], \\\"}\\\"}]}], \\\";\\\"}], \
+\\\"\\\\[IndentingNewLine]\\\", \\n RowBox[{\\n  RowBox[{\\\"sol\\\", \\\"=\\\
+\", \\n   RowBox[{\\\"NDSolve\\\", \\\"[\\\", \\n    RowBox[{\\\"ode1\\\", \\\
+\",\\\", \\\"\\\\[Theta]\\\", \\\",\\\", \\n     RowBox[{\\\"{\\\", \\n      \
+RowBox[{\\\"t\\\", \\\",\\\", \\\"0\\\", \\\",\\\", \\\"20\\\"}], \
+\\\"}\\\"}]}], \\\"]\\\"}]}], \\\";\\\"}]}], \\\"Input\\\",\\n \
+CellChangeTimes->{{3.4941618998598137`*^9, 3.4941619588657084`*^9}, \\n   \
+3.49416200170741*^9, {3.494162159839367*^9, 3.494162264850087*^9}, {\\n   \
+3.4941622953964167`*^9, 3.494162314363269*^9}, {3.494162429878344*^9, \\n   \
+3.494162429931975*^9}, {3.494162689372713*^9, 3.494162709813946*^9}, {\\n   \
+3.4941627527093143`*^9, 3.494162752876684*^9}, {3.494162969971979*^9, \\n   \
+3.494162984039895*^9}, {3.494163074268774*^9, 3.494163197175642*^9}, {\\n   \
+3.4941632664519243`*^9, 3.494163266509802*^9}, {3.494163302388669*^9, \\n   \
+3.494163302618104*^9}, {3.494167125909374*^9, 3.494167127043168*^9}, {\\n   \
+3.494178629013938*^9, 3.4941786941328583`*^9}, {3.494178743416378*^9, \\n   \
+3.494178753982154*^9}, {3.494178806776251*^9, 3.49417889255365*^9}, {\\n   \
+3.577548930912209*^9, 3.577549058993216*^9}}],\\n\\nCell[BoxData[{\\n \
+RowBox[{\\n  RowBox[{\\\"myplot1\\\", \\\" \\\", \\\"=\\\", \\\" \\\", \\n   \
+RowBox[{\\\"Plot\\\", \\\"[\\\", \\n    RowBox[{\\n     RowBox[{\\n      \
+RowBox[{\\n       RowBox[{\\\"(\\\", \\n        RowBox[{\\\"180\\\", \
+\\\"/\\\", \\\"Pi\\\"}], \\\")\\\"}], \\\" \\\", \\n       \
+RowBox[{\\\"\\\\[Theta]\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}]}], \\\"/.\\\", \
+\\\"sol\\\"}], \\\",\\\", \\n     RowBox[{\\\"{\\\", \\n      RowBox[{\\\"t\\\
+\", \\\",\\\", \\\"0\\\", \\\",\\\", \\\"20\\\"}], \\\"}\\\"}], \\\",\\\", \
+\\n     RowBox[{\\\"PlotStyle\\\", \\\"\\\\[Rule]\\\", \\\" \\\", \\n      \
+RowBox[{\\\"RGBColor\\\", \\\"[\\\", \\n       RowBox[{\\\"0\\\", \\\",\\\", \
+\\\"0\\\", \\\",\\\", \\\"1\\\"}], \\\"]\\\"}]}], \\\",\\\", \\n     RowBox[{\
+\\\"PlotRange\\\", \\\"\\\\[Rule]\\\", \\\" \\\", \\\"All\\\"}]}], \
+\\\"]\\\"}]}], \\n  \\\";\\\"}], \\\"\\\\[IndentingNewLine]\\\", \\n RowBox[{\
+\\n  RowBox[{\\\"omega\\\", \\\"=\\\", \\n   SqrtBox[\\n    \
+RowBox[{\\\"(\\\", \\n     RowBox[{\\\"g\\\", \\\"/\\\", \\\"l\\\"}], \\\")\\\
+\"}]]}], \\\";\\\"}]}], \\\"Input\\\",\\n \
+CellChangeTimes->{{3.494162004524008*^9, 3.494162076852659*^9}, {\\n   \
+3.494162433062894*^9, 3.494162433108081*^9}, {3.494162592059354*^9, \\n   \
+3.4941625983662167`*^9}, {3.494162757151064*^9, 3.494162787005321*^9}, {\\n   \
+3.4941628547936563`*^9, 3.494162856894761*^9}, {3.494162887335985*^9, \\n   \
+3.494162892983869*^9}, {3.494162976794415*^9, 3.494163001498172*^9}, {\\n   \
+3.494163071893292*^9, 3.4941630719595547`*^9}, {3.494163240196003*^9, \\n   \
+3.494163243631948*^9}, {3.494178674109873*^9, 3.494178699548072*^9}, {\\n   \
+3.577549065982582*^9, 3.577549072700952*^9}, \
+3.577549145166576*^9}],\\n\\nCell[BoxData[{\\n RowBox[{\\n  \
+RowBox[{\\\"approx\\\", \\\" \\\", \\\"=\\\", \\\" \\\", \\n   RowBox[{\\n    \
+RowBox[{\\\"(\\\", \\n     RowBox[{\\\"180\\\", \\\"/\\\", \\\"Pi\\\"}], \
+\\\")\\\"}], \\\" \\\", \\\"\\\\[Theta]0\\\", \\\" \\\", \\n    \
+RowBox[{\\\"Cos\\\", \\\"[\\\", \\n     RowBox[{\\\"omega\\\", \\\"*\\\", \
+\\\"t\\\"}], \\\"]\\\"}]}]}], \\\";\\\"}], \\\"\\\\[IndentingNewLine]\\\", \
+\\n RowBox[{\\n  RowBox[{\\\"myplot2\\\", \\\"=\\\", \\n   RowBox[{\\\"Plot\\\
+\", \\\"[\\\", \\n    RowBox[{\\\"approx\\\", \\\",\\\", \\n     \
+RowBox[{\\\"{\\\", \\n      RowBox[{\\\"t\\\", \\\",\\\", \\\"0\\\", \
+\\\",\\\", \\\"20\\\"}], \\\"}\\\"}], \\\",\\\", \\n     \
+RowBox[{\\\"PlotStyle\\\", \\\"\\\\[Rule]\\\", \\\" \\\", \\n      RowBox[{\\\
+\"RGBColor\\\", \\\"[\\\", \\n       RowBox[{\\\"1\\\", \\\",\\\", \\\"0\\\", \
+\\\",\\\", \\\"0\\\"}], \\\"]\\\"}]}], \\\",\\\", \\n     \
+RowBox[{\\\"PlotRange\\\", \\\"\\\\[Rule]\\\", \\\" \\\", \\\"All\\\"}]}], \\\
+\"]\\\"}]}], \\\";\\\"}]}], \\\"Input\\\",\\\\\\n\\n \
+CellChangeTimes->{{3.4941620805077047`*^9, 3.494162130559312*^9}, {\\n  \
+3.494162438686253*^9, 3.4941624388214483`*^9}, {3.49416276111087*^9, \\n  \
+3.4941627612842607`*^9}, {3.494163076540534*^9, 3.494163076603696*^9}, {\\n  \
+3.4941632000470552`*^9, 3.494163201262197*^9}, {3.494163247872136*^9, \\n  \
+3.494163268710841*^9}, {3.494163305169607*^9, 3.494163305408745*^9}, {\\n  \
+3.4941671378365726`*^9, 3.494167137896326*^9}, {3.494178681693411*^9, \\n  \
+3.494178704379784*^9}, {3.577549081756276*^9, \
+3.5775491266935997`*^9}}],\\n\\nCell[CellGroupData[{\\n\\nCell[BoxData[\\n \
+RowBox[{\\\"\\\\[IndentingNewLine]\\\", \\n  RowBox[{\\\"Show\\\", \\\"[\\\", \
+\\n   RowBox[{\\\"{\\\", \\n    RowBox[{\\\"myplot1\\\", \\\",\\\", \
+\\\"myplot2\\\"}], \\\"}\\\"}], \\\"]\\\"}]}]], \\\"Input\\\",\\n \
+CellChangeTimes->{{3.494162134647728*^9, 3.4941621507573*^9}, {\\n  \
+3.4941622413147984`*^9, 3.494162255928239*^9}, {3.494162609064744*^9, \\n  \
+3.494162610408478*^9}, {3.494163058283469*^9, \
+3.494163060738275*^9}}],\\n\\nCell[BoxData[\\n GraphicsBox[{{{}, {}, \\n    \
+{RGBColor[0, 0, 1], \
+LineBox[CompressedData[\\\"\\n1:\
+eJwU2Xc8ld8fAHB77z2uca977XHvfVRKeT6FpIRvIUmUSApFKqM0kFJmRJmV\\\
+nSlIiJaMcKzIyExER2Xvv3/35x+u8znnO+ZzxPJ/3eV2i0/lDLixMTExunExM\\n//+\
+fHOjEQXNONGhq2WT8YVDRomh2RNEPv9F1nK68gcHm1y9Biop38fUva8OP\\nljAQiPn4jqc9Bj+\
+Y6Dp0bBKDZBSuwK74CP+Tx9To0YeB5qRzxKZrKn6g9uNk\\nUxMGvwVSNtZ+PsXH93Ftv/cZA/\
+IL7q0rq89xB1/OvcnPMXDfdcljUeEV/v7W\\n7SN8YRi8b/2TPmeYhXunJlj9PovByjmzrmnXbJyZ+\
++s38X0YpDF33V00zsG1\\nf90cLiJiYFQfTVn4mYuLRPffbVukw1CCSemcWx7uf+YL2aOGDved1+\
+1nVz/g\\n4zJRbaGP6NCyeiZ2SqEAl1u2kvbQosPlKnnqZE4hvrvlN+eBGRrIPGitHTcs\\\
+nxv91R3xteU8DJ3VgHXUtwVuaiNtEtWjAsurfMHcV4QJbKdp9/VRo/WMtN2dc\\\
+nimsbJwfcf0QF3yzegpmfZbj1Cvt/VrM6sD/mH8dMWjluYR226bNfBwi+pVbT\\\
+nbhW4L1V8G0rUBmR4ZWpytRKP4Pa7ZqOlBZydfSrjCt/wrc+/i4OQOrSjz5fG\\\
+nhr7hUtTc72d3qkHmi4Ty0Zwa3NeS8q3zlCqYe5s7jhjW4QIe54m058rwkLvw\\\
+n4aBrAx55Tm3eYIEEIknVLNM/m/HEfuKc6Yw4PKlJ9RpV6MDju4rfBD3iQnMJ\\\
+nH9R77nfglxZ2rC1t40d7XWv/Ni934PJcvBPLg0JojHXRurDlF14fGR64xUcc\\n6e0y33E3tAu/\
+S8mxybOQR/d4nWevznXhvVFf39/SV0TdHX5ZF07+xl2yDGxj\\nDxBR8OXn8rb63bitXiIz+\
+wkl1Ji9xqIy2YMPVzsmNx5WQSI4twO/9h+84b8J\\nTi8jVaSvHLsj1PkPnss25VSgo4Yi5l7N+\
+jf9wW/naxtcmVdHnzp1G+c4e3Hb\\nnMzMsAYN1FtWkuVp0Itb/JqYvflME+lG/\
+3Bxet2Ll4M9wVVPGzn4ntjT1duL\\nX7cckNxY0kahjqPyNlJ9+Nuysu21uTrolxZzu2lIH95zzNP+\
+wx0qYhW/n1de\\n1Ien7D9EXf5FRZprEtG7ZvpwxaXUM+FqNHS9RnM/zfEvfsMjSdWliIYycvKV\\\
+nX8f9xVUl7jTd3aCh5oQ9rJS6vzh3spVy6S46Wr1e35PC0o+/k7ZtXvelI7Kr\\\
+nbbHU9n7c3ErMHntHR+bmfxNizvfj2AkNFZu/dHRli+clvhf9eE7pwKVjIhhK\\nIyz/\
+d7urH1f1yDy7fReGaliDtZlEB/CQfnfuwVMYmhsR4PU3HcDrzMf17G9j\\\
+nSK750eDs9QHcA5WVR6djaG8BucLjI6McZn705hcMXUjLThscG8A3XkRGUFox\\\
+n9Dh0x7WTSv9wbp72br8BDJV7Vh7tPPoPX953Ict/BkNj1pZbraP+4Zx9K0BZ\\nxZDErk6Rhq//\
+8PMXvtRf2cQQkE9P7lv/h4d8XzvnxSi78U7XlmGD+JVuOTkR\\\
+nRvuYmYCMnWcH8fNP7tXYMfor7uAI+Zg2iDfsvmd8kDHePxR9kvpzEL+WqmQy\\n1oIhwQyCQSb/\
+EJ5S/vW8PiNevciXMmSjIXwXa8VenDEfp8v0xWT/IXyI8mH7\\negiG7h//\
+3CKZM4T3WXcmBjDW44PRvnfRg0N4iZzx89KdGOrWaLnPKz+Mc6jV\\ne/\
+0UxhCXqINbiNUwrnlOkOlrHx3RV4aMN8OG8c7rutT4bDo61nuR5Fc6jNep\\nRZdZM/\
+brbfbdTnftEfzfsbzTNes0NCIycn//yRGc7NI7qVlCQyqX9xuoxo7g\\nlk9Mnmhfo6G0nbxP/\
+i6P4DGXir/BJBV1pZ47VKo5ihtsD/M/94yKpFnrWFMd\\nR/EThm7lblZUFPPt/mm7ylGcW+\
+dWlp6dDvquOS6ptzSKB3bo+fa80ka8UQe/\\\
+niWuM4XMt7r9ezWqhYBsBzaaoMZx0JDWBflkTXf4bOW1iP46fSZS/IKKvhnL3\\\
+nTj2lRI7j51T9lescVdHkK0sr1rJxXEvgzfjP6yrozAXh/C8qE/jcbg7FqFwK\\nsluPubpldgKP/\
+I+V7DBIRKm8tUHCxlP4cNdbYsF5UWSwK8D+hsMU3nfngGqR\\nuTDq8tTYMnllCq/R5O/\
+8ZiWApJrv/avLnMJz1ciS2bnsKDrBzPSO0DT+Sfz1\\nb2/\
+e3pIgyneBzc5pfNSdkrUrQgBIRwIHPean8axVrun954QB3dFGXQIzePKS\\n5D7p+\
+6KwNhrhVbh7Bo/Feg4ul0rCpVyL1ksvZ/BXOzKsbs4qgCve9GjMexY/\\\
+nrlt9MeOeCjA9XSjsvDeL33i9IsPpqgoJbISumvRZ3GSMlXdglxpUfzst/6pt\\nFndyo6QG/\
+VaHE5r38YTJWVx9rWZ56bkGLEXknAjlmsPTh35JHnHTBFWrtacu\\nO+bwVgmDF7v/\
+aAH6SKywOjyHZ3cGpYY90AZbaZMBQ/c5vMib2W/Lbh240x2t\\nQkqZw13ShXIfG1NBcXf+\
+PuH8Ofy6b3vRywdU+PSsy42pcQ4v+1FXlNlNhaEz\\nKlndzPP4p7+HSo+\
+fo8GNWrP6epl5fE7HvWouiwZS2t4Txdg8Xn+8o8pilAbv\\\
+nouIFs8zm8XcDs59OKdNh32wxNdFlHhddl1NTdqDDH+u+/8IC5/GbOkN4eAwd\\\
+nfD9xXvSLn8eXNe+XRJbT4dW1Qx+OfJvHxx3q+YxlMdjz50rb3r55vO96qsfQ\\nbgx+\
+7Ule3LI6j69vbnXkcsHA+3mZFEVsAb91T/lTSjAGPFxD28W0FvCUxeKJ\\n52kYPD3Lf4x17wL+\
+MnNJWroAgx319KszDgt4cc/w9Gw9Bs06tsm9VxZwo8j9\\njfQeDM7GXPvSGLWAP7uw8a55DAOW+\
+ac9Ja8W8HlLoDctYPD4SDVTdtkCPnmR\\nI05zHQN64TgxpXMB5w+aK/\
+7L8EgNQdQwfI7RXjmUusDwiNN1Peer/Is46cNO\\naecVhg96j4ecU17EubxvGGrPYBBjFPTCDl/\
+En9Slytv8w0DjZUaVqe0i/qb5\\\
+nUfHvNoZvuL8P6Xkt4mJBHM1V5RjYu89yq4Yt4todrz5IvsFg7ruUhuSzRbym\\nn/\
+VEUwwG92kGZhzFi3iyDP+5ZR+GX2JPecy3LuKJpm+F4w5jULxwJ6J/fBE/\\\
+nmK2gk6mNgdXRt9ktHEu411ETA5wDg7GilsYyhSUcfVy3PfaLDsHyy9M5eku4\\nJyu+\
+jeM1HQg35UWf/LeEu5ibau/zpYPZXjfr60FLuI/Nj6oPXHToz4i47Jm0\\nhEsIf5Sbr6XBVd68+\
+OMflvCQ+7lTM/do8KZxo0N/cAmv2x6weYSFBnsx8qo6\\n0zJ+t/Dkq5+\
+fqNAdZ0qQkV7G5eRPvNrrTgWBY7EOS/uX8RvcRsmHY3XAc0Dt\\nb97bZbw7Vnllf5Um/\
+HHo4Cr9tozvUdaB/nkNONx+R7u+fxlnVZ3gPy+vAXq1\\\
+ng34DMiv49Y2i98IOasCa81xIInQFjz0Poj1JFEi4SjS44riKf3m514QYIQM8\\\
+nC42ngvxXccHb6Zfzj0rBtfM37kbGreIvvIwurylIgJNTT+vL2lX88N5Lm0Ep\\nwqC5L/lc+\
+7Y1fPPzI1JBHxOUiko/2i60jvf2u5xg2sOGdMOrvxhrrOOnZ3IE\\nzH9zoRccvv3/7V3HXew+\
+d2lc5Ef3l9t0zl5dx6cKhNYOGIsim57Yr4+H1nFq\\nGIuymTIBVdsajb1g3cArzse9dbKUR/\
+rNs8Lv5Tfw0X4qfWK7IlKsPHS81moD\\\
+ntzVg0Ys6REIjmUJzq2gDN3r61oF6SBnZk5E0V9cGbv83duPaXhXUkHweF1vc\\nwO1OUZg+\
+b1FFeVHfwzS1NnFfkUp/QzZ1pMIT+E5v3ybuT5jVVv2rjh4HabUZ\\nndrEBU5Vfdcr1kDXL98nHn+\
+0iU883xqvbK+FZib1TdzyNvEhqlDUa5I2cnYb\\ndb/UsIkHOp+\
+nZPVpI4o2pesrCxNEf90ow1WoqHtkbcJMiAkkA4V+s1yjooSX\\\
+nrcwtckzwdrJJd1sDFfEQg1V69Jggk1rpn32Ghqp3RusEGjNBWqu2Mv01Dd22\\\
+nTdkmd4gJmAzNg5xHaMjI5zVe7MAE5VrfZPSV6Ygl6pPJsXNMUHCESfy1Ax2h\\\
+n15UWK1eYIJnJVT/zAR0FVjUfeRTMBKzFfcvalXS0sjHm+jOZCVRPC5JeyGHo\\nk8zK+\
+cuZTPApYubRHSMMXd7K6SuezwQ9vXrVja4Y0j0kdiOvnAluv/pp5RuK\\\
+noRkP4p3DjUxQd3o40u8Zht7d1Y6a6WKCmzKW3g1FGPJ8rp8QPcwEGn77Ui41\\\
+nYkizdF8adYEJlo/0O57pxdBol3VGAwszNGtdf5M+gaHMJad3noLMQD7Fraq6\\nhKEzYhc+\
+8RMY9YcNZKfXMaRMvYayVJmB53j3tQ2GX/oPhFUf2MIMyQo90xYb\\\
+nGHrqGt84spsZatlPVAwwnj8RlN5+15wZXIdixtEkhuRTc/6oHmMGSneB0N8+\\\
+nDHUVfhmqcmUGk4PcV82bGb5qq5067cMMP5dNVDkYnrGdaV9iv8kMxfOen/hf\\nMDwl8I/\
+peTgzvE0/6+cWhqFWtVkuo8fMcG5r2kn5cww/GTMJ/33BDO8HdwrR\\n92HI8iS/\
+9K33zLDP4GpdJhFDAtdkiETEDPICe0IiF+moLkFFDdUxA1KxbBz8\\\
+nRkdhebo0xw5mEA2SGy5KoKN9jbu3bwwww6rMu2wxZzqq4LQ33bnJDMSUf4v+\\\
+nUzR0S8ntv05eFuBsnXVNzqEhwC8f9ZdiAbXhcEfP8zRUfDnK7RONBaLog4/M\\\
+neqnIPybZ64gBCxCdnny+GEdFem8z/Rb2s8CnejWVa3upKG+g4q6uMwu8XWvb\\\
+n2megg95YLb9695AF5KJHv2kc10TuFzhyLZ6xgEf42EeOeA2kfl+0cCKbBYpY\\niz5n1aqjF+\
+VaNZrfWOCbz9+SaYoaSqE7jWSsssCd7XaNRU8pKEKoVv3JCVZo\\nqF1zxL7KooJtch/\
+MPVmBXURxS2iENOp3OI+vBbDCjYKoUcp/kkj/jajVkXhW\\\
+n6HVxf2pYJYKGTO2v8X9nBa6gG1PXeFiRYdB4g58+GwRjsbMZt1nAMxO3UzFl\\ng+s/\
+h4e1aJzwuCm6v9WGDZ5M8qFbbbwwpbB1WcebUa60tS26LQIpxYGkfxls\\\
+nsBqbZTYbKgtL84KXDkmwg9zeZ9viScqgJOe0uanEDp5xH0KTZFTA3Cjv7hsa\\nO+\
+yKG1K9zq8Kz2NsU7gOskOA1dR3rr9q0FiQqfrRjh2qOkn6ppXqsPZnLffU\\nGXYIYc7//\
+eiJBhzSeVL1JYgdDNljr78x0YJAm9n/3KPZQdGmb1JMWJuR/427\\\
+npFPZ4X188t0fLdrAVDc85VPIDsduT1UeJ1FBY1Y/gFTNDjH3MtE+PyrYyESw\\nN/5gB31Q7I+\
+qo8KbM3QZjWl2OD0Xyz3jSoP2yOD09g12ULtk0TCcTQO2/Dbt\\\
+n23wc4JKXtX9tlgY63aoFmAwHCBc8XZHRpYMde4BhrwoHbBiw6etdoMNtzfr6\\\
+niC0cUN4dsNckgw45hxVsdxpywKQqi97OLjp0+Xv1DVtyAMeteT4+Pgy4npa7\\\
+nxztwwEffuhdZ2zDAvokvGrlzwMGWpVoxRwwcplxvzvhxQIpEgNrOWxiESRby\\\
+npoVygLx3kJXsEww+GPA9PBjHAd0Cd2teF2Hwx8VBcfUpBzRkr04PNmHAF/4u\\nM+MdB6i3T8jW/\
+sVgWx7LFpsvHBAvIhDy3zTDG51WJax1HKB7qsfKl+ENnsRe\\nD68ODuj3CHSmMXySa+\
+dJ6PnHAcMhzjfeMcp2Mqs1ZnMcEPxyI2J+FQPWX6F+\\nhcyc0M48+x/zHAZZj8RUVQU5ofLsjtM/\
+Bv/vhSdtcQROMHZ/b+jzE4M1Ke0Q\\\
+nVnVO0ArY3NlbhkF6eyHmtY0TznVPBCpmYmCWYNLXbcQJKdYmQtvCGV450hpl\\\
+ndogTCv7jbFJ3xyBJ8iRe6MgJUe7v/FhMMDD+OT6u4sEJx4fNHlfKYTDx0D8p\\\
+nzp8T6q4ee3R1ig4PbTgPsN7hhOnx+VxqCR3+/VDM6H7KCUmZQvsLLOkQEffG\\\
+nxuwdJ5wQN3VMF6XDVusd7IWfOeFKU3pRQTMNQlsPO8W1c8KDlhSHR8Y0oMb+\\\
+nEWL9xwllXbWvbyxTof2wR8mFWU44pV+2r+4VFVRbbhPMBLhgVOCE8ItNHWiM\\nEa0tkOUCtk++\
+H50O6IDvoTQ/FTUumLK5meUTpQ3fmgraWIy4YOkmn/sWTi04\\\
+n2zgWVeDHBbxvxlLKXquBSJQfrhLKBWU9u77lf1WFQguOidhYLsh58NHLsUsF\\\
+neBsUDlzI5oJdQnlC4UsUyKo/xK4ywAVewaOY0AoRJmo++cVacsNCDDG0Jl0E\\\
+nvCqDnc6r8AChzyhMaUMYyffv5VjAeCDa5M1Gu7gYqmXhzrwKPGBTwPm8Rk0C\\nUSB8+u5RHmD+\
+eS3/h5EM6iiMu5F+jwcK5I15LsoT0e2OI2SNBB6oivkeMyxO\\nQtiSdHVOOg/g/\
+k5og1sJhW9JESz5zAMeDz+PWA6S0e53L1I6JnngSZxzfpOX\\nKpr4fmbPiTUecGX25blsqoYSx9X/\
+/ePihXGLq/ouBHU0r56tNUfkhWMjZZVh\\n7zXQU1OvJn9tXkgrSa+/\
+fEUTWZzBLjHr88JjXjE56a1a6NXz/GIBK15Ymohm\\nWnyqjWwq/\
+E7EneAFxaX8c1OWOoj1rz4bwYMX3p9IbpNd1kHHFdEBtdu8kP7h\\nl2p1IsMT+\
+K3J7BheuENsY278R0X5x40ebE3lBYn38TfytWlIOLH6l+EnRrne\\n120mj4a+FIQF1lTwwl+\
+bsBqtWRo6125G+q+JF/YJtpZJadOR1KLA15+/eSGm\\\
+nffl7hgsdVYo3uTmM8ALfGgtX6yM68tZ9wD+wwAs0tl5ydA0dKRy2zjnHygdK\\nhEsBP/+\
+f77wkrWcE+WDtgTFzKiMf+kV1LPkS+GD0VJHZHxNGfs9OTNpU5YO2\\nq+YPY89iqKX+\
+ONzewge3hYs/fbiLoRtjCv18e/hgMiyaZvAcQ1q8faEPzPng\\n2D0rktpnDP1SS9eQOcYHB5SO/\
+OfdhKHQfacb0lz5QOOWr5oEI9/ruqpeVPHh\\\
+nAzYm30Jhhgd6Q0Yk3t7gAy7jdwVODC9EpGcV6obzwTPs0S1Ohif0yz0dih7x\\\
+ngWmDp8QmwxtDvVSWPS8Y8QzTCKaM+jim2efVuXwwZ8rW+39v7FH4YGpRwgec\\nyza2bYz+\
+J3ddGf9Rywfl9RdkCX8xlGS/Pdq+nQ9iz+m5FTC8YRqwqvu3nw9c\\npOWVcxjeWHj0ud1tmo/\
+xvgx0crzE0LNP169OrfMBqUCm4Ms9hid+7la8wsMP\\nN/++jPrtjqH1edaKdQl+\
+2OF8oOPMfoafxL66Bivxg8m1mazTZAwdwe7w8lL5\\n4V4Tb/XvFTrKucB3WMqUHzR/\
+jE5YJzP247Go3xsbfvj9Y4jezfDFvwqZ1D3O\\n/NA98IfXTZWOZKTVRt2v80Mzjcpa+\
+IyGdA2pwizhjPaXCjYSj9GQhce2bfGP\\n+WHFotj4kyANBZcaB5V+\
+4AdfdCf4jzsVpYyavbIp54ca6vCAgAQVfRK3ahht\\\
+n5IfJrfplvld00Libk6zEGD8kqedoVSxrIRuR6+/PkgSA8/Qwx+4cdXRh5+2O\\\
+nTR0BMMwi2Is1qqGw0+GbsbsEwOvoQu7uYVVUUph4oMRWAPp37ff25lVBqqc+\\n/\
+RWNFIBrcQX8w2JKaOX9tOjnVQEoOD4RuL1TDIl1L20/xC0Ial5qcSnxIkib\\ni+nEoIQg5BQY+\
+YxYCKFT9gJZwnRBEGEPPOPtzonq2DSMTp8RBCHtke2B+N+S\\nFGtnH8EfgnD22yl1NS0h+\
+HT93OP0PkGw7XgZKnlJBFpeeaPtU4LQzXp779wn\\nMWC7Dhy57EJw5oYwz1W6NOi1mB/\
+qUhQC75yu2shJRTA+c2jghYoQpN2P6Tq7\\nRoRD69a+XtpC0LZHb+U/\
+diVwVzmewrFTCAYCHkU68FDgScC5EeoRIZgYuzPk\\\
+n1KkKVMS9FHpcCCqzdeTs3qsBYstg7zklBFZXufzP3laHP+H9iuEXhEDz7q+b\\n2+U04ULzLe3+\
+y0Kw1BFBzvqjCZsSxJ3614QgRenlWGqKFsinHT8yfFcIePe7\\nPw3k1oG3/\
+avOECUE8gVddOWPOrBL7bF3/EMhMP4PEZy1qWCf2xZu/EwIWnaW\\nNKJaKowt+\
+CQmvRKCodDqgGxxGgToi76azWaskxDzsZP2NHhcYVHxpFgIHE5l\\\
+nOHX20ECde6JpqUwIRA9Led0j0KHg4P0ei29CQKEM3fpuTYd9MerjLxqEIFhM\\\
+niPT4Hh3a26pX1n8IgX3532v9n+lwRtaVy7pLCDiCJdzTx+iw6MgukdUnBBJP\\\
+nx92aJDG4nf5MiXVYCJo7zySfwjGQGN5Ns5tk7EeUXtvhUxi80PpjkDMvBJzx\\\
+nFyMSgzDY4h1oxrUmBLtMHUd10zCo+Eiwc2QRZnx/Fb/IFDDy/2qh60cuYdih\\nbx+87zsG/fjRS/\
+yCwuA68/pMYQ8GF4MXbzmLC4NDhIKhxzgGLN/ioopkhcHv\\nc9Ajh0UMYvh1U0RIwrB1e0rq/\
+XUMSIeaX7upCsNHLadtCwyP5Dy8UIC0haGb\\\
+nsGP68QYG0ClQJblFGGKuMPEFLGPQqPCm1VNfGAaEf/vET2FwwvlAX+VuYajr\\\
+nVKqaZnhoMmN4krBPGMSc9pndb8EgcDx0/aK5MLRkvVl1K8FAgK7MW2slDJ1l\\nW/\
+0jXmKQcrlCinRMGH4yNUlv3MNAq8hJ2e+kMLTLMnV8ZvikeJNJt9GVMZ9Y\\\
+nF6cWU4ZnjFJ3q3gKw/wWYT5jJQy67uyyCPQRhtzpvDbpZTqcq++0/+EvDOXV\\nbe5Ha+\
+kQZiPlGxQqDLaUy9M7XOggk/gx5Fe4MLxjzrk2qUmHVz1WD2ixjPiv\\\
+n3xDQnaZB9Znotz1pwtCWnx396DwNbN/oFG99KQxXZVoNm9VoMDhd/y38jTB8\\nGGu+\
+XPOHChwBPAP6hcKg8XsyT8eYCg9LMmZikDAUCox1ew/oAIXNhGnkqzC4\\nhzfy+\
+O7QAaPwINmEFmGwaFA0/NmsBbdS1/6bGxOG3k9mlS+QOlhSP3lpzArD\\\
+nrS1XjqrNqoF86cVop2VhSHvU5DuiqAaFfSONjewiYHT/YjvyVIEZSofFG3kR\\\
+nUFJSIMu0K4FT1oeDpy1F4Krm7MV2fimg7vLySLYRgd0FEicKmSVgo14zvNWe\\n8XyBY+\
+T9aVF4PPmsbo+bCEiLzL8XCBeEZnrMAYVbIsB0wmQycs86vrvA07T9\\nvQhskdOpPR/\
+CigT2q7sJForAg6+yw5ZlnKjr18CdvUgE+nlIJt9XeJHvmn11\\nXp0IfDy6koy0RNA7/\
+IBJ9IAIrArZnCCdkkGBjRyu1aMiMCU0lI67EJDZybLb\\nm9MiUKN/+72ikzwaurX9q8eGCCj+\
+3CV2nEJEil9VjPdLigJlJb/s3T8ymrD5\\n63xTThSiY/fFtdVTUPFgSvAnJVGoBt+\
+elXfKyJZbokKZKgoy3937Hp9VRVFm\\\
+nbIaspqIAXqkaYy80kMPvEqcdFqKQKhf4972bJtL0DLjlZS0Khx1yfu9T0ULV\\\
+nkTOlPSdFoXfvQOvhGG3E1PIHiv1FYftIENvOGCoKHv7yxP+mKPy0iPSx+Mv4\\n+jEls2y/\
+Iwo83lV55VQaEtE6WvEhThT28hWsRCAaijfcRvFJEoXIxW8q1Sx0\\nRLATv01/JgquTwm+\
+yrvpiBLaZJL9ThQUqoS+KOTSUWZydoZHvih8qypwetZP\\\
+nR9p54dyaX0QBKbTdkxPF0Puac2dHKhjzdRJ7FbwLQ3q9prUZtaJwu16VtfEU\\\
+nhooXVTRdm0VB9v2/4sUQDO0W4AindIgC6Y1J69wzDH0l94//7RGFppLDSqUM\\nr+zXLzN/+k8U+\
+Hr+nTjSgqHv/6VlnxgXBWuX88T3/Rg6fCZQSGFOFOJlb/5s\\nnMZQe6C91+8VUYiI1m59s4Ih+\
+7gdzYnMYnBxn53JPoZP/ryWwuy4xCCA/BdP\\\
+nZZRdyhYeSAmKQfemQFbuKoZG2lvn2sTFgCP12tGgWQx5TuZaxxHEoHyqYU5k\\\
+nEEMz7NEfDyuJwe+rNtzObRi6QjgvKaIuBsGPWZn9SzG0Rj/o20gVg1I7Ivlo\\\
+nBsNjphodEdvEQOjz4wQOhk/YT3DvOGggBimcu07eccNQ2OXBx7zGYkDn3bAf\\\
+nMMSQQHjl6rcDYjCiR99LkcHQg2fP7O8cEoPG55dzLMcYviy8+XnvUTHA4yP4\\\
+nvArpKKnRUZ79hBg8TKUkRwXT0Yt12T83PcSA565P+gofHamLrQD4iEGR6/PG\\n47U0lK3e/\
+mTDXwyOTmc8mg6hoU9HYk8F3BEDWZ+0UwOTVLTT07tie6QYzFX8\\\
+nfuCcSkWlwZaUpTgxiH0yV3joABXV5PAN+jwTA69w8eIQmg7q4g056/lFDHok\\\
+nfBalpTQR4yWq1awUA0P/+graHg00oLdbc7RWDEqO+bu6nVZHEy7r464dYuC+\\nf+\
+7ebLIqYkaXvE7OiYHCeVmpju9kpOxz2tdKXRwUfjraRdZLIa0dPYdTqeJw\\\
+n4v2y3O1iCaTLZKszslUcWi/eWNZ5KYb23Df9d91QHOgOH5SpXkLIIV3T6rW9\\nOHA/\
+76wyub9Z8rB1RoclUhx+PfE+r1/PAsmPz/EejBOH9tgoo21SnJB+ov9f\\\
+nfKI4ZO06f63FgRdyx34ka2WIQyd33HL7uDB8ZyvgPVoqDjK6AeU/DWSAfcv1\\\
+nwexZcegNOHbYe5wMfKuLZSvL4lDP5ax+6CcFREovpBgzScCPYhs58c/KoHjQ\\\
+nybqTTwL8nnE6PA5QhZ0uxuUcyhJgMH54rzbSAEONLyn/aUpAvn7g4TfBmrB/\\neqt/\
+El0CHLcj3xZDLbC9pkqj4xIwsfGs9W6ONvjE8aYet5UAi8fnAm8/o0LA\\nsWD/DAcJ4B7V/\
+Rs3QYVbxHXrWWcJyBnXXwnYSoOoNxN8d70kQNPiYVlCMQ3i\\\
+nL7oOtVyRgGCOS9vyV2iQsv1PuXygBCxuWRkK2EKHrMom/7wwCbhjQzb7nkaH\\n9/\
+f222xGSUAtUer9viY6FP5XTtsfLwGx8h3lezboUCq5kz8uWQLIV4s981Qw\\nqP6dN9TzjDH+\
+dYF9Dw9i0PBMq0I9UwK4dg7e6T2PQZvbi9RL7yQA3RMRiorA\\n4LeOQgD6KAE3z7U5Jb1ieGE+\
+3ob3swRMVl16w1yKwdPd2MXf5RJwaNp4Uq8N\\\
+nA8fw75HZNRLg7vd8K2EQA0KHW9bNJgmoEQtceTmLwS8y+7fD7RKgSCp93LGK\\nQcKFtAFKD6M+\
+IuZENsMPNsX6LEsDEtBw/26gKqMsxvVTvmZMAkQS24WMVzBo\\nOuytnzQrAU+\
+z9OQ4pjGISOW39VyRgIPygzEeDD+YjWb4ALMkkFVP7Q9swoBn\\nm1G0CJckdLJLs+8sYsz/Vs+\
+bfgFJuDKZ6f6a4aPb3/1rPopLQsf6bZHmmxgY\\nykgM3iFIwkl/\
+8vmPDhgwnc5hPaYkCTxyWr2O2zD4kmOmqKUuCY4XQ7PaeDG4\\\
+nuj64c5MqCcm3dy0rddFhu2nQ0aZtkuAnRWj+L4MOC7Hyl58ZMMY74qZ07gId\\\
+n8v4UxFwyloTztUcKAnTp4K1pnW1iJgmaJqYGUXM00PGdqpU+LAnXSCzbP76j\\nQaagCvuXE5Jg/\
+MFv7IIcDc4cKyNGuUrCxIuYcfJ3KlBeHjdw8pQEsXOWU6oB\\\
+nVEgziL3CcVUSdI1FVJtidSDeg3nEPF4STjtbJTdc1wSrgiQOYookBB+o4zuf\\nqcG4J+\
+gpzaZLQrnuXfr8d3WISPK0j89ljCetN+7DoQbBtZ3fe+ol4Zbe1adV\\nuhS4oPbx/\
+QU2KXDedz3t2TVp2D9w9lqMlxQEkXrX8oicaO81pSwjXylYSPkz\\na/mWF+0R7/\
+q1ECgFE425NYEyQmiH8UG9Y/elYEe/mJr1QzGk/lxnVumlFHzX\\nV/A+\
+ZC2HlHcNEdveSAH3xqdLdy4rINKPNMs7eVIw/rpj/ma1IpJhF3k7VioF\\\
+nr4sVPzC3kxCvy9yZD11S8NjINYerUhlxrWfFu/6VgidVrcmZeSqILc7lq/SI\\\
+nFNQXcvzGU1XRWkWbUuCiFFw97Pn6hrM6WrKPPETdYMQbdfRUvYEGmpszudnH\\\
+nJg0mtsbNFqKaaIxc0L1XRBqi8QqxvZlaaKjYi39ZShr87HrsXNy1Ub+V+s7X\\\
+nCtIgd93dTFiV8b0NTnwkqCUN/y7Lvy00pqJ2glV1KSYNzepBYt6PqKg1j2/x\\\
+n4g5pyP2iEfJimIrq+q9ZtZtIQ8ijeyeMr9NQ9dWtQWHm0pD0XyoxuoKGKsQm\\\
+nc3ZaS4MSq1YKgYOOUNbLPxPHpEGiItjnlyEdFRudEHziJA1rWRYCX67R0acu\\\
+nKYPDbtIQaOTxtOg9HeX5NLmzX5CGYg6/rdUDdPSOLywx/7I0fNYwTOtgeCAr\\nfU+\
+NG2MfF9t3hP5jeCBj5+qSbLA0BLOlu/xjeCC99b3K9zBp6N62creJ4YE0\\nd3ebG9HSYH+\
+0RPIJwwNJbJQQeoI0cF/14bJgeCAh6ff7/hRpGL2rptnWjKFY\\\
+n3Yd9D59Lww81XJ3O8EBUnbmwaZY01A5N33RkeCDcmRNWc6XBIagu7BjDA2Fr\\\
+nJZ5vCqShP2bFh8zI/7djfZMdEaO/lEjTAkb5liatTrhKGsxPPRyRXsNQYMXw\\\
+nSnm9NGzJWBUxmcOQv/1TtcutjP7aH9vsGcLQ5Tk7W9VOaSi5yE4SaMeQ933R\\n0F+\
+90hAgq1b4ppzhB3Ldh/tD0hD/dVaf8hpDZ4uD+w0mGftr1p/oF4Gh01a7\\\
+nRKfnpeGZicnzdx4Ychqb3/1sTRpkI24uN+7DkEPw2wvWrDLwsMhasE8BQ3YE\\\
+n11ROHhmwOfaDNjZDRzZ5Ct8LhGSA4Gh6famUjsz7ozTk5WVAdGWR8TLSUZ1G\\\
+nf6s9WQb2aBMfVcnS0YGL2wIT1WWA5d0pq7UeGtrH0t0otU0GCtUayxMcaOir\\nKc3/\
+yC4ZiE8p9ZeUpiHj6GClh4YyoPzGOcirkYr2KGpcFrVkPG95dGV0CxUh\\\
+n10CFQzYy8OaCnqxltQ7Cs5uqo+xlwEByl9e4vA7aaeArK+AmA9VyNd4iRVpo\\\
+ni30l4rolA9FnVsqSctVR3jOpsyZ3ZGB2g/9W/V81RB89J3o7QgbKmKS4dIXU\\nkLa/\
+yGnWRBmoXfe123VMBakmOPJuvJcBvgM9OtlflBChddl6dkAG8tK82bTL\\\
+nJNFj2YObtDEZeOtC9JrLFUfSp9IyLszIwMpyRU92qiiSmNm7Or7BaC+5xKL0\\\
+nWwAJCcWmDUnKwoM+0zu/36+WsJppj/42lYXLofe6NS+xwa0HN2MJlrLgsnlf\\\
+nweQjFzB1tu46ZiMLW/9FXK+c4YM1t4CodidZkDHx/XHqjQgshFZvaQmQBXD8\\nePP+\
+kAyMlDvdqH4jC1X34ohpGhRQiG4/G5EnC9wk0gteZWWwcjC3tiqShTFj\\nbsunsirwZWm7+\
+p9qWYi/U9MQuKgKs5XZYi8aZGHDWeuqw281UH1A2TzXJgtJ\\nYgcFkz+\
+rQ4yWcOviX1k4c0MwyNddE6pWbn/5PCIL13Z8CCvYoQVrVWsZQdOy\\nYN+\
+n1v6ERRtOOw1dE9yUhcDqfE4UqAOJOg5nfrATIFiEXHRImgqNay2HEvkI\\\
+n0PanKaP6PBX040tUVGQI8ODKD4EFYRpccN4iMq5IgKo76RfuHafBC9rrtVwV\\nAlz85dDr+\
+JwGnRuKg77aBLDJbz/iPEwDobqHTQZbCGBReDApTI0Oxo/4itl2\\nEmBxPXN/JeO+63/\
+61ouaPQQI0eX4wZlCh2xsKSrKlAAT0ZUhe5vp0M/kGWBj\\nSWB49P6NyywYSH//\
+60I4QoBw1tDycG0MzBOPWvYdJ8AuLxG1IBsMgs407Mhw\\nZsT7/\
+pSbuT8Gn7YYUzzPEeBsu73s0CMMxlmKBHW9CaCzJe2D6QcMSI3UlWVf\\nAjh9eRzpUYfBkeQX/\
+SXXCfB465le8x4M7p8lNITcJkD9Q7bK4XEMSrfFFBwI\\nJ8AzgutW/\
+SUMFti40oVjCTDQe1Bs9wYGGs3XIn4+JsAt2zzFFYYvTqTO+iY/\\\
+nYayHZh7T6XUM4tzdTp3KIMBo76+dIQsY1GzvOaiWTQAxNkc4OorBJoe13uQH\\\
+nAuTCoaP9nRjottaQPhQTIGfS4ZNaNQZuT4A/oJwA0Ol8QesdBimeHxehhgBu\\\
+ns4KX5x5g0KKv2cfRRIDNcHJq8EUMuLif1tX9JADb2akn/eYY7GqTzI/pJkAq\\nNidKUMbA+\
+1n4E9sBAhzu53HDlunwe5ff5f4ZAjyd9vit8oAOIryTJzKXCfAp\\n5B9Nxo4O+\
+9qdD1xgkoPnrgONEnJ0yPW2VFzjl4PjF3a8cIqnwSD+ladMTA4C\\\
+nZoXr6s1pQODfOR8qKwcaNVclA1hocPulSo2omhzw64bMdjlQocgnOa9DRw6y\\\
+nLLhH33NSYWq3aGrqVjlgbZ5KU7LTAbuujYsaRnIQq7Lk4tipBdrCbXKGjnKw\\n+91Ylk+0OvwL/\
+3crzkUOBI+1PDYqUYNknsXBwXOM+pb7r+hDqsDHJpV731cO\\\
+nDtJHUng0VWBk4ejetmg5kJ0uyjS5oQTPu357ulXIQUZ43hVNdklG3ploKaqR\\ng73XMl3/\
+jYuBWNuGnkCTHNTu+qr1pFkEbjUosL7/LQfOErt63JT44UTZyfi1\\nBcb8/\
+LME578u4oSMgZJINXk4cH9taGcrB2olL5D7dOQh5r0fcbciL7r3hCNM\\\
+nd6s8XLktry3hKohWHqtYdeyRh8zI15SlKVHUHu42RLKXh6rxFsrMDgKK4vE/\\\
+neMlJHnQD78rNgTwyCQ3LrTojDz+lz2YkKCqijzdeX3W/JA+uRrDbQ5KEHlwc\\nF/oYIQ/\
+95h1NFr8oaP/U+iWuOHlo+TN/S7xUGbF4CHTaJcpDwvLsgzvPVNCF\\\
+n0zrPN18y6rdtCny3U0Oqf3GeQ2/lwdr1gJO5jjrqcbQ8n54nD+XHmud/bqgj\\\
+n86Ne201L5eGwWeJJjwhNxNF2MyWxSh6iPmfy6Zhroc+HYlgn6uVBfqwyw4VL\\nG2mava+P+\
+SUPt6eNZF+d00H91eX0gT/ykO3xYNsOHipKNG6N3zYoD/Ui57sS\\njv3/\
+95j5k12z8iAUUDjIPk9FvrtVuT6uyEOEcjtL2x4a+md47G0kswI8b/8y\\\
+n2Hqfhqz2Rli5cSnApWfMxTPNNFS2r3Rlj6ACuBuGXVcUpyPqgbk0goQC5NOO\\\
+nCloepqOUgyomCwQFKLwvqeoTTkf+h8IfvFJXgLn4reZu83Q0ZIW2B9EU4Jyk\\\
+n1G6yEoZsjsz22OspAJUn4t5LMwxVHFW+vRVXgPDkkBMjXhii2x/VFNrLGP/N\\npc7+\
+GIZfHO43D5spgBLzLeaobMZ9/mSJb/lhBfAYDSobqMLQ1VMz8sl2CiDn\\\
+n2b78pxNDoy6UyssnFeCk8rrntVFGfj9je87yjAKoCGJt+QsYqj57T1j9vAIc\\nP17fGL6Ooa0eX/\
+JZLysw7mke4+sMr6Sfnz7++6oC3KSbZvz/9xgRbzJbfpAC\\\
+nzGz4nXu9iKEbPkcyo8IUINKiMGJkDEMTl8Msz0YrgB4by5Gq3xiy9/u8YJig\\\
+nAN2axgtGNRiqCZhKkktVgGLW2/dcczGkF6hkuPhcAf5WE0m6DzH04obNcGOW\\nArw/\
+0PDu3SUMiQXdjcx8rwBSv/Kl+i0Zfgop3hJcqMDIk7KUNhUMTYVOdh4v\\nVQD+\
+oMNhkSt05BBGurWtWgH2OG/pl/7G8Ml9a1XhBka8927mXX9ARzsi73wf\\n+aEA/\
+xEbTtYdpaOM6CKfii4FuN1nsJWPQEfBD4mlV0YU4O6XlN7HsTQ0k2Dl\\n+t+\
+0AjgSpzM5DtDQicRQfo0lBVC8fvxq6joVyTcuaE6yKMJ2i+GAxCNUZP2f\\\
+nEJM9hyIUWNqWGG3ooPvNai3V3IqwW4fPSX+vDlpptfd7KqQIf2/5NAeVaqG2\\\
+njrJKa3lFmK5vXNI/q474j3UllBEVwd/6WDEeooaMuubP6VAUQSz6YV7sY1WU\\\
+n260qwq2pCBOx9w4wf1BGEX8jHIq3K8LFL0HHWt+SkMm43SLJWhEI+b5M082i\\\
+nKEUsqOW6rSJ8KlnlFHwgjOb0X2d3HWP0L2iZhFIEUFrYqutDJ0Vw16B1Kl1j\\\
+nRysqSe3cFxRhtEXs3nfL9pIsp98FU2GK0BITs+fbbyFgCWN/eDBCEQ4UsgUM\\\
+ny4uCbY6Wd2a0ItgWBd8fPCYO7EyB6s4JivCO3rQjiuFch2T5xJ/PFSF9svKS\\\
+ntiYR8ir2XtF9pQhsVy6cjd9CAp4xz8PRWYrwmlJRIKqvBPk7SngPvFeE89+8\\n2c5sp4BQu+\
+PVL0gRrvjtNXi2rgqnN0NtZSsUoV/G5XtFrxoUK7/T9a1SBCmb\\\
+nujBbpA5ul5jGad8V4bZTL43A8ApKUv0W0aQIh0ITsBk9Lca9w/L5aCsj3sLr\\\
+nabc3taBM5Mnx552K0BSvNG3spwNSO75tZ+lRhGX9P5tCElTwPDkt7tinCLFt\\\
+ngZ6C7lSQfbf7u9SwIngmYLWX+Wng/dMt89KYIixcvGH8xZYG1RvRt5snFQFN\\\
+nfjY6nEYDn4N9BvcXFKH8YvwtDTIdanx4ZIeXFeHWox2PDp+gg2ISfdF4XRFY\\\
+np98PxSTQ4XK5XctTJiLc3bJr4HcdHepHbmVvshKh3NazTW2dDmSR1/fsOYng\\ns+\
+NVu7saBv7bW1wLeIiw97h+d/J/GDSeWDWUECCCXmjIu7xLGCjfUVK8KEyE\\nlyYHp1/\
+FMe772QfWGsSIwH+xVPZKDgbNbRfbNaWI8P66SojENwxUNxLz7soS\\nYaPhxvGgLgyuUyqi/\
+skTofuP2rsChh/azMbcDUlE2CWX6PyR4QtNHzHTNAoR\\nUrM/GFxh+ONW4k7KuioR7LN/dv/fJ+\
+1lzsx2jH3PDCWUAcMvU7t/yVzTIYJd\\n0efcJoZvOEstdNPoRPh1SXwpdxIDeag8WL6F0V/vS51/\
+fRhsLdnh+k+PCGT5\\n4WSPZobHDN7d4N5JBO+4ei2zLxi4fKY81sSJYD6feSHkBWN+OxPfW+\
+xhnLPA\\njWS5exjEFgnVexsT4cedphhpdwyydtz+F7ePCEVBsk2BphiUF6xufjpAhJO5\\\
+nW64fVsLgl56XdJc5EV7YabumMLwyk/+PvvkfEWS2bc6fZuwH9zZ7M5I1EdDV\\nVzs+\
+JDL272OTi7EtEeTNjQaiXelgkVeccM+BCCc6Kg8Q5mlwGqPnvj1JhKeW\\\
+nvkHdH2kQmPuytsmZCFJUooTtJRpkvYvZkDxHhPmNsvm0ISpU6HBJ6XsSoSBx\\nT9zdZCp0vr1Gc/\
+Aiwsfo4zR7CyrwvDnjnH6Fsb4ZI11Th3WApNl9rcqfCK8/\\n2bKh59qw/fXh+\
+JFrjPkqHBj8Na0FZ14Z1FCDibAkePfrFT9N+PpcjPo5iggt\\nKq9XlfarQTc5zPTPA8b+T1/eo+\
+CtCvPPNp1Y4xnrxxz69k6cCpCfjsSZJhOB\\nN+\
+6vq2kDBW6loNUfr4jQt32UU12UBAbx7lUTZUQIs5U23sIlBh/uVDgozhPB\\\
+n6fRxF5kLfChjf61U6BIRmF5H9nMEC6HHfM3N46uM9fC7s+donQi6EdWzt4iF\\\
+nBH73O7nZLSWRWcKKto0QCX49V2Jv5lFEuB3zcDFjnLk9KaeNZImITuB6piRJ\\\
+ngmyZ12hKhYQk08Qlp+VIwK53UJV/Cxn1vaRu3tNgtGcWElaWUkU/3LYVzGiT\\\
+nwKXqmy3GpoaqNQwuHqUz4v4R3Vs6oobeZB8YVN5OAqKNRXvSCw2U5nXoSfhO\\nEmhv+\
+5p5N0ATxWBHj83hJHgVJ/1Yb78W8s0/3VC6lwSKdgpMWq3a6Jyfx13V\\n/SS4eDROTz5SBzno+\
+xhGHiRBQapeVCyRigxLbubbW5Hg+2kf+ZUaKtp6845X\\n+\
+RESUCvvwVYZGlI1jNRQP0aChs8hFvkuNCRQlZS6eJIEzyVs1U2naYj57rOj\\\
+nDi4kODgvHbyTRkdz+zNFK8+QgC+Se3S7Bx3948up13AnQcgyV7nuczrq+J4f\\\
+nGnOeBFxNfgeIHYz8F/Vl97I3CZ6qkp/McWHoy6HKVcfLJBCxFULpuhjKEav7\\n8NWPBD5/\
+3INV7Rn5vq35vNY1EsiSOl9fuY6h+IQOtdgbJKjwUf4ZloKhMLs/\\\
+nf1eCSKAi8yXsWAHDG4TB5JOhjHjSurX7GzB0vnv8SHUYCab3iAsr9mHIKW1O\\\
+nWCeCsR7PnrjwTmHIymm1Ni6aBEohbCbPljFkQma5vRZLglPTdR8GGL7Y8Y8L\\\
+nTiWQQPTspUdNDH9oZQiufEtkrD+vUOnpNQwpnpXIo6aSADqK+p7PMTyiKecZ\\n/\
+5QE7syfEqOGMMQ+oaS68ZwEdqZz59XaMbSUrd7n/IoRb86PbxfLMTTiRUuq\\nzWLEx/1h+\
+WImhn5jejb0dyQwd/LdohOOocZ5A6FH70mg0c+S8PochsrzjWs2\\nPzLOz3MzxSljDH30Mws+\
+XUgChST/d2wEDGXoHzao/0yCtwJxfDPjdJS4fnQJ\\\
+nKyXBs43EjtIiOoooOZH7uIIE9OdbkgJD6OjGTVd35moSbFaz5mMH6Og0+6U/\\n378zxudPr/\
+tUQ0MyCt9+rjaR4H1X7+kzd2nou55cg+oPxnnc3jlVZkRDW90r\\nP9/\
+qJEFgviFnVg4VjYRIf8juJsF+vKPQ+hQVpaR6ZHX1kuBFy4+MP8JUxNEi\\\
+nnrh1iAR3BiKPv63VRoVjbjGnRkmQhFP8KiW0kSfHl7tREyT4Sxxvl7dneGT7\\nad+ROUb/\
+DQZ15DYN9Dzto3UKsxJwhS8NRN1TRbaFPAdr2ZSgxJHZvzJLBfG1\\\
+nOhgtcSrBTA333QvflJEPJyd2SEAJHtaGjLTNk5GR5xEhDlkl2PnIuOq7AhH1\\n6y/\
+VeOgqgcXQ7dkzFcIowdqs7PE2xvOdruP5ewSR2fm0gqodSrA443Hj4QIP\\\
+nynu6L4O4WwmKDJzEIyxYUDD3o5AfB5VAee7yY1JhUQn553bY5aoEq2crOkZH\\\
+nhaB9Knzb2bNKoMd/iWeOTxTu8/Rpx3sowbOtkWsW6uIwtytMbvqiEoQ9HMo7\\nZSsNFem/\
+VtIZ97R8imeBW5EinPIO+MD3WAnqpHMEazFV2Erv/qCWrAS7D8d2\\\
+nBvKqAc8MfNybpgSsQijvYbcavPPiyL/xQgk+9llk213WgCCaW37yKyW4dPnk\\nls87NMFmuja/\
+MEsJsPotKVPLmrB2IfrTXK4SGN99lbb7jDY0UOc+CX9Ugtg6\\\
+nsTA5SR14OmVToF2gBFf22zGZIB0wvUAoPFOiBFbJJ91CblCBQL1eGFKmBJG+\\\
+njWxb6xj32cnewqeVSvBrebdxqxgNHp5/WdRVqwQNF9yLXiTRwE2Hp3j5uxLw\\nH5TtL+\
+ukwc5J92KJZiWgLXQ+TpKkg1B2QzH2QwmokZqWapZ0+OtJ/2zZrgTI\\\
+nqIHPMYQOH7XjPnt0MuYvyXtRN58OYROLn8O6lUCWVRalDdDh+Fu7Ly97lSCn\\\
+ng1CfKIQB1fPzl4p+JXjHlicor4cBq7ZiSe+gElTuoSUq2jP8MH6rZGNECXin\\\
+n3hKTr2Lw6s1AieyEErzesXUu/BEjf3vsQ3rTSkD5qM06kYuBhdZrZD2nBJMl\\nl3o+\
+VWNAGucv9V5UgiFz/aKRXxgsZF0ojVxRgs7mIrcbwxh8c28pzVpXgg8v\\\
+nTzlemcMgSXNr2TcmMnxZu5Jbv4rBhbGEsn+sZNir+VL2FsMnhlmrZaycZFhd\\n+Tr/gFGWcHcoV+\
+Qhw8RE/C7WNQyGNUrLd/GTYaSaJ6aR0V/xqFKFnRAZLule\\n0V1njBf5+\
+nbFFVEyaBsZcN3rxMDp3HBFrAQZQmqex1xleGqLhllljjQZhIIP\\nrLS+\
+x4Br9G3ldwIZTn6Q5kx4jEFXpvDXUQUyFJ8SIdVcwyD7rM9XLiUyVPUv\\\
+nHb5wnOEp9Z9fKcpkSD06aBy1HQObke1Ve9TIEOq1HagiGKy5bVZd1SGDzNf0\\nYL4COjSoOVU/\
+opNBefi4j20oHZ4OV1R/3EIGa+mwPMNDdDB1C/s2pU+GLhFe\\nRfluGhDUxr/\
+x42TgfSb6lZhKg6khixr1PWTYnBbNGbdnnKcz4rXO+8hwKlC0\\nnL+\
+BCm6qvrU3D5AhwtFQNCCICjuHftWmmJPhSvjcfJ8uFfpc0+rarcjw8iVl\\\
+n5IOcDui4anw3O0mGsqXZFI09mtDtpnD+jTMZHEb/5El7aMB9d1EhgTNkiDYo\\nuSEdow7DXqv/\
+NXiS4ZOX903uWlV4drX2x39XyeBoPkIW3iCDZMy53zbxZPi7\\nv8XZVkcavsY6BuY/\
+JgO5WipTeUkCfOIPK0ilkOHivLH5bJEYNCXpn+xIJ0PG\\n0yN6/\
+luF4N5L3oFjuWT4SvlSekxsDd8sfj12op4MWSkVs4H8nOhtSWp4aSMZ\\nzMw/Vp5N50X2ZQ+\
+0Sa1kyNcW2P9SRggVVAVc+PuLDJZbR1JvpYmhi80H5lyG\\nyPC2tO/JaW85RPqBx30dJYNc/\
+oI1Z4ICavyJbVWZZJyf1jtDpzoVkdZvWd+h\\\
+neTK0jxtaj0yQ0ODg6OpZVgpkB3L6dfcpo4cjPUm1HBT4UNfCtNSigozGW3Zp\\\
+n8lCAHMttM1iiip7MFF0fF6JAzpzuluuh6shyPlvRXIwCKz9JZV+dNNDG4rPS\\nt5IU+\
+FwXvYWkp4mOrd9jvSBPAVPiN8uTjVqIh+lGeiORAtF+gW8nYrTRJxYf\\nYxqFAhpJLp5/\
+zXWQOJd96IwGBVwJKTrYUSqq4LFUPaxDgRBt5pXWLCry5jf6\\n9p5OgX/\
+5N3p61qioQUST9xLjnnbu9dHfE9E0ZODhMcy4AsDdz/ESts009Lbq\\nbVUZTgFerd/\
+V5wTpSJ409Xx4DwVaR+oH5U0Z+fEqLVhoLwXWz49wuF6no402\\\
+nb6dtphSIFVyw25FLRx60PHAwo8D9cPOiyF466ro3Lx9iQYGG4z1PHfgxZPZv\\n6/\
+rrQxTYk8pLS92CoWLw7Wy2psChe+nq++0wpJlYULBsS2Hkw4UV2wAMJc2v\\nxCvaM+\
+LdHpxXmYAhXsudl00cKZBaHSN8LxdD/pnXrDydKLChUeCTXs3wAlsJ\\\
+nPc6FAl2ap4b5OzFk58gkXHyGAslZfuSKYQzVFOye7DtHAafsvOAKhkd2iAXV\\nc5+ngLZjkQg/\
+wyuZnhWvqd4UeOtlczOJ4RmZb+xhRy5RIM4iRsubUb6rZHIm\\n0JcCh+Xa5SNWGV65dmfv8wAKUA+\
+c5JyexdCZ9m/kukAKJDy9ZJjE8E07nZd1\\n9iYFeLR9OqI7MLQv3KxXOoQC/\
+Z5jfq1fMfRpMLwE7lDg/AOe667vMKSypyHZ\\n9R4F0vbDmPlDDD1MEroaEUGByW0DHpG+GOJY/M/\
+uQzQFEsde2WofwdDl/x7o\\ndcVSIFB0NYNGx9C/\
+160SrAmM9XezYUnjxlDliSMtlikU2OFfmdT5ho50ixJy\\nrjyhwFn5lhMF/\
+nSULv4rMiWdAiZmfTQlIzoKrrE3G8ukgLKSA0t5HQ3NkVPU\\nRd9SwOXF+EOB+\
+zR06noP144cxvqksp0Q3kdDe3SdKkPzKVBQlXTT8yMV5UY8\\ne/a2kAKfJvSs/56hItJw//\
+8qOu9wKt8wjgvJDA2yCWc75x2yUm6ipEREipRR\\\
+nKQ2RlBTJCBmJZERWKSNlhnhCGhoSJWmhpET2KPze35/PdVzPuO/7ub+f7zmX\\n9z3X/\
+kATpheNWZmuwNCC9P1r1Rs1YZTjuF28i4vQosMVtS2akN+8KSd+kI0w\\\
+n16LEb280QZpv29JyTYrva4Z8xN9R6+3D/Gu2s1DgMW9s50dNWJBlEi9WyEBr\\nP/jdGu/\
+XhMDKrTryapqouig4lSNAg84Kxc5lt+WR0GY7+SQhGnwoXtsq5bUC\\nbe2nJy8QpVE+PnxNCiaD+\
+tRfXHkrRYP4iH9L7LOl0dJk2fggZRoIPamv21/N\\nhzzPF1xo06fBCF9kqWGzIJSrBi4yWkMDx+\
+b8qwxvEVhQuzXsFtDApr5x776l\\\
+niyFpauL82Q000LLMXud0fSk0HDYOZNjRICFozYx6oiIoOLz1DfCiQZdXzUxq\\\
+nEg32jeeNffehAVc5unn+Ih3uxp/22epHg0+FrxNYZxiw4YXqMdpZGmQv5z8t\\naMmC+\
+IOjQ3HnaNCPPQrfwmHDx0VNR/6G0KD0rUBw4kIO+Jh4HmqJokFKRyBr\\nd64W1H5e88sglgbp3aY/\
+wj25IHJG6mBuPA1UFqc3TrN4kFFRtt8/mQbyQS9R\\npAUGP7dd+N6bRoO9M5MvKzMwWDWyc6/\
+VdRpcVjl8Z80wBs0cPjeNmzTg29LJ\\ntygCB5lnrV9jbtPgSfOoFPsVDi77c/\
+dMF9JglZOt7l5pAgoET352u0sDtX8h\\nLjetCJjMtHB+\
+WUqDOPXkHb0RBJgYKX3Uq6TBtje7n0giAqK7hhyzq2mww32n\\\
+nrvIIAR2n6jsl6mjQmrxoyUJVEtRlE3ecrKcB3r37ZtVGEo6U7u/ofkTNv8aK\\\
+nrXOUhPtbDbZbPqVBZvN8xdE4EgSHxN9WPKdB5Yb6LXsKKT65+HnbyhYq3rUC\\\
+n7xc0kZDCvPfm4hsaYMayTCuKT741hdhMvqXBVN7XmXU/KT5y3/7apZPKU6nn\\\
+nWNc4CacXsKyff6TBwtEjN2RnSfhuKtZB+0oD5ztta4coHrG+MLD7XC8NrO/E\\nzsTMkVDV/\
+KLvQx8Vz9B61ckpEjQk7xzV+UUDxTSVN4whEmJs4ibjBmnQPVMt\\nQftKwlTiscBfwzTYaJ9+Y/\
+glxSfvbRatH6dB2FVry9hKEp4rasden6Lqyz81\\nUiCdBJ09y2X//\
+qVBhrQMsg0k4Xr2RLrdPA3S3LbSwyh+E+17Ryvmp4NwyVRL\\n5ioSfFn3i0SF6EDj/cwuEiXhy+\
+EUnb0idNilZ+9U9oEAi7una+vE6VB3Miuy\\\
+nLo8AZb21L48vpUOBQNMNYV0CLpxWsX8lQ4d9x5xfOE/hMFLL94kpT4f5qbUd\\\
+n38tweGzW8PuTKh1Q8dDnBk0ciIgcX30NOvSl/Dqh04FB2vPQ2ct0Ooyd1lgp\\\
+nE46Bl625xEYuHd69G6lFpTzovMJMzMbpcPLtN4uPs1ww7RRVmtOmw6Vzlxtc\\\
+ngQtyLi84Javp4PbrudGGexyoP2KzWWkjHbKWZAgqbGEC5x7Z5reZDv4BNVZy\\n+\
+xlwZXyZU6sVHUpu+gh+9aeDZ8A7z3B7OlxMJZ8kXNaEZZFOUcNudNjwVlbH\\nNFYN9uXue/\
+boLB3eLL27bfVDaRDt8jc/UkoHeQnlNwIdS5CO3y2J2Ao6LBj1\\\
+n6brxexlyWdLReqeKDp3lijO752VQpfmqXcOIDn6qSY6RyxXQvrKhY8df0GF/\\\
+n3uUk2XNqKN5aWTexhQ4/ZVfGTZxYiR782vyv7A0dFDbeo7kfUEfLVt4Om3xP\\nh6TgH8/\
+01mmihzHuqf7f6XBhbd9z6SYGGmBe3pPaT4c7wWt+3E5lohWPHmrW\\nDNDhU/\
+ybiOBDLHTkr3Lx7Agdog84/LCbZ6OUK5a+yhN0sNV6ZCP8kIMe4QEG\\nRtNUfizD8/\
+ed0UKKHu8bg+bpYP3wVGbGNy4yFxCOzORnQOVDESX9Szzkk65j\\nVb+QAaOS/\
+bSzChh61nb5vYA4AyJWOTaaVmJo4mh9uoYkA7rMGzIk+HGkJjbs\\\
+nZraEAXOT2kIllD6cNN4yGLaCAfy9a0+5UHqS0xVQclOBAf2eKfy2IgR65Zd/\\\
+n8okyA4rSZZeOmBBoZknnmn41BuzYmXhA+xSBaEXCAqKaDAhIuOQiVUCgrRt1\\nn7AYDJA2bx4N+\
+ECggN690ZvYDEgxX1dxbBHl7wMTbA5xGUDG3un+ziPRG/kG\\\
+n2WicAcuKUyzbt5Formy4q1CbAWN74rx0TpCItVU166UuA3Z9+bBXMIFEdgNb\\n9g8ZMMBrNv+\
+nfhGJgsLPcKTWMuCl0fPdrY0kKlhZMIwZMyD8Z/DTp+9I9O5B\\nZ/\
+lWUwY8zl3aothHIv4dIgHeG6j1/kaiJyMk4o7pGl+2YMBQ0vLo5hmKR2L3\\\
+nCZVaMuD8hrvP1SmeCGUlNrdZM6CQfqy6hRoXP2qIG7dlQGbrd4NWike69ozY\\\
+nyWxnQFC8SitjgkTC/1QVdHcyoCnIqLD9F4nIJKsv23cx4JTYmWudH0nkTJzN\\nPbmH2l+\
+MspzBcxJFvig4mOxGnY+fvnqynETlHh94VfsYMP2ht355Oom+CoiO\\ndx5gQPdU4tKUcyQSz9Cr+\
+nuIASKVw2SEC4n0DPYHKnoxIEE55sWPNSRya080\\\
+nXePDgFDvXZw6GRLFeDWKOJ9ggNXin2uWDhDo2w21hIwABjwtfbTV9iKBBkK+\\\
+nTgsEUfOl954usiHQiGvmbo/zDGAk7FdZspxAfCpqbDySAdahiXr0GBwJzX6J\\\
+nS4xmwDrd7skxUxxJfLg+MR3HgNoWASQwhSH5JNX6+iQGLOJ7Oq9piyE13y90\\\
+neioDenmd5yoneIhhez06Kp0BYup8OAE8tEpSdce2XKqeA+as+mu1kHW4yp9v\\\
+n9xiwJtTbYP4oC23f+9nOopzyLed6n7lGM5HzuozqovsMCE4pyMFzGchzXjnc\\\
+nDzFAJttWobORhsL8lJVFXjLA4ULthOyzlahmv9JmTj9Vfwo+M7mrl6EGs493\\\
+n4wYYoLy0yd53Uho9U78mOz7EAPvBlqRMZ0n07rNiz4MJBpzr+LrMiSWERrYr\\n+\
+lsJMkHGRWhp5OmuOoa5Qp63ChPuhghfZT+SAh7tg8S7lUzYJnIsJlBsKegI\\\
+npvqspjFh8U4TwWzL5bAOyRsJajGhojsXnBvkwFlP/m2iARP6ooyvRpJqsFem\\nc/\
+XMGib4fzo0SjNaCYfGkjOdjZlgvG2wv369OpwqljtMN2fCxgSNi8v/53iG\\nnOB9Oyasj1IqVF/\
+GBCdn2s0eBybIp/orpP1kUr6GtFjsxISiW/UKtBoWlM5b\\\
+nxrm5MiHLX3LVGysOBKxyJGP2MmGsc71kvrQWmHp6vK30YEJSXKLI3AstaHsb\\nrLj4KBNs3ry+\
+EbmKB2nicXV63kwwXfCg4twXHribXHN182WCEltnf4UJBmOF\\\
+nFXmVp5mwzvnDph2fMKjpadzUc5YJ/U62gh50HELkWgclgpkw6DFzTu8wDktD\\\
+nB7TdLjBhH3PaaGAQh86q6XfRUUx4/vnvkwoW5a//CJ2ujKH296owf7kbAQdp\\\
+ny5R7LjFhauPprL9JBBBOag8lEplQUJAtvucpATOXuO56V5nQK350SH+SgPrH\\nqxe5pTKhmH/\
+bZJAaCZGz5rej05nweXT0pJY5CTakvWVlJhMcD84d0/MkQf6A\\n25/\
+uHCbECi6MTI0koTvd67JEHhNSXFYv3XqDhNttZ3T08plwO1ZJbFstCd6i\\nUe9di5iw4fG8/\
+PVWEgzgakD0XSaU0kKu4j0k8J/IVaksZcLaAKGwhX9IeJZ/\\nr767ggnx1//Fy02TEP+\
+1bq9ENRPsX7AUD1H8sVP2hbBeLRMkTZ6y/1F8stKy\\nM9/1IRP2Nhefekrxy8/gvi3RjVQ9bN/\
+n2TZJwr3KseGKx9T+5qaXKg+S4D+4\\\
+nILH7GRPabv0k876QYKIhqSfxkglD36X0fV9RfLFT8YPuayYYRW1ce6GKhNZY\\n5lnXNibcqhMQ+\
+5ZJ8dUjHbXod0x48O33krhQimf+rmus6GTCZVq2b8xeElj4\\n1v3dH5lQI9A3+\
+82YhJF9zqISX5nwJfCN6jV5ip/SPAt1e5kQLWYwWzVEQHDr\\nSWvXPiZschF23PCQAOm1l69U/\
+GZCZVXIgpc7KF70ua7f/YcJcw/jlD6oEnD9\\nVmGX+\
+BgT3jMrdgf04oAtf7LSdYYJnVvWiuW54DBl0f7o4iwTtE5Ju1oo4ICC\\nuj0q+\
+FiADAbKi19jYD3wr0h8EQtA8Ckf3yoMVqwUtdEVZUF6f2eCWCMPvmyX\\\
+nHXeRYMEn1ftHlqzggVcDvrpiKQtsRhWw+CItiEvZ99hFlQUND0Lc5ZNZ4Hci\\\
+n2CdAnQX3XVrW91NxdbZJV0miUfcoXvUW3xQDOKJv/Z5zWGCWpp2SaUqHp6fM\\\
+nGLr6LJg4IzghXKAO/Ds0IsRtWPAs8EbBvbuy0K8Nq+h2LDBfk8R/OHc5tEg5\\\
+nfTV2YMEvw5EvrMSllE++rO/nTH3uFUc71LYYDPUEfn49yIIkVuhus/a/Rr6y\\n3RYV51mgcE/\
+zy21cEDmNzk68DmNBdVuo691Dwsj0lVz2QAQLbJN3btDNFkdL\\nwrf+\
+VYtjgfrS9fxtgUtQ0QTKv5jGgmCiSnFHsTxKbO3afjODBRI3W2+r3VVE\\\
+nAUVTAvVZLBDv26OcXaCMNu3DnCbzqHh1Xt/M26iGfrRniLuWseCp9C3TI4s0\\\
+n0au71ZUBlSyIVOeNNP7WROXR79yTqllwbUdiskwLDYWYST54/pAFjzweflp0\\\
+ngYHUys4e1n3Jgg+muU1diI2EL6XI2bxmQdgBgwMomIP+HCp/dKiNBbFrPj0/\\\
+naqSFajUGlbI6WXCzskGiII+Ldibseinex4JDCzWKElMxpFgiquD5kwWhS3XW\\\
+ncQYw9Pl1xf6nv1mwKU+3Sl0fR+6SSxaEjbGAPvxXa+IxjmjcOsveSRa8LH96\\npYTimf7Nh1JM/\
+rKgsKDxwZUNBDoS2UTOL2DDi2qOQFoFgbBbPkG7FrKheThR\\n8mY/gUYfq76oFmbDo7D0+7dkKX3+\
+/kJOXpzydZqLYlOMSXRy4el9JyXZ8GBF\\\
+nzbjXfhIZaDBK3i5hg1X2R45mBIlmTdrntWXYMONw17L4BomQS/Dmy3Js4Cuq\\\
+n2SyOSBQcxEseVmRDcPj3GbKdRKYZXd+sVNmwRjxzofp3Ei2qjSCK1Nnwixs/\\\
+n2U7xyrMunUBxOhs2JkrpW/wl0cW/Pc0HWWyYum4ldZbiky3yl1Y81WJDZFZB\\\
+nphc1ltZfu5eOs2HJnakhNerv27b/uhuqzYZJb8OueGq+KyeuzvXosmH0WL7m\\\
+no28kckg022Symg0BbacOVLeRSKF0JOn6Wjbwnzq18lQdiT61ZvTOGbOh+nNR\\nHj91nuvDm/\
+FdZmxwetWM7bpAIlepmTPV5mz4fv5Cc8w+Emnwbj6T28yGE5kd\\n7ulAou+W22RPWrHhbcPv+\
+ssUn9w6tMD9rQ0bVkU4hfr9INChqKJibXs2yLpO\\\
+nq9uWE4h723E2fge1XrbrbyyIQPf6yq5Y7WGD9Osqd1VhAh0XcuspdGPD3cOy\\\
+n7RZNONLVlMLE97Ph+AKT4bwgHNW4Hnz65DA132HGNYOfGDp7TlaGfowNA9Lr\\\
+nXKKTMWR8vdE19Dgb1nkPa9uYYajpo/I/49NsKHXMHh3W4KEWhzfc6gtsCFks\\n5ntblIPi/\
+YJOy11kQ916/7Mp2mxkd0XriV8sG17v47crdmChzjfhLtpX2PAs\\n+\
+1mocBwD9W4xTCjMZsPnnpLgl0gDTZnmTmfUsoF93W/X0L0VKKA643zjQzb8\\nOFLvbpIlg/iIFIn+\
+RjbMbVTpsYpehhapxKoRzWzIC59dz3GQQjLTJzc2vmPD\\n+cNRGeux+TqycHPyjz9s2C54//b+\
+YX4oV9+gLjHGhvl8jw6x1YvAIMW4EJ9k\\nw7dANavNQWJgEq7z0H+WDfa7V/\
+zQnpUGaxfVfnFRDrwR2PDpwCZ5OLJ8TA9X\\n50Bt4hKFRcMaMBI1WG9H48DTgIjqxE5N8OXv3+\
+zP5ABPtYMngmgQMPRxTwOP\\n4opve3TGzzAg6unjC3aGHBAjwx8fo861GOqX+\
+BtxwLfc99jdUA7El9ekpZtw\\\
+noCfgmEiqqRakZN8t7jPngKjJyw1f73Ih70xqxyk7DnTkrbpul40BZyzRNd2B\\\
+nA5URbqttBjEoPhg3UO/IAUGJ/c50HRwqtofyibty4OK3vB/0GhwMXgZGYns5\\\
+ncGuKpK2ewaHW1H+ZnQe1/pbzqRPaBDThRxnpRzhwz8cm0fA65afzDtyrP8aB\\\
+nL4ImXSUtBLxQdjfsO86Bvr2bugtmCbBOdG4SO0mNe93TVOgktIntsMZOc2DV\\\
+n2eYsQUsSHIJtO7ed5YCRVR9ud5SErilL91PnqPipSbPFYkjYc9R88FoIB/Le\\nrFuudouEnm8mJ+\
+vDOXDOrVwpHlF6nfEyixXFAfvxqZGOdhKuO+x8ER/DAdws\\nQ/\
+3ldxLmpb9PzlziQDqrVOPIKAnOzcdWuiVyoOmcjm35XxIehMxubr5K7a91\\n/1gOxQ+\
+KayP8yDQOOLeK6+hT49OTy7JSMzgQm1LF9ZkhobP4+nOBbCoPtoUf\\nbYdJ0D/ImfS8wQHXP+\
+dYHyl+uapeqdZ2iwOyd4S/SVN8M9m1brNhIZVfB7lH\\n49Uk2F95dSKnmAODvXwHo/9/\
+vomVY6Z4KQcSb7bv+BRMwjKRvubjFRzI1qnn\\nG9pNgk+990RXFQfOnzEubtKj+\
+OP0nKpZLQdicvXTD0uQgK+K3FT4kAPm72t6\\nBj4SEDe4/MTyRxxY3VV7esttAoZuZl4/\
+84QDrWtajK95E7DFRav5WzMHEtKS\\n//TqEFAof3/c8hUH1L2XqRKTOIi3maqWt3KgfRitiy/\
+B4dl6J9+w9xzQol3y\\neaSKA5PvR8ZgFwdGO2qvVVD8cOG+zzP7Lxz4KrB+\
+dOYsBus5USr0Pg7ofX97\\n/+Q1HtRLVz19PMaB1BnJ/kuRHFBrNhvjTXHgm0vjn6oyNgSFvFa++\
+pcDwUHM\\nw82Ubq2d/OHjwa8FySMFPJelTKjqklUWkdKC4gVPpT6v04R7N329LdhacONm\\\
+nsoRkjhxkrcEVXrhowQ8l3bpFtUKofovo+b/uWrDioB17lbQY6t7d85PpoQWL\\\
+njYpwzd2SSD04sSrsiBZ47xRkz44uRTlN0zvgtBYIGiw4arpJETW+a3145KwW\\n+KrtZR7cpox6f+\
+Qzr53TgpFyD0YnWxVpiDlPT4drgfsbyY5EzZUo16r+akmC\\nFhhv3lZ6hdLzpj2pfN1JWiB59bu/\
+fzsNfT923EMqVQt0rV38pivpiJZA0zuc\\nqQUWcg+\
+dlbyZaH3ufEZqjhZk6g80H9nAQvvKOxY9u0mdZ92D4FJZNrrREfmO\\\
+nRnFWz1XF9qA8DmrqdzOyu6sFDjfvyNZ4aKHvM4Y3z5dSfUDQb26bOhfRlYZO\\\
+nfKmi4lM4r7Y8nIfMuU8+La7VguNqA5P/ZDHkYZS5fs1DLcgWSHnseABDeS62\\\
+nMimPtWDZ0U9lWfw4euLNOfvkmRaIbB53P2KBox/nF36foHyNqVhZ5m/Kvwon\\\
+nfrLUfK0FtPt4w9IWHDFuVJTZtmnBoymfhjYJAplXxCkFv9MCgxlhY01zAnk8\\\
+nORBa3KkF7Ze8g2bOEujWTwU7ia9aYCgelCbWTaBnf8dqVvdqgdm6pE2rFpPo\\np/\
+hLjYN91H59C9zqdEgkqnzz4tWfWrDreeSpLEcSsXhBY02/qfzdL375LoBE\\\
+nFrDDafyPFijaK9rsSCHRwa1Eo/qYFswNDl9XKyVRpKsYx2aSmu8VfRHnGYlu\\n+/\
+ReDpqhzr9cNOh4F8UDIQ/+Fs1qwR6L4vLJn9T6iVfcPvJxQdTeUahknFr/\\n5tFmMUEuXBd+6Z/\
+zj0TsSnPSYBEXDgX4tjyj+GDzU7VUD1Eu/JMJPq5JjQ91\\nzvAnSXDBvGg2pHSG4otfbw4+\
+kuKCUMNQy0mKFwr+FbSOLuVCUi+jw4fik+cS\\nYQYrZbmQ/mTy2c23JBpQ3p1lLc+\
+Fc59mI2QbSCSO6YkGKnFBabXkjaZ8EnGM\\npb0LVblwkV6w+34ctb7Nz/cf1LlQOe16Y+\
+wYtb5bg7EonQtbJTetOGtFrX88\\n7ZYeiwuWZ9MWODFJVBjqK71fiwtNh9sdE+\
+cJNGC4KzgU40JngcMB5TcE4oyZ\\njmaTXFjg2r5RJ5tAt12XtX/R5wJ3i/lPbX0C/\
+ZT7ZzZvyAULwWo37jyOmK97\\\
+nypWACzd3lqt2PcRRnlHJ1Z3ruZBCpvsEraHqZyJF5NRGLvBLm0fGTGCIXhTs\\\
+nn7SZC6VbG7oDCzB0Q9HGqc2GC0/WxZQZS2IoZ/qPypbdXFDXdjxS6KaFeos7\\\
+n4g65cuFIKKarcpOD1D3Qgqi9lM4dEg3f+I2Nst7G9jz25MLiXcWl22xYKKOE\\\
+ne9P4JBdyleeV7UdpKOXwIe6qS1Q+ZYIWff+hjDo1tmXYJnAB01aIyvyliOS6\\\
+nVkt5J3GBXlprOfdDHl21EBspusaF1x23BOXaZVAi/XYZ4zaX8h3MTwMz4iju\\na5+\
+hYgMXnu23NFr3steo5eqrQoMmLui+jHrwYmbESNK6QnnHUy4c3e9tORz5\\\
+n1yimNozvyisumOSM9KlYCsHFVM1GyS5qfRELWU78Ugi3c9skMM4FQSFGifVr\\\
+nNciy6nLaO8UFu4RLGt/er4SajXZHHv+l6s1il/6uT+owsmbDpSh+HiyUu+ew\\\
+nguIJJxr73VIpHpzftdrv7RUm+Knm/PBdyoOksHH/aydZEC+vNPNOhges99/1\\\
+nc7ex4fFiSaU0JR6cc3Crr5nhADE54qrB5sHBtlh+kxkeWA57Hg/j8uDZX/uJ\\na9sw8PjVG/\
+oD54FtduOZy3kYXPv8Nq9AjwfRVzyCs8xwqHxvVbXYkAd95Zhs\\nagwOrW+eNHsZUfMXdXs/\
+e4OD8JOqQe31PLjqdyouwYYA9XqSL2kjD+xKPv9c\\\
+ndpGAtTUF0tObeVDxLNY4ifK7DuWa6o7WPJh+YnlKapQAn+J07Qe2PHD12WV9\\\
+nQpWEmNuy61W288DsoPueuo0k5OXEbT+3kwd/6qRVeo6Q0JAucqBnFw9mzJd8\\\
+nfh9Lwqerwf5mLjyYannxOq2AhOn4v1E33Xlws26LMO0RpbfRx6+JePBgjNTz\\\
+n8XpPAjf8d5GnJw+ijGp7/PpJ2HhuH3pxhAcT1pXi+uMkuJ/+/JrnzYNFzpnB\\nd/+\
+RcNbXoeeSLw+Koi9Uf6Z4Ifno67HRkzxQ8y+RbJgjofSAhZB9AA+04gbv\\\
+nO06T8MqtQbYykAcXHYXe3R4i4ecuQ6b8eR7A1jt7730lQdChzCAgjPpcN3r9\\n/98/qNhwN3+\
+K4EHA8cbVk5UkGGy+uQuieTBr5PjDMJ2EbetVj2bFUT69tfTV\\npkASjkJykGACD/\
+zNurexnEiINFgSvy+JB54mT+5/1iYhVzsq+0kKdR7hzcrH\\\
+nRUhAXMEyVjoPfLyWBf55T0An40zTxUwerMzRLnW+QcD4yol3gzk8+JDO9Xp6\\\
+nhAAppaP91nk8aPA/ttaQJIAl+2PmXj4PPrpan2sYxWGPWKeS3z1qv/aNMmYH\\\
+ncPBfaMt7X8aDUP9dW52UcUicb4bV93mg8c2t+eErDJ6NPnCbr+PBVv8tjCo6\\nBqu6Mm+\
+Fv6C4Ac2ce+CkBVJcj6k7LTzQjBPJSL/GgYFA7oaONzzgtQYdWPGe\\\
+nDTnq1b2MTqqecgcueAALlnm2qTz7zoPPQcXqZW00mAkQ2CTEh8EulZ3byo8p\\nw4/\
+cfd4pCzD4GvL46MtDivD25dNkrgAGNYzg9DOu8nBPNe6HvRAGU5YsSa6R\\\
+nDBxsVAy7KY5BV6pP3atLYvBeTOehuRwGwaOZH1evHqhr0k7+0SWPgVf3dIZ4\\n80Rd6a5/\
+kscUMQitubt45fH5urg79c7JKhi8rVx31naHMDK3tfrXr4mBcF6Z\\\
+n86uCZUgn4J76WercT1poMXyNMkgjd/mmJUwMWmjrL3x4uwLxTX5INuBgMGlX\\\
+n9unfb0VUmeKhG0VgsM+kOCvRcyW60dDsrKKNgT8jPuLYHnWUMMANK1mFwYFD\\\
+na45lbNVAXmvH2z7oYSDSq1ZtyKAhRvc5b44RBuPFCWeqM5lIRuxbMgIMHgj0\\\
+nJu05zkKC2uYPt5lgkD90pE/QhI2+hC6WOmOGwXlORHDJCw66ykwtfLGJ6gsc\\nK78HWTw0Nro+\
+97wlBt+06XORbAxZ1Y6k6VthMCSbNa4ejCEhW4uLuTbU/vI+\\nOtho4MhVaeK8I9VX/IqL/\
+zYexVFtX+ZpaXsqvgkqj50rcOQbMH3wzA4MJk7b\\nhjYbEKhlfa4r6YgBeVnQN/gEpU/\
+SW3f2O2Eg5OMcxSgi0IUP/7ZmOGPwq8xn\\\
+n4u5XAvXm5m2024OBVInT46XSJAKvbcZirhhceVUyus6QRKkGfPoP3aj92sts\\\
+n13cj0YRgAea3F4P9v0+W/golkc2r7Qyt/RigblaFbQ6JipIFVHs8MDCuaR89\\\
+nWEsiEfc7sskHMSiftelnU/7enesoaXUIAzMp9wXxlP9HU0KLFh7BIFXZ8VIy\\\
+npfeKDffmqo5isPVLXKfRXxKdjHae8DqGQfSWG6Ln5///PkF0kOaDwaBO7WpX\\\
+nasxbWf6t6zgGpZeeH//4///vDrh8jD+BgXV74K3xYcr/l0u0m5/E4LHOxP2C\\nXhKZnLv/\
+fO4UBnZlcd4L35AofdPextLTGIS3dkQJPCDRzHLpmoNnMFCL77iV\\\
+nn0Uiuy81JaqB1PlPWDkKhJCo+LZH/tsgDHZHrZSTdqF4w3dZ9sVgDDzDq8y6\\\
+n9EmKF1GKSQgGhWlP2IcpPmsQORQ/FYpB98Dff88/EUi5TTayKByDTGu+1wvz\\\
+nCeSf3nDOPQKD9y7aOSt9CPTW4+gp+aj/89Vhx9MlEEEqHGu5SMXP3OiG3iSO\\n+h977zGMw+\
+AnwR900hNHpvHKDiOXMNA7/u3TcxUcXXd6ZpV3GQPdrR+Cd7Rg\\nyGFYzWhZEgbPf5VE7KFhqEn+\
+tdLANQy2fxw77GmthVZ+C1ielYHBx3Ma7QVB\\\
+nHHTmDkPCIRODFyUqUmm32UjbNOhfQw4GVuX2sUYDTJR1mPchNR8D7OFXJREO\\\
+nDQWi6Kub7lP1JKgSfThFAf38iBKmq6j6mxDK33FIDtn/HY27WYNBn4TkgmY9\\\
+nWcTR2RkhgDBYsiP61sqGJagjn+Zf3YRByfPES1b2AohIqnNkt1Hz7ZZgq8Yv\\\
+ngGulI9vft2MgPfTyZRxDCIRbNbeFv8PgZuX1R3pVovBZ/OLmnk4M0o60hmd8\\\
+nk4aLwQ5rUr9S93OfvcqpRnn4fnhYWWwIA+cY+h2TPE3YGqWhcP8PBrla5rvt\\\
+n0mlQk7dddv8IBpUx2QnRsXS43PNAsmEcg4hre0KyXZkwxzcsdmwSA/uQvbeU\\\
+nTVlwUFlDWGUag1u96fozKmyAHZF8p/9R9zM0SVahiQP5Jx78Y8xhwFbP+bUo\\\
+nTgtkEv5MvZ3H4FSmqHmOLRd+v7QfJgRw6I7padz4mAcOAxG/vwji0B64+3Hw\\\
+nagwaRR70xwjh4LLMXfVXLAYppurdP0VwSDa/+nc5F4eFrvafropRvnN8+nmF\\\
+nHw5egRGd6yVw0HufWZb1AIeutJq3Y4tx2LizzPrJPA4bqoZas6RwyAncu1Bh\\\
+nLQH33q18Zb0EB6H8SOGYkwQoj9s1zy2luOR2sfPyOwRELIl4XLAchwtHFT/l\\\
+nfiVgjFfTsFOW2g+vi7dKioTdlkN1wnI43J80en3fgIRnB1fWlMvjgDmGL2e7\\\
+nkLDqgl2luyLFMQvu0s6dJ+F67oXSJZSOnfixXaiM8u9iDdXFSAWHbX6SsYjy\\n9ye+\
+DBYcUcNhrQa/b/prErpn1W4pquPwd9/m9RY9JFgq2OU+08Bhe9d3T/SH\\nhKu9XORIwyHvJj/\
+jHMUHvYXCHwboOIQpfMMSKH7A/LrHzzBx+OYgkjlF8UUA\\n1EhJsnFYnRarXzRLwhORK+\
+zrHBzuxkm4lk1SPPPm6HqciutBwXMMyUES9qRt\\ndKnnUfOp2Rs/+EJCwV71AFscB48Y7qJ6ii+\
+muLNXegkcOodj/VWp/ZtOvb3r\\\
+nq42DYG6KcVcWCXEPi58L6eAgtuTGzekwEj5ERvYl6eKwiPc07cx+Emjb3PmZ\\n+\
+jj8ebO17LApCd5Ka5WqDKj8GC1htiiRUPtdVm+TIQ7s8but+RTPiRYP23St\\nofKcI8QTbiLA/\
+lTz4cNGOBQekHb6nUBAlknuhTnAgXfqi6z7HgL02x1qVU1x\\\
+nsLp22YrzG4eQdOL9XYo7Oezw3fFFOLTsFx8z2YDDQ+Nt6iWHqHPN1DH3WuAw\\\
+nWTSRuO0z1Ucbkk0nNuFwXMUjb5DqI3zRPrvDLXHQObmaOEHp2lUVeuItaxzm\\n/GRvSFDc+\
+tg0hm/QHoeZzolN1a4cWLLYQyHQAYe2ZNnDSulscH5nrCO1E4c6\\\
+nx8pUxzYWTBwY9yR24fBiPj6Uj2ACLdbp3Qk3HLJ2tgZj5ZoQ8p5VNH8Uh3CN\\\
+nGTPDxYpgfOSxo3QEDlePLbK9bTNZN9PRv74xEgfHXrOqqa18qHSdOOF3EYfc\\nZg+\
+bBZOCiCa3VfhjLBVfP4kiBrEYiTd2luZdwUHqmvYbXcYK1MSdzXC8isOE\\\
+n2FW9X7vlUWCyStTiFKreojpnX1xSRCNH3F2OX8Phu8m8pMIxVdQhNygBOTj4\\\
+n7JJvXpOggeJDpKZHcnGIMnFpNovXRJuGiN7cmzjIdh1piouiodpGvyqxfByi\\\
+ns3PjVhxloJO8lNzaAhxWSsw2DjgwEZ5SE3eMyoPvWPkbYg0L5RxdsP/dXRxk\\\
+nTvjTto6xkXOnuk1kCQ73ImJlmps4SNZs/Zo1ZTgsaAmymInXQpHyUUuzK6mx\\\
+n5bVNzbI8ZBpaOGdXhUOo0QIt+RYemh161S9cg8NucVvTGsCQ16Nl6EgdDu41\\\
+nTlv292GIhenmqz2k7nv3lU9Gq3DUk7LjSls9Dnd230reEYijtIUB58Ibqfus\\\
+nWfAp5xGO7L3SDxk0UfWtKfpliTCBpD6g7b8f4zB+sCc3cT2Bnpr1mFx/SsXT\\\
+nWVNK9RyBDBUYckIvqHgur76s8JNAE6EWgvdfUvXDp196YgWJ7vw5NOTZgoMo\\\
+nLzKy0ITSS8fYTuVWHAJF9DZUeJBoZdPdR68pHxR29svfqEgSdWFtxSHtOPSg\\\
+ndWkaeSRKTJ1I1X1H1Ucxa/7/52ltEZIL/9mBA7+r/ueItyQSPrba+1onDpsa\\nMj5s7iNR/\
+Yddu6y7cLAxzTyJRkl0en2QucAnHCxExFS7Kb7QvptFln/GQY4v\\\
+nRq2Y4olBhUfKB77icHHJt3tMapwX1iei2EPFZ2ByaAvFFy7DIuMve3Eomv/U\\\
+nqUrxhbwT58u571Sfrcl3zOyh+KRpS7P2DxzMp3XgzWsSxeDHyvv6cSjvGFxd\\nVU2iDWmXM1N+\
+4aBtyOvbmUkivkXlFy2pexogeLG2KphEVcc6/PiGcNDf6LDy\\ny24S+\
+XTNuJb8oeptuMeuVY9EnA1KW/aNUDrweuPZZAmKb+4a6cuN4eBkvSFz\\nLcUXGYquGs/Hcag+\
+bpXTfJtABiSb6zqJw/CLt2XyfgRq2zimOzWFQ8TQMrFf\\\
+nRgQS9gvbpPEPh6WL0wL1HuMoK9rKrmoWhweZ66qaQ3FkmLNitzWlI64CVofE\\njXHk9fq2dwA/\
+AQqlynueFmJI9IdPwBJBAkZcc+r37MZQzpxhWN5CAuQPqnd+\\nkMBQB/\
+tVcpswAbuNbeSON3ARhI0ijiQBlUH3QutfsFFnWs2zeikCqu93Jtzn\\\
+nZ6PjJaFtDksISOjv144gWCjvi+yPkOXUfOmL11qdZyDp1YaSHxUIEGhd9HDq\\\
+ntwbqHgrZFc0gwPyF1RsvJXkUILRlvzqLgNk+Ced50RVIRkn22H02AdcfFRcM\\\
+nji5HFha3Qr5xCQh8/zE18r40upfzIn/NKgIs4gzUzNbyo/M7ZGZ+GxNgppOn\\\
+nxUjnA2WvzwIh6wh4OPe1XXlMECrD8iTkzSgdfXirUXy9CAyUGKitNyfgXc/8\\nprW/\
+pWDb4t3m6VsIeP+y+NGO7XKg0XDzyhZHAvQu3Jm/nqABLzlTOV1OBFiv\\\
+n3lRieUYTTl4xLznoTECxdaWskCsNmg/0vwpzIeD2XY3zY8oM8JZii9TtJ6DP\\nUu++\
+lysbFP1Py1oeIGDnkkR/ZToHHvU0a344SADzkWVK9ncOrKg4ZDJ5mIpf\\\
+n8f2IfDsu1O0qOs07TsAbgTrTFRQHezyei3jgS8Bk+JIjwo0Uh+FWVzf5EfD0\\nwSGvfnEc9gn+\
+Kd3vT40f9Q9bJFJ98wg0jJ8m4J/Ale0lbZTuv4t7ff4MAUJO\\nB/\
+d1UXkTz8cHM4IIyCw3r1gfSED5suB/WsEErGB5Xzp+l4A9Z1tFa84TcOAF\\\
+ne4PhF0rPfqyUswglwGCqKTdRjISSrT70jjACZqLzZE6RJDhVN6zad4HK38X5\\njM/\
+bSRDSXGY6FkHl9/Klb/UnSSiOcbcJjiIg5+NJptIVEnZOle6RiibAk//t\\\
+n5v47JAi6LjyaHkPVZ8jWlpVNJBQ1253hxBHwIiSr7VEHCQ6rbkRVXSKA7+Ww\\n/Ks+\
+EhZkTCSbXyag1ZSz0HCUhNvCG/LeUrp61mntFdG/JGzzTip3v0KAjrG3\\n9/+/\
+b8x96GscSaK4KST582NqnGem9yYomTrPBb5HZf9IsLlz4eviVCo+lnvy\\nBSZI+Lvi/\
+VBaGgFR55tr7v0iISeYOcdKp+pFtb6x8SMJWwZOid/PoOplnSRm\\n+\
+JziC7tn8hsyCVjQ6yyuWEFCVp08sz2LgDCBlkUe6SRsZnrquuVQ92k4y0sj\\nmITx+Gqz4VwC2tO+\
+atu7kpD+T2xb4E0Clm5P/spvRIL5PidXiVsEOOO7s7AV\\nJIy8KvBKvU3AKutm+\
+P6bgDT92bPMAgJGE06qsxEB67MtoysKCQCTg5aLYgkY\\\
+nEk9PNaO4cOHhBbvO7yTA5MvaSpd7BKzdSeQF9eEwsDG2aaiEgIsnZFVkbuFw\\\
+npeRz25kyAn7Tzw/57MehPyxoOLmSALsTg2EVFKfHadWzWmup/TNW90Tr8yBP\\\
+nz1EkmFrXMPnWoNAZql7XjfXh9VQ+tu/2GrqvBYM7aLmXHhGw2KjQu1SVA5vC\\\
+nIlW2PicgGeQbe24wwPWS+hzfS6r+Kmddsqvo4J9W01X8igC/aysH4CkN8u4N\\nJku9ofafoTre+\
+04DhD7bLGt5T4CkQkBOJVIFpZ+/RgI/EBDin3812lUFtMdD\\nXvM+\
+Uvcry6ajw1AJ3MQqYmKpuvXapBLd8WkFIF0FEas+Avyr1/DlNkvC6bie\\\
+n2RdjBMR7VgqmXOqti08N6DozQQAnImPzSOxo3e0by6u1pqj68DW61Nb6r66j\\nZsPJ6L/\
+UPZkDkS+Zi5BOf/7IZn4SVn/4KBb9fRmyHDN9/U+AhFAFz8xXarLI\\\
+nff7jnYKFJBillWGiDnLo8nKpw+IiJCgVe7w/U6KE/hgf72uWJCEkPrr3hrg6\\nEraUaDotTUL4s+\
+GDqZIaSMXhRg57KcXBVzdU6SzWRFuOdLhEyZAwxud55MIs\\nDeWnGHZZUNwZ/Dlm47d0FqrPba+\
+aUSZBNjTeyv4U1Z+LjyTfViXh5hGjhPeW\\nHCT8+\
+Lq9qAYJ1dICfu69WmjfqODrpywSiCDxwgAXDDnfNn3pxCEh37E71PAO\\nhuxdQpqHtEg4pm/\
+m93EaQ+tfCTQtx0k43me9KJrSl7Vh6xryCBI2zd+3D27C\\\
+nkc6a82i1NgkGIUs0aIIEouXzV7vokjDA1tpm6Uv5Z1eTyjE9Er65KNnW5BFI\\nRi64LJzyId+\
+1L4vd7SDQ4paH9+QNSeivZHxZuZBEQuELigvXkPDR+c1bES6J\\n5tYYFwJ1L5wHrVOcbUk0MRZ0+\
+w2QoD0Hp+V9Kf3PRzf3mZDgGWnopXuZRN9c\\n+XKn15Ew+\
+CJIpriQ4hE5yLpoRoJUtWBJYCOl9y2BGSobSPgVPUZkvSPR8/C6\\ntHvmJLQoqXCWUfzRuHY+\
+2cyChB8nND62/v8+uPG1SR2bqHt/rFSri+KJ0oKz\\nCZ6WJPQceFLEpXijwK320twWEti2qqlP/\
+39+h/xczCVrEmJWMN8V/CNR2us1\\nFzVsqHybTf3pGCdRwoUzERW2VB/z0la1+\
+kWii0YPwizsSEilzZpJfyRRyMS/\\n8x/\
+tqfx9qhpQayZRQKHhOS8HEh7eeb8hpIxEx90DzgrsJMHl8GHSMI1EhxRq\\\
+nTl9xpHxNdS25JZBE7q1/TzJ3kXDt7Ovjdc4kcopYfaLGmQS1M6+eJhqQaBuc\\\
+n9rHaQ9WvnkPBuyUk2jxZ5dVN+UAx49erL/YRyLRo5rCvGwnQHWRYXUnx4V4D\\nz//fu8W/\
+54bM4TACaSv6e6TuI2HC/lr7bWsCaUROuz48QMID5Rb74U4cKRrr\\\
+n79nmScLsdb9tkqk4WjZ1clffIWr+6iW3e7bjSHDf1HYJL6qv6ttc/fIYQz3G\\\
+nk5t3nCDB38BYfdNCHuqc0rEY8CPhsOfEig5bLmq9c2JD4Ckqfi2eFmVpWqhe\\nacI4N4AEZe+\
+D5X1KHJQ1PaYzTPXV56lq8/LdDOR6d0Q1IpaE2HUR/G4JauhQ\\nsO0/\
+i0skMB74DocFqCJf29J34pcpn1u1j3HpoTK6MO4bE0fp0p4FQ4a718ij\\\
+nIv3pv0nXSPjXqLFZakgKTT+cf3sjn4TkBfd0BzZ2G/Ff3nPPo5Cq/5Bv3x1f\\njRiJuz+\
+MZlE6Nlss5WPl+89IWei8adE9qq+fSrR3aV8EphZC98ruk3Dh2a4+\\\
+njd3LIa5VPLrxMQlavZsFRpPVISX7sEfYUxLcww5OMXI1IPv4y3XmzSSIJDgZ\\nh+\
+RrQrlM3EzzSxLaVuQaVubRAfX9aY9uIaFd9U+ffAYDnlZuvWvVSoJqWv9I\\\
+neSwTunYu9XjTTkKj1t7YWmc2fGcfX5f4jgSLhvPxdYYcGPrXprz9PQl61yaG\\nNJZpAX/\
+GlfbOLhJc9VyFdxRxQcxrsjjtEwlNe/5KPfPiwTJjh4vOlK+eUxSS\\nHlmOAb1Hbl13z//P/Y4+W/\
+YIA6zUXznnGwmBXq3CjbI4GIR+mN5L6fSXtGyP\\nd3txWGdv2E7vJ+HVgxWzH+/gsJl+rbj/\
+J6XDf+7LPKa4135qNip/gARyvGw6\\nWJfSmafO+\
+w9Tvl4ucOkXfop7vD1VlYeHSXCU7z2zooeAAMNz0/co3X8LC2IS\\\
+nqT4ZKtHddnycyl9Vnl0u1SdiPpkU60xS/c5TcG4N5d+v3smOmpoiAVftuGsf\\nSelzkOD+\
+qhkS3gXdTu/Lo/re1r0mARQH7LjRNt5fT0LpyialtXMkVBw893s7\\nxR+1o7Tp/987W4rrPuRQ5/\
+gPNHuRjA==\\n      \\\"]]}}, {{}, {}, \\n    {RGBColor[1, 0, 0], \
+LineBox[CompressedData[\\\"\\n1:\
+eJwU23k4VN8fB3A72bKvgzFj7MvMXJUi96NkKZUKSaikUJEkSahvlKUIkX2p\\\
+nkGRJiUgcW9lpE6WS7JF9yfq7P//Mc545c+65n3Pc9+s8jKLT+YOn2FhYWC5z\\ns7D8/\
+zU10ImL4ZxsKN2zTvxgUPeRbHGYfAV/se9cLmkNg/W3lUFkchh+kPad\\\
+ndnERA8GYkme8XTF445a5II4JDFJRhAInOREPuRR658MvDDQnnCPXXdLxtq5d\\\
+nb352YPBdMG1t5ctD/Bgnbq5TgYFS9obNS8tZ+OEne6XqH2Fwbvsl9wWFJ/jp\\\
+nNzZvs0IwePGpN3N2Zx4u1XD2YacLBktnLXqmXApxyX1N+Q7GGGSw9oQt7CrC\\\
+nWTLKkozkMDBujabNf3mOnzEwbQ6bZsJwgmn1rFsx7sjet9+wjgl3nFftZ5Zf\\\
+n4l6BnwZcYpjwcdk1dlKhDO9M1o4GJSb4vJOnTxSV4/xbli9wDDNA5t6n5vGd\\\
+nFfiN0JX50zkMcFIH9j8uVfjleK4EPQUGsC37tc/6I/xWZUpi9Wc6fOq1lpvd\\\
+nVY3HjqVxyoXRwTePr2z6Sw3ueOGXMl+rDuyOGeSazqjF+1YzWp0UdYDkW201\\\
+n5VaH20b1sX89rw1o5+XJieV6nG/x9M6CZU3g/tanMq7QiEtUu9t++6AGXejN\\\
+npbHhRvy6WmiL2Ioq5GYn1P4pasKPUwze3yerwj6vfcdGd7bgG09QlGXtleH+\\nhvL7Qy7t+\
+JeikthfDyggktLANvXlAz5aeljdSlEcHjSlX/ij0I2vbBKvTM/g\\nRbMJL9V/\
+3unGjxvFnL67YyMycWn+/eFfN37IMbT+3V9hNMa+YF3+8Sv+uuXG\\nUZsACaS3fd+2sJAevHTiJk+\
+qnQK6zec84z/bg8doe8z0IjL60X0lz/PEdzzx\\n2NX3rzsUUbBPlryt/g88YE3usl0/\
+FXUUrrCpTPzElZcznvZ8UkEi+AZHAe1e\\n3KxExHlfnSrSV47dFuLci7eZ1ZwyKlBDkbNPZvze9+\
+IfDd4N93hqoFffdDtm\\nuX/h93kcPBXNNdGvmqo8D8NfuN70z5MKslpIN/rzKaenv3Du/\
+55lRD7VRo6+\\nx3f0/PqFk1qWhR+76aCQY3/kbaT6cPyL15OTQnT0VYu1y/xmH258qlytqoKO\\\
+n2MXvFNe+7sP9VCb3OAswkOaKRPT26T78+X9bfoMdA11r0tzNOPYbt3zDEHcY\\nZqCcolLlp3G/\
+ce0IE9UANSb6kLCDndbyG9+fo5MTd5qJlq+1/kxj68c3jTRx\\nJaYzkZKLbYXU1n58d+\
+uXVL9PTLRv3++EmPP9uPpYfZE2J4Yub/K4xJ/dj/M4\\n7PfOZWAog/TvwK2eftzW5wdX/\
+xEMNbEHa7OIDuBJxyr9PwRgaHZUkM/PfAD/\\nsCj+3T0VQ3IfEodmrg3gFo/\
+zlApfYcikTKnOvWQAV3nkaxrVjiHPjMKMobEB\\nfL/7PIO/D0NJIdsCTlAH8QJF8yb5SQzVetQf+\
+XZkEE89RZ2q+4ehMWvLzdZR\\ng/h0pe+NlTUMSWz/JtL+dhDfpLlgXbeOIVA6PWG2Ooir/\
+DbDSSsYcuObaq7B\\nhvBhZXlBzlkMxUxfzTE4M4SnYOsR14cwVNHNdbMkYwivMR+8Gd2JoUEUfYL+\
+\\nZQj/MfGgVL8aQxtzSIa5AsP41Yj1H0GPMaR397GMkvEw3h5Z+ex8GIacfJgL\\\
+nqX7DeImFRTenC4buOLz5KFk0jA+zmC/vBQy9NDZ7Fj00jAfJdOZbimPoh8bH\\nO3zyI7jIoQI/\
+yUEm4hF1dLtpNYL7TnL35D1nIubS8K718BG87qnRNtJVJjr6\\\
+n6yLlSvUILl5tN3IBZ6KCwrBv57RH8Sf/5YtyVTDQqMjond0nRvF69m8z+BUG\\nUvHZbagaO4q/\
+f6AQIoUxUIYB34Pf/0bx7Y79L3pS6Kgn/ezBas0/uEQSh8OA\\nBR1Js7ewpx/\
+7g3crlGdFzOigmMY7p+3q/+BHpo1JubHaqE1zXFJv8Q8uorMj\\nxLRHC/FF7W0U1xjDSYc+\
+G8rLa6FgG0HN91FjOF+9SBtftAby+X13ytR+HCfp\\\
+nTrvS9VTRc5PJh7S747jFzKpKt7UKmnhiacVeM457RM8fWvNQRq6ewqWVKn/x\\\
+n0o40twuxSshuNcZ/08xfvBqsv28sIqN0vuYg4V2TuDWtZ2bLKyFkuP2q/XXH\\\
+nSTzW5r3ndrIA6vHQ2DRxeRIPP2Ga7drEg6Q+3B5syZ3Eq749R5gwC4pOsDAP\\nFZrCS/QbzN2X3+\
+FBtDbB9W9TuLpJ2/IzbRGgHA4ccp+bwu8Vd/PJHRADFKqN\\negSn8Vd5f9iSz0vAyp/IC+VG03h/\
+pc9rtXQZuPR8/6dLj6fxJ5uLc3IcFcEF\\nf5845jWDq6/yfG1oVwWWh/\
+Pl327P4J4zdRqjWWqQwEHqacqcwXUljpeZXFaH\\nhsbT8k86if5hxZUSfJpwXPMOnjAxg6+\
+eNKbgrZqwGFl0PIRnFn/FavOYP1wL\\nVK1WHp7aNos7RLQV8c0Qz+\
+cSxTqrQ7N44595qaU0HbCVNh3YeW4W9zZufxVE\\noUPoj2gVStosLvzTbc+NKjqQjUrNhEtn8a9+\
+xqwOGxjw6lGPG0vHLH488+In\\nfksGDLuq5P1gncM35Gh8Lf3IgOvNFq2tMnP4d42K6CQhJkhpe/\
+2twOZwBtp+\\nSXE3E55FxW/Ms5jD9W4mfDC6zgSzmQp68qk5fOVlZOLUcyb0WvcdCA+cwwWy\\\
+nkh1U+pjg+4r74pX4OTzYrPjwVwEMhGS1Yl2fzeGDrCMubJsxeBJw8OXhxjn8\\\
+nuNWwRIIdBjt6L3ea9M3h+kZO8bFXMfi6I3Vh0/IcXsBj8W4qAQOvrBopmtg8\\n/\
+laEg5H7HANenuGtYlrzOG+TNX9ZAwYPzwgcZTeZx19sccBlvmGwrZXpP+04\\\
+nj3Nt2X2saQSDDzq2qb8uz+OxsuxFb2cxOBMTUNkRNY/L52WrCaxgwDb38GfV\\\
+nk3l85si4Rwrhj6TDDSyFNfN4xUO3LxeJNrN8XDHt2zxeEPX4zL1lDJpIojsj\\nZufx/\
+Yc0fi3PYOB0Tc/ZX2ABV5jal1kwTHjhl8PNs8oLuKvUemt+NwYxxkHZ\\\
+ndvgC3iR7WHXlLQYaj3Pemdsu4JJaJK3UZ4R3NrQN611YwNUnJDnj7mNgf25m\\\
+ng2r4An4l4GDIsC8Gs21SGpKPFnBdQU291MMY3GEYWnBVLOCfjtiYlTEJz8Se\\ndJ/\
+7tIDXLebf28mLQcV8aGT/+AKu8ncmfecPJoy9/thRo7CIdzobHX17lQnB\\n8v+\
+mivQWcS5c0O7oLiaQ/pMXfXBgEe+KHHsZzscECxM362tBi/iOprfU/ggG\\n9OdE+\
+nikLOK8cQdjaLsZ4M9XHO/wchGPyiwVobMzIL9jrVt/aBG/aG+c9fks\\nHUwwpWV1ln94V/\
+Lhb3dk6fAjzpwkI/0Pn/5c1RwepQOCR2MdF3f/w0uxK4NT\\nDG3wGFD7XVzwDy+\
+6ZuXox9SAXsdunurGf3gY5bIcp5U6HOoK1W7t/4dnWDIt\\nW8+\
+rgV7z0JUBmSXcOblt7cd9FWAvyhKSCFnCe05zlr3LoUKCv6Lh5WPL+LdA\\\
+nWSdZGQngne84GeS3jP/xIF+x6xKFgPPXw+7GLeMnLpXL7ogRBienn58eNy/j\\\
+nGknXAkXmN4CmWerZri0r+A+P4nsp3uN4tah04lahVZzLaN+5iF4BpBvRULlL\\\
+nYxVPXn0ZWrVNGGVz+fYfMFnFc1z4Tl38TxTd+depc8Z/Ff8++Gz7XVYpZPMz\\n9m3S8Co+\
+aJrmevEYGTXYGo9ls6/hfHJ8StUeikj/w4zwC/k13J7jbqihHwWR\\n6w86NFut4VxNT2V+\
+Biuh0Vyh2WW0hvdPvjC57aSK7JWQNE/PGl5Lkc9R2quG\\n2lPP42ILa/hy+\
+ei6LlMdFUe1hWtqreOTTZeOzYxqIBXewGd6Zus4GZUvQaUm\\nSgrS6jQ+\
+uY4XnA9pML6tha753FF0SFzHOZblVyuEddD0hL6pW/E6vnSctPCt\\nSQc5u/05d6l9HT92+\
+ah2kCEd0bRpPW/ZWGD+b2zI1AAd/Rhd+WshxAIlNk38\\nyroMlPD4E+tHORaoA2eB+\
+EAG4lUMVvmpxwJ23TbMv9xM1GAQrRO4iwVCuzi9\\\
+nsnYw0S3btC1yB1kgMd9y4tcVJjL2fopXOLKAX3E5NTGfidiiXpkePcsCH6aC\\ndau/MxF6Wr9/\
+6TILGDZGzlryYijw3YfDicEs4JQmPohjGDL4/fOYXjQLWPMd\\nMrhli6GltTGXL6kscMvhXw/\
+JD0OvZJbO++QS1xeKPLEajyGfzdy+4qUsMMzx\\\
+nUIryHEO6B8WuF9eywIktQ1y3GjA07a4YeqiDBQpqqcNK3zD0LEw7arqHBXw5\\\
+n2OjLIxjyyNJPiB5hgcmcN7xccxjSrDbLoM+zwGxavsNOwiN/eqxz2tlYwbc0\\\
+n910R4ZXcRadnHhtZoW7q4ANLou0q5vlKgMQKkcfVVhWWMaRMD0B5qqww9jDm\\nMXkGQ/\
+17whv2bGKFL1P5ylaEXx66xHeMGrFCdCNvecUXDB0PyuwK28cK2tv1\\\
+n7RzqMCSfXtSrepQV5DfsfLU1H0M95ZXD71xYYc/13wY2MYS3OpsnT3uzgq5P\\\
+nHferixiyne5a5PyPFSb2+f11PkD4SnCQJSuCFfKd3a6e1MDQJ7UZHuMkVuD8\\\
+nd2usnJXw1C4W4d/ZrDD6d4FxkfCj5QkB6RsvWOFYVMRY7CMmaklQUUMtrCBp\\n0Zy/\
+bQsThRfrMo51s0JLKKvdx2UGMusw2ro2wArN4WE1a4Rn6rjtzQ3WWeG5\\nPOOA4SYGukF1O/\
+CNjw0mZM5bnxujI8B9jvhJEe3Ova3HM+iowifK7RWDDWiV\\\
+nngcKV3WQX0zqhcOGbCDLZpkzdVAH6RXkXpnfzQZ+wruW9B9qo+KBujBdZzYo\\nrb5r76mjhfKt/\
+j15dp8NDpXeDtnDo47OeXI93/+IDS5tN1p8xVBD6ndEy/8W\\nssHp6VOuR2xUUXatVpNmIxvs/\
+Lnb8Vu0MkpjOo3mLLOB81XS7NNOCooUalZ/\\\
+ncJwd2sz15V2vi6OyLXIv93mwQ1qVHPZhsyjqdzyPr1xlh75n6oETw0JIP1/U\\n6nA8O7z6ML/\
+pSTAPGja3DxBoY4cMnq+ZUDtYtTNovP2KPgc82xldemByI3jk\\n4nYq5hwQLtaglGUqAknvo/s/\
+2XDAm1wfdd57YjCpsPmfjhcHuG2UePSfrDSk\\nVQRSBnM44MpDf/db02Ro/N2Rd6+EA0S/\
+VC19YaPALC91i1EdB2y/55CruJEK\\\
+ne46825PykwNYklP1C2RosDi38dJBCU7oY4hw2i2oAlXOaX2dygnUZoVQsV9q\\nsM+\
+4OCyfwQlHyr67ctSrQ1aMbRrPXk6oPy0bVeanCR1luaoldpww5iDbR7LQ\\ngpXelecnXTmBg+\
+VV5ZSENhzUefCuMogToqN28Rgk6ECgzcyBc9GcUGL2I1VL\\\
+nhU74YFePdDonHJITa00PpANLy8ikdzknkNKkfB0pDNCY0b9KaeAE3++9+255\\\
+nMMBGJpKz4zMnHF02v/KuhMgjV6aMxhQn9NySWbPWZ0LX3eDMrjVOmEndWXDz\\nMhM4Sju1b/\
+Fzwatzus73Cpmg80O1DJPhgvGg+7Fev5lgx3l15y8VLuDWzX4k\\\
+nKYrBLc3W1shNXKCc3Dx02RCDokMKtgY7ueD79dWnYacw6PG70DdiyQWbL48z\\\
+njEMx4HlYey7ekQuu1q28SM/GAGsUXzA+xwW3s/6djkMYOE66/Dd9heh/M/Oq\\\
+nQicG4ZLlfBkhXPDf+xWFrUMYvDTkv783jgtwJevrPwhf9J5yJC8/5IID/2k3\\\
+n8BNe4Y94lpvzjAtcrnyl1BA+2VLMtsmmkgtYBPpfr64RHvlmVcXewgXaenhV\\n1T/CS8m/\
+3C90c8GOW57jMInBczsP0s9BLqAwDstc6sPATma5yWKWC1K+vcWP\\ndWDA/jXkSjkrN5w/\
+c86YvRyDvEQxVdWN3OCaOL90Kh0DqyMPOuNI3CCUw6cY\\ncR2DFSntm+zq3HD7ML/\
+jNQcMMrvKsQtbuGEwINPImPCeRYJp3w9jbmAEqu3o\\nJ3wye/hTlMVBbjiz/\
+rbc9RsTUiRP4OXHuOGPid/It8dM2PVlfFzFnRvms3rG\\nzDyZ8Pe+X0qcHze4eL+\
+pfq3LhPs23HvYQ7khjXQHjOYYMPiZnPPjITcYG7N9\\neX2GAZFx+TYWz7hhsb69vU2BAZutt3GWv+\
+GG69gpbfp7OoR8OuQU18UNJpqo\\\
+nnKJGB9WPt0gWgjyQQj5SmHlMCzpiRJvLZHlAvvsVtSJGE3wPZlxRUeOBooHu\\nd0+\
+qNKDxfVknmzEP7DW6yl3FrQ5nOsaiyq7wQLX0uoWsjTKIRF3BVUJ4gJld\\nH6bkQIPy/Vx/\
+Y2N5YHCJXyjmmBLwtSvs8SzkgS03fhdfOkyBvNaDnCoDPKCf\\nT+9XwUjwt+\
+nVlVjLDRCtGHVmgzsHXKgPdjqvwgvr5FN7SW4ySL7fhGse44UD\\npde0uLxIqJltQ64/\
+8EKa09ZDiZfkEQ0ipsKO8AKHDF9ZyiZF1F0edz3zNi/I\\nDLnc2sBOQ7e6DytpJPBC/eYve/+\
+N0RC2KN1QlMkL/mHnU5o/KKOITWkbq97w\\nQlZ+\
+iui5aFVk9Cw7rXuCF5rdcrilOzXQ3zbXHcdXeIFirugZm6SJksfVBwd5\\n+KAsIuO/\
+oiNaaE69UGtWkQ/qzltp73injR6aX3jvp80HweJiWhcu6aD9rtgl\\nVn0+\
+6DzpatUjSEdPskorBK34gBadN7WhgI5s6q4cjzvOB/+J/5ucW6Qj9t/6\\nHCR3Png+\
+oen9HBjIgYz2qN3iA7ZHfW9d3hK+wG9MFMbwQfsOwUBTDiYqdTC+\\\
+ntzmdD0JuqUfUGzKRcHLD152v+IBHRcbjwhMmqiwLD2yq44PJqsxtt7uZ6GyX\\\
+nBeXAez7IOGVpK8uFIakFwbdfvvPBnuIlN2kdDNWLv3dzHOUDv++ClQFWGPLS\\\
+nvScwMM8HBw8s7DfywZDCIeuis+z80Dbh0egQi6GWC5LW0xv5If1GUVBrAYau\\nRHUv+\
+pL44ZbJ7dDb9US+FyanrKvyg/EB03v3ujD0sdUBbm3iB6vH/sJ9RL5f\\nH1Po59/\
+BD5Nfy6jeRP5r8fWF3NvHD5vFNqaZEj74qpapIXOUHwJcfXiOEn4I\\\
+nMTvdnuHCD0buMun5RFvXRfWiijc/nP/ndxAn/PHr5qhEwXV+0Bb0fCdE+CQy\\nM69cN4Ifbg/\
+yHqaOYki/1sPxdSI/9GLWglcI3wz/orPtyOYHxXt/88UaMRTH\\nMpPV8JwfwveGPvlH+GiHwkvz/\
+VX84BuAq2gmYmhi++Xxz838kFDyee3ZVQyl\\n2G+Ntu8ixrNpeBVhhyHzq8u6v/\
+v5ofupSUTDJgzNJ77pcpvih73y3CddBTD0\\n6NU1/8lVfrBLWW71/kV44osR+\
+TKvALBcHxCYL2Ki1Tn2ulUJAZjb3Mg/F8hE\\nuWJvXYKpAnByzsjhqhkTHcZC+\
+fjoAtBf91LvniATFXnyH5IyF4BHfn55j6IY\\nqCVJ9Eq+jQCc7s6O+GDCQIN1Muk7nAVAu+ORE+\
+MfHclIq/05d00AakUv76g7\\nSEe6O+nCbBEC8LdPY+O2WWK/um/ZEp8kAJ7MhSM/\
+9HVQcPWuoOqXAmBhtcH7\\nUYkWSvtj8cSmVgB+OE6qyoxqolfiVu1/OgRgW+\
+4zGx1JTTTu5iQrMSYAWcK6\\\
+nuZOO6shG5NqLMxRBoGm9OLQtVxl5GtzqXtcRhGxMr4bzGQ2Fn45Yj90uCOm9\\\
+nOtPcRUqoqjx5T5WtICzfSiyMyaIg1ZOvfoveFQSJi+qjeypJaOnFlOibZUHI\\ntD9rxK7KicR+\
+LG49uGEjCE1tWkIBLEibh+X4kMRGMO3z5i9JX6g6aS+YJ8zc\\\
+nCOOa2xvpZz5WtXBoGJ923Qjv1n6e4LJhgTRrZ++NnzfC/bdHXOiXZeDVtbNJ\\\
+nmX0bYfu6hELOUxJ8fOKFthIuiSu5LdnSLQ8c14DrOacQJBTKtd6PUgS9j/sO\\\
+n9pCFYFIwzuTBYxrscj04kK0iBIbfJdzXHyjDwVVr3wvaQiCpl/zXMV4Fzqk4\\\
+npHEZCMHSgO7d3V5q8ODq2VH6YSG4TxVdZf7WBDrasBjiIARW93ZN336oBYgj\\nh/\
+PnSSE4uUWnhmGvDb0R/eQITyEQe+pn2PlGBzw/3NDu9xECJbetFxuYdFiX\\\
+nUDTQDxCCu2NFm0OD6CCf4XB4JEwIRvezhl2QZUBB/7IzRAkB849ib4ATA7ar\\\
+nJXnF3xeCec4pA2Y2A1rc9a7/TRGCU25fEv8bZID9886IXY+EQFPyRMIxKnG+\\\
+nnvdOTnkiBL0WaUHInglX9UWfzBQKgfX4yYOJMUxIqttf96BCCLhZ930Pm2GC\\n+oa/\
+7xdriOttPj0bKY9B2d47P/c3CoG2Y3DO4C4MzGLUx7PbhWDiRahrmBsG\\\
+nXZ0NS6ufhaDhxJcjnmEYuMq68Fj3CEH5vydH4rIwWDjGKZHXJwT7Y7avTb8h\\nvJL5iMo+\
+IgQv936PD/6AgcSIEcNuQggUpBoZJr8xyNbqNSyaE4LPnosxuoQH\\\
+nNnkFWvCsCEGZVJnhXsILdSUku2NswnA+RO1SJOEJq+VylxIeYejaeBdbILzR\\njx+5JLBRGDY/\
+CtENWcXgYvDCDWdxYXBRk5w0XMCArTEu6rWsMBScjUpWGMcg\\nRkA3TYQiDM73j6hp/\
+MSAcvDDUzdVYcAc7pg5txKeuu9ZhrSFQeTTBee2Ugzg\\nm+\
+A7yU3CECrx9ZF7GgYdCvmfPPSF4f73/cMm/2Fw3HlPX72RMDzXUG09dhyD\\\
+niZyRCZKZMHQbeGRX6mMQOB6yenGfMLybeHrtDOE3QaYyX7OVMJT0R8qcHWJC\\nmk+\
+dFOWoMPy8d2a8oZQJWq+dlK+cEAabrHjFiGAmWBinG6l4CIPUz/x3nqJM\\n6Andvj/\
+QWxjoTj1LWZ8ZcLb1m/1nP2Hg+Fwq4B7LgHAbKd+gEGE4mOKZ/Zub\\nATLJJTe/RhDzU5rDCioIz/\
+60useIFYYA6o6n4EGHBtfogp8ZwpBuYBgze1cH\\nuK7yDuiXC0PhutIVqUJNuF+\
+VMx2DhCH81zez18MaQOMwZRl9KwyNO8XH10ka\\nYBwRJJvwURh4o/I8+X3U4Eb6yoHZMWH4XO/AU/\
+aXBpb0Vxc0ZoSBIZ9/MoWL\\nBvLVF6Od/hH9B6rfp8goQXnfaEcHpwhsG6eJZm6hwDSte3++\
+vAjItSaQfOJI\\n4JT3cu9pSxEYXlvS0P/HDfTtF9xTbUQAL+qXGy1hh7VWzYhP9iIQm7boOPxr\\\
+nDU+aeNSyw00E7mz8sJX/0h/8AzNmj8INEbi4NadhKWu2yqjMw7zrhQh8PZEl\\\
+nWy8igQR3q7ttLBeBDDWfpgeKUqjn60CoCRIB24htCTyaMsh3xb6huEUE1gX6\\\
+nNs8w5NEzfI9p9IAItMl6+88uU1BgB5dLwx8RkEyr+u04RkUWJ2purU+JwIO7\\\
+nW8JkupXQ8I2tb93XREBZv9/gS7YyIr9V2bVbUhTktfofNwuqo782v53/kxOF\\\
+nDzq7Osjf1VHFUFrwK6oolDrNNAdmayDbDRJ1ynRR6F/ptahW00LKSe9/O2wW\\\
+nhap7Jtsdf2uhWfUI9jgDUXg7fL3fO14bRVlw7GQ3FwWWlVMGt//qIMfvVU7b\\\
+n9otCqtvm6iwzOtL0uHrjgrUokEp77Njj6ajh7nT1zxOiYOBwNCZAnYHukwt+\\nSbiKQl9O/\
+njgeQZyLnJj3echCsvZGbhpEQOxfOyFCj9R0Lm6oWpFnYmCRyof\\n+\
+P1HjL9xNuaMCxNtYEll2xoqCgHagdiXdCaKlLh6ciFSFNoXgo5sJs7nIlpH\\n6l7GicKG0ofp/\
+hwYit+5headIgqWL18Ep9MxRLITv8V8JAoJJ8Q94mwxlOE5\\\
+nMzj5RBRq99c8sfbHEC3kvWnhM1GgJm3y7ErGUG5qYY57qSiU6ZMGJUoxpF0c\\nsUGzUhQsOD/\
+K8bVh6EXT2TOjdcR8vz6TetaLIb1f5s05zaJwaIzUwDqBoYoF\\nFU2XD6Iw+\
+tpTcHURQ0aCXBG0blFozsmqSl/D0Ful/vHfP0VBdLL1wTDhmd36\\nNfseDhLXW7Z1/\
+0J4pu1ARuHxcVHgn6O0niM8c8g1UEhhVhSG7u93zB3BUFeg\\n/YXvS6Jw33SyMKYbQ/\
+Zx2z4ks4oBW+SlHWqEv3qfSmF2PGJAZR275ZWHoVM1\\n8/ekNooBs4fjx8W7GBrt+\
+jTbKS4Gwe6j9zEPDHlMPLeOI4mB8IPe8VdmGJrm\\njC45RBUDvZkiXn4FDF0mnZcUURcDf+\
+rI2qYpJlph7vXtoIuBFm9XLVQx0XVz\\\
+nje7ILWKQsnZWb0sYE3Ee37BtryFxbjfpkKftZ6Jwn6Ekvl1ikCj+U1pSmInu\\nPXpkH3pQDCj/\
+FDQNwxhIqvy/NyZHxICLXP0hCmeglI5j8pzHxcDFxD+bMk1H\\n2auyvf+5i8EhtQ/\
+cZhZ0pC62BOAtBg8939muD+mgQvWuB2t+YmAhuMssgK6D\\nXh2OPXk1VAz+\
+NE7uNcnXQgYeXnVb74rBrS7R7IFfmqg62JK2GCcGLXk0CQMh\\nTdRUxD/k/UgMnOlRG9/\
+aqaMevptnPCrFIDv9vGlqnjI6TjnZrFlPzOer6NFt\\nxTQ0oGek+adZDPYcrT0tX6qE/\
+p5aHXfpFoOAoJjChEIKYkWXLpyYFQOro7Nh\\n2r9JSNn7tK+Vujg8ntn5cUcZJ9La9vNQOl0c/tk/\
+zz7iwop0WWx1RjeLwzRv\\ncKOZ0lLVjjvmg9d2ikPs34vP/IJ/VTlmalo9tReHtt/cgdE8S/\
+j9T9M6bHfF\\n4eEmW799MZKQmnSWb2+cONg+6El3z5SGzOP9g/HJ4nBvzz65oiJZeD72OVUr\\\
+nRxwOnf4lJFWhAG0cZXxHqsUhrfGM+O8aKnxuYgw9eicOrqFzuowXStATlVvz\\nt1UceGkZx++\
+l02CUlHIl+Ks4jBadv/7rrApwbro2VDgjDpaP3zyaalUH/uWF\\nmqV/\
+4sBfFjGkkqQBItWeabtYJEB//PQl6glNIO91sv7GLwEFX7WffPqhBSqi\\n3+\
+jKohKwqXthzShOG7S7D/FfkJaAwVIGf/8uHTA4tauWS1kCTlk9a8jYTYed\\nGpVpBzQlYPQyF/\
+qRSIfdU5v9UpgSwMH+/u7CAB1sA1QZTFwCzr3WeHLdmwHH\\ndj7gD9glAQ/sXk99LmHA6Q0yw+/\
+2SABz4Zt4B3Ge9o7jS3ewlYCHuvo9QW6E\\nZ44G++U4SkDU9/\
+4YlTQm3FBctZ5xloDKEtJB43YmhA1dYhielQAvrr/NHStM\\niMr/yx92QQJMXbYeq1PGIP6iy/\
+DHyxIgvv+wtOReDNK29tbKB0qAYGhiafV5\\nDLLWbdPdgiVA+dDTnDeRGOTVv/\
+crDpeAycl2Ac5cDF7c3m2zHiUB5Vbrr2Oq\\nMSg/\
+UMvYHS8BNc29Bk6fMaiWNBCIS5UAC7dH7ecHMGj4Xjz885EEnBYsdns1\\\
+nhUH7I6069VwJGBu1LN26hEGnW3b6pWcS0Hd0SXaa8M13HYWrqEQCngtXP+/9\\nv2/\
+m4m343khA7PkL+zgJ3zw0wi5+r5WAoscRcVlzGByLaLtb2CQBiDZ14dMI\\nBqRut7z/\
+3kuA4yu2m7HdGHxV4mw81CUBR3Trzo3UYZDgmTFA+ykBZoc4ar88\\\
+nxcCmQp9tcUACPgbbkk4R9yvG80W+aUwCnMd/cCWcw+D9IS/9lBkJKO1q4PE1\\\
+nwSAyXcDWY0kC6mfy0wRIGFj8yfEGVknYlp+z1WmcCbxbjKNFeCSBrmqw/Xo5\\nExpu/\
+MzvF5QEua0cq15BTLjV5tdUIi4JFyZ1yk3MmLBTRmIolCQJb3a8y+DZ\\\
+nwITKIguylrokZGU3ykcFMsB/dchgnS4Jn0VJYd4YA7aaBx15v0USHu1peR3c\\\
+nT4fi3rKYS7skwbm3IvG8Ph28NK0LTS2I8bYXdPys0QEd38lm6UOSkKlkfLWN\\\
+nWwdyN6pwVh6XhOudW0XlA7TA9WiNYpSLJGQPn+jpzNcE2mMHQycPSQg3GLfR\\n6tKADMPYy1z+\
+krD5qi/LRRl1iHdnHd0XLwmPdZaPj9gpg1VZCpdiGjHeiaLH\\\
+nAo40EOHUo85kSgIKDDH3tFeCyBQP+/jnxOcln7J92UOB4OZvbT9biffHNKyO\\\
+nLMiCp1rJC08OKUgIsn0fZssOuwfOBMRckIJ9Nz9Zn/KTRSYB1DxjXykwl3Wd\\nomfKoR3iPV/\
+nA6Vg1CogJeOdAtq2a6/e0TtSUOkuN9y8oojUs3RmqI+l4MQb\\\
+ndefSNRpS3j6s2JkvBQXc30PGZ5QR5XOGZWixFMwcShbZ0q+CZDhFCsaqpcDx\\ns9nOLS/VEN+\
+pWdeXPVLw8beUaZSoFuJZzYt3+S0Fx2Y+l6x900IccafeSo9K\\\
+nQZ7Eru2cadpopa6TGrggBXoCxq9luOlo0f7uQfqaFOxfZpXgcaSj2VnT//o4\\\
+npIFnw7YQryI6GlMq+2EiIg2R5OSey3sZaLjigsA/KWkQjB01nYpjoH4rdYOn\\nCtIgu0/nZ+\
+ZXBuod6zvjoCwNWb3bB4JkmagnODlxoxbRv9Hs/HVbJuoiWTVU\\nY9KQ3NjjEhHNRJ+K+\
+RcubpMGiYDC6LS3TNRhUU9TNpKGjbfx8JwFJmrpD7Dq\\nMpWGT392tWQoYajBf3NQ+\
+D5p8CtZKArYi6E6sYkiA2tp+LIieXmzF4ZQ3uPe\\\
+nv0el4dHO7m21MYQXjI9vfOAkDR06kaxyhRh61SNleMhNGtr41Eq2v8NQsff7\\nc5ye0tDyIUyD/\
+P+/z/CHJ5f6SIOGX5IcGsVQXuaOJrcAom2wlSkzj6Ecg+VF\\n2WBpuFk0+\
+U9jFUOZn16otIVLQ0RMwOQM4Y2Mc+dsrkdLAys7JeAC4ZEUDtpN\\nZoI0fLZ5O51JeCUh5fuL/\
+jRpeGs2dPfuXwzF6t7vu58lDc+zDwRihHeiWvYJ\\nm+dJw5YbTz/ca8VQhDM3LD+\
+XBvX1ptvFJRgKX6nyyC+Thq39X6OTCE/divVN\\nPYak4SVp78s9hLduaDJahN9Jg/\
+up5Pw2wmOBdSNLta3SsOjaKanBwJCf/UM1\\nn0/S0JzEfsmNE0M+s3a2qt+\
+I9VDfrXrvMxN5KLW8vDMsDfpHqf4f3JjoTEVw\\nv+GENOzekLptXYuJTlttF52ak4aQOJ5bu/\
+4ykGNwgac1uwy8n/EzsTnJQHYk\\\
+nl3RuXhnoPDkXZijFQDbFCm1lQjKQOPZ78mojHe3rj9KQl5cBdV3Lm9sU6ahF\\no/+TvdL/+\
+zeksqbooD0XtwQmq8uA6vAA5ExoIzO2Hx1SW2TAo9fYo/6mFtpB\\\
+n1vARtZQBMcWbR7guqCPkEqhw0EYG6g9+ukJJV0N44fuGKHui/+quIp8GVWRg\\n6Csr6CYDffse+\
+LsKqKBN9vWI54YMvHhl2ch9ioqKH0mdMQ2VgV+/bN29L1AQ\\\
+n889Z0VuRMlA6OLfR008RafuJnGZPlgH/G/X3kzgVkGrCMb61FzLASdbRT+2X\\nQKRP/\
+6xnBmTAaOJQk+nrhaok2b3rjDEZuM5919Fhy98q6ZMZOZ7TMtAQcjps\\\
+n40B3lcS0yfL4mgyYV8nfUEsewIWEYjOGJWVBOrqah5TMBewW2n++m8vCgzKn\\\
+nCh92Ety4918syVIW1vcLTpZwyQPLt0/bj9rIQiH/nJs2GxlW3K5GdTnJglvJ\\nGWbhvCLMhzRs+\
+nhVFkbCo5YESmjg3S77U/iGLPiEFfBiKcowI3E+1DJUFgzP\\ne/\
+OTA1VgMkv8W2usLLTGF4vn6qrBaK3T9YZ8WdBpIwlKumqCQnTXmchiWZAp\\\
+nC7onoKcFVo77rK1ey4Jr9gEsiVUbKhe3qvc2yIKBXun2t9d1YKa+UCy7XRYq\\n5U6+5ZGlg+\
+o92vrZTlnwTutwpXnRIUZL+NPCb1lIqJgbuyzOgHdLtyrfjMrC\\\
+n33LyXNgJBqy8W8kJmiLmvzRv0fyEAYw4r3vmi7Jg3LFdSvMv4Q2n4YCN67JA\\\
+nep1glarNhGQdR9fPnCQ4/f5Tj9BZJnSsfDyYzE8CtxT2c1ceMYGryXz7CVES\\niFQ4ZzR9YYJ+\
+fJWKigwJTPPk1ha5MfB03iQyTibBB9GqqX8YBtmMpyvPVUgw\\nJBj/ofYoBt/WyEO+\
+2iSomW7v33sNA6GW++8NN5HgvejRo1FpGOxK5K/gMCDB\\\
+nguLjI8FlGPidvpHdtIMESq8V56gdGBRii1FR5iTw+hm0+Uwf4QMWj6s2liTo\\\
+nWR2WOTSJgXTb71OkwyQ4YP8s9ts/DPYlH7HscyDBvSeqd1gJTwS5tm/LcSaB\\n1T3O3lqi/\
+WrTLprHWRKUm6SfoqxgMM72eqOuFwlMWpeH5WYxoHTQl/75koBu\\n/FDz1RAGh1Oz+\
+6uukWBsYcvITCcGd86Q2m/eIsHzK0MtnwgPVW+JKdsTQQL3\\njmi/\
+YzkYzHPwZArHkuDhdGNoYjgGGh8CIr8kkcC+Jul6mCsGx9NnfFMfkEC5\\\
+nQ7Jn8w4M4s65nTyZQ4KkTWUcuZIYNG39uVetkARlv28cGBtmgu6nJsrLChIY\\\
+nOHbv5rnGBLcHIHC1lgT/1b3Y9G8nE9I8ShagiQQ54VsqhjiYRO48bGn5QgK9\\nJY+\
+vc34M2N4pWRrzgwQbG7LLMDoDvB5FPLAdIMHHmtGKp7/o8H37FZ/+aRLc\\nOXdy5u5WOojwTRzP/\
+UeCXg+6zA6kA2Zdzns8WeTApPyawjkuHXjuZUleEZAD\\n9X5xc/\
+9ALbj1WKVJVE0OllTPOR6jqMNr79Tibh05+C7SdirEQA0mjUTT0zcT\\n/\
+RejD9AOqIJdz9pFDWM5sBqOz485owzawp1yO4/JQQGHnouiMwUGIwZvxJ2S\\\
+ng5KKPLEeN0VI5V0YGjorB/qpMqY7zpGBn0Pq+R1fOYhtevHgcTsJRuePmHRG\\\
+ny8EDvuBdS4FikNXz3cOtTg4CDNQ6M3+M4PZH/n583SQHBhY/axLrOnCxzjU9\\\
+nwfdy4Mtvxb1ny4eqG+0K7C++y4GqhI21P/d81fGaE/Er83JQe283n58DPyLl\\nDFTdVZOHZ/\
+eXu13H5NEnpXmlPh158Bs0HnrvQ0a3H3CF626WhzLJu8fNvRXR\\\
+nUpKKVfcOedAXSxXmJJ6PXRFuwxR7eXgNb73uSKmgKF6/vZec5KFlT+vfD0sq\\nyDQk/\
+Pk7V3kQy2b1D+pSRSXXn/qfuyQPjnu1FPxuqqN7F8eFSiLlQS9t7JL1\\nAy20e3L1Ek+cPIjOX/\
+QJtNNGbO6C3+yS5SFQLvq/bgEd5HlaJ2v9sTwEmzt9\\n2segI9XfOO/BAnnQjtzb2vcfHf08Znk+\
+s1geeHmvPd7XTuTJkQtbzauJ5+L9\\n084XjzMQV+d/acnv5CHfKuGmUCYDvTkYw/63VR6+\
+etnw7utnIO/2h67wSR5I\\\
+npRVPFBSZSNPiRWvMV3mY9j9dc8WOifobapkDvfJgLJpjfyCKiZJ3fYrfMiQP\\\
+n57Ifa6bUMNHBmv6VsHGifvusYy2J8zovPneiZ0Yepn4ZZZ0iYcjXSJWnZEke\\\
+ngvYZic6aYGhw59GCu6wKsH3XQ19tdwxZmURaufEoQMgTUeC/i6Eas+qlHRsV\\\
+ngDdwqe1mHoboe2YzSBIKwDavHBJbj6G0vSqm8yQFONdt2cD8iiF+S7vxdqoC\\\
+nqA7ZTR0lfOJ3MOLeE3UFYI7Zn+AnfDJshbYGMRTA38rb14jwic3hmZ/2egqg\\nxXU04R/\
+hk7ojyrc24wpQcapOSZfwCdP+iKaQiQL0u18Pmlog/OJ458OIhQKE\\\
+nfXQmYeMYEjxR5Vt7SAHqtq3YLn/HkP/JaflUOwUg3V1+tLcJQ39O0ep9TijA\\nnrQAV+\
+3nGLJztT1r6aoAmxQ5hR/FEV47c1tY/bwCVJ7bxfXcG0Ob3StL2X0U\\nIH7j83yn/\
+YSfzk85fPdXgMfPPru8oWFIxEuJozSImP8dz8hmwn/XvQ/nRoUr\\\
+nQOeao1d8PRPZX3kzvzNBAfIFpK7et2KipquTKXLpCrC4dft6nzgT6QVSdy5k\\nKcCuslf/\
+FD4ykFhQ2N3cFwqgLeiolWPEQDduVmwKLleA/24MbBSboaPJkIlv\\\
+nDtUK4K2hVlyUQXjkjrWqcLsCqJ8e10j6pYO23Q1tG/2sAJq9to/6lXVQTvRr\\\
+n77oeBQjeRL9JP6WNgu8rVl8eJe6vhovHv1UTyXfMa04Qubz01EKa7aAasj4g\\nxGLPRYaEYc+\
+H55xV0Z0Pah8bNpBhw0SdgsMFFbT0yf7KQyEyqG+mXHh6lYY6\\\
+nu2vqreXJkGqlRt9uq4gEjvYk1CiSQSd5N1lwFxkZ98yd1aGRYfTai8bz9vLo\\n+\
+Q9VkQ2aZMJDmXqUcWkU+TvSsWIrGfrVbPJQixAyHbdboFiT4Xz4sKP2tl48\\\
+nTSzo4zVbMmQZ3H4v4zaFz+o/Lew5SobA4x0dR4qW8IzwZZf7TsRz6koum1E8\\nFyyppHRt8CTDQ/\
+Lj+GFXMbDcX1d8+iIZcsLED7plS0C2z1hUrQ8Z/NQPyrP/\\nlIJD9QbmAQFkMHuX23Ufl4M8p+\
+9lk+FkyFU8QL3TRQG2cM77eyPJ8PPleUWZ\\n71SwLdLyyo0mA/\
+uqW8zR70rAyRKo7pxAhos370zIdiiDY6p88pcsMtyQv/u+\\n2lcdiutMLus+IcM+\
+xoirmLUG8I55HIrOI8P+hMQsfw1NKN1WxbfnBVHfuwW1\\nn+u1QKjrmH8lIsP1+\
+VGYt6bD6fUQW9k6MuQZHX8tkkuHCuVnur7vyMDSo/rn\\n3hId3C6xjDPayECyaw6+\
+FsUAlKLaGPmeDGR/U//GzwyQqLPM+vPp//dzYs8W\\\
+nSSbUiDxwyPpGBqPFiUyTSCZIbWvcyvaTDANnv55pq2WCx4kp8WN9ZJC41xts\\\
+nMseEulDp6dcDZCjWVzPMpGAg+8yoTWqEDM+Tdeq/78HA64tb7qUxMizu+601\\\
+n6olBw1r0rQ8TZAjLu3+xOhoDeeVyJ50ZYv24X/vZF2DgvbfP8M48sT7+Z0Re\\\
+nviXy15tXduQfGSJnK+fqv2JATmEu7Folg574fEv4KAY+tXYfH7IowrkfJ7RZ\\\
+n5jFoHb1RuM6uCEcRLZ26ioGSyNPb9tyKsJ0N3SPOM+C39aNLGa8i+B895nl+\\\
+nDYOO48s7JQQVoT6PIyx+EQPlUCr5orAidLz3VHT/i4F/4Z6VdjFFQHd/nJv+\\\
+nicGHzotdmlKKYFEYGqHeioHqWnJxmKwi8Dis3JMuweAarS5qUF4RXOe2BNYl\\\
+nYdBpMXZuJ0URDrjf38y4ioGmt5h5Bk0RhmNCYk4fxuBGsgFtVVURYt3FD5zT\\nwaCrxpnVTpOY/\
+8Yt0nvYMSKvv8oE6ChC1I/PI26dTOCu3q+bwVSElBe0EytZ\\nTNhctc1lUI8Yb4LtzINtTNhn+\
+Oz6BgNFEP6N6zasM+DUG1qSJq4IaT/fiNyu\\\
+nZkDsa6FWr12K4LHBNUZMnwF5224Nxpkpwp9x55DZaTrUli2vv9qjCDIs17BH\\nj+kwXTrIXD+\
+gCNx/07izuemwv7gi4bajIuh11P0ZNNWC0xjzecEJRbDff8lu\\nPEQTAp8/\
+bn7vrAhN4WscsTUakPcsZk3yrCKcmgssP6yqDrz5rs6ZlxXhx5mH\\nU5zlyvA2S4z+\
+JkoR2rVYqD5Ebv9QCjfvvacI43m32U0ZJJh7tO7EHq8I1cVM\\\
+nrwZlGVB6OBpnnqoIJsctYlzYJeBGGlr+/EQRHFtO1SmS+MAw/ty7vzWK8ExA\\nnL9zeLzKRqKvV/\
+itIpS7mv7wS1uoco87vKTbqAi52nsH+SgsKOXeDq2r7Yog\\nVrQo//oND1q6K3WPu0cRSL98l45/\
+E0MvQ+scyXNEvVK47yZco6Cc3c1SIYvE\\nevNekAgNpaIk/g8fxpeJ9R65eVYpQgldj/pp8vr//\
+1d23v1ZQKgyskhY0rYR\\\
+nooCPcxIty0gd4XasIxWiFDhQbrx5SFEDMUk8j6iSFJjexbRVWdFAkhniklNy\\\
+nFMiv1fz9K1UL9T2mr9/WoICV9Ykvj83o6LPblrJpbQqQ7O1djdPoqEHD8OIR\\\
+nJgVeP5dixybpKL9wz5DyVgpImy8nVoYyUMaFgw8iDCjwXjOwfWs7A8VgR47O\\\
+n4hRIUp0PrRVmIt/S0+3VJhT4vNvVvyGcic5ecQ9T3U2Bv5Elo6rVTOSo773z\\\
+n7l4KVKxG7XGaYSLLVb/VOUsKfONQuu6miKGdVf+V2ltR4E6H12HdPUQe/hd6\\\
+nofYwBWwXEqLKPDGkuvOuhvpRCsStdPZMRmNIlvP+QJQj4cpNbr8+FBB5/C4l\\\
+nfeEEBQpyVbceeYch1rBHRxxPUWAheu5S4DcMze7OFa13pQCv/B9Fwz+EP/iL\\\
+nWjXOUaD1gD2KJXzQ3VYaEnOeAlWPE9uuET5oiao0+udFgTnHa3WrhA8qD9Yv\\nH/\
+OhwP19LWKChA+KxFpevr1CAS9NI60iwgeZnR/OawVQgAtCfYbHMBSf0K0W\\\
+ne50C7CEDh0oIH4Tb9f5eCqKAo0MhRZ7wgT9pKPVECAWS397dqkT44PyP8cMN\\\
+n4RS4eSNyqJXwgVPGrLBOJAU2K/V7KV4ifOS03BwXTdTH/b6ksiWGTJXYbq3E\\nUuDF9h+c/\
+coY2jbIAycTKPDA4/Bx539MpJWzcakxmVhPruWtRe+YiHxGopie\\nTsyX2X/vczQTiWjKecQ/\
+pEBvUK/d98NMxPmXqrqWRQEmW4vzZ2kmWixU73N+\\nQtQ7vcy9+\
+QsDjV5gpDTnUUDm5bBYWzQDdcwZCiW+IOqtZyapt0RHtaW7mtZL\\nKAC/ytmqc+\
+io5IpF8OlyCqSx3MxKPERHyatHFrFqYj8kfonm366DTnNe6m1r\\nI/b3U+92kqQmklFo/\
+LL8ngI00fUWQwsN1KYn1676mVjf63unZf3V0eZz9W9u\\nfKOAybUMpyctqojro3jy5mFif3/ZL/\
+98Ew1lZZRYp7FSQXi76720NBnUr7/Y\\n5K5LhU3mnWY3VtfxBGuLmqQtVFBp5hnTsOcAi/MZZe+\
+2UaHQhvdpzkseKH5o\\\
+nlqNoRIXzqDOrMk8Igjck3vy8lwoz1WdVcpWlQY867s92gAp27VEjnNtkYczA\\\
+nyFvHigrBgr2HyWbEucdzxCnMjgp83w8LBRI5rPRlK2x3oUJsxZsgwztK0DUZ\\nseXMGSqQhZ4k+\
+V2lwR3ePu14dyrkdgfqRp9Whtnt4XJTF6lQbFS4K1FHFeoy\\nvy5lXqcC/Zt+g1WoBvhWak+/\
+D6IC19k0//QDmqDZdWNk7RYVGgzDBrzEtSCW\\nT6PLNoIKlfuyy+TuaMNJr6sv+ZOooJa+\
+dP5jAh02M3+8VEulgr3r/gs6/XTg\\\
+nnYYSkwwqmLdsNXbTZMCzC1yl17OpMMzf72D0ggFBDLfS1CdU0IhqzXg7xQCb\\nqebS8jwqXJvb+\
+XxBkwkrntGvZp9T4bRh7SwjkQnt9NlXwiVU4I5eF1ZpYsLD\\\
+nSZsy7TIq7CGPdKcvMMHnWVnZngoq3Ihg/35PEQNzT1K5axUVImPHDi6bYkCi\\nXyu/\
+WUOF2setsu1niLya+FX+sJ4KAqYF1TzEebu20Ph1VQMVlj9mX3mYhcH9\\n849f9zRTQS53Rin+\
+DQZuOrwV/9qoMGQ6fKDvPQYGE+cqJD5QIeNojcH1PgyE\\nCtsrsM9UmL1j3+E+gcFvD+\
+Ybyy4qcT5B2TlEXpdox71x/0aF25lJG3SIPA//\\nu/Am/AcVlF6ETP//+\
+7MOBXaVj38RLtMy55Ml3qd7vKms66fCj4sf868Tn2fX\\nJlf9GqKCn+/\
+2fgYxfuf4jaq1USoYnbjrSieu/yR/oEr2LxU2h3pmBhLz83c3\\nQ3pTVAgcLH6mQMx/\
+v9ZTZD1LhcssTVaSxP1RxgWqvRaoMOrOznUmDIP5PM/q\\\
+nu0tUKFB4N0gi6tN47mN13ioVaOGJ9ZuI+qVobq5pZFEC618bSK/JGHiOJdQM\\\
+nsiuBY1KgQPE8E3bmLdewcxPts32nVBuZIHHOsZbMqwQB3MwEcgITRjSqa7cL\\\
+nKEH899GKrJNMqPhDrbMTUoJHlKNR1RpMcDo7UhcroQTBt8rth4oYsEnDor5I\\\
+nWgn29d6Y5PZkAM+fgvo2khI8SwxyHlNnQOEZ77c8VCVwubi7RTeeDitu6+/8\\\
+ndZSgKfGSb9p9bWhXc2pIZCrB669C1pp9WvBwpK6hZJMS8PUPsOqoaoG5W3jj\\\
+npL4SZNRrdchlasB9V/FmZzMlkKl5J551TBV0XDTaLE4ogUHn15GTPIQD3BTO\\\
+n5zsrgdVL466FCQW4c05USNBVCT7L/O3UbpCDkQvLB9o9lGCFQ0Aw7pQ0PPJv\\n/nzAXwm+p/\
+BI154QAsmYs99t4pUAD7YuFw37VfU29lhgaZIS+J5Iaq+Vma7y\\njj+kIJWmBIut9T82uC9XvU/\
+RP9GdqQTHpXq7mte40O3HfANHnxO/58kvPMKz\\\
+nxNB6xdOx461KcKyuAo6tUlBBVXpEdYcS6M1lSF9mU0L2Nfe0KZ+UoLqbM47O\\nTkNl7656/\
+v6qBEmz6/BkXhld/LBn9tQwUb8NBZXv09UR5TMe9/aPEhwZOJ4s\\n5K+BOr5gm1UmiHq+\
+GLHcf1ATaX2X9R2eU4LEooO3RMa00NDQn+Uz7DR4mfey\\nadaFju6P/kxp5qLBtOHxX09f05Hx+\
+Mftmrw0sDX5/vo1HwM9mH59bVyIBq5h\\n+g8yMhjIcq6QvE+MBqT1LerWAwy0tvCoukCSBiu4jZ+\
+iMhMdXb3N7ilPg4CG\\n9yWNycR5n+V6ZociDU6eUp+\
+53cFEr9i8dzFoNHivvSWFyYoRz3vXwWhVGvTa\\nt4i80MKQOI99yLQGDZIbs9LZbYjzN6+\
+l6iEdGuz4d/OSrB+GvASMG18wabCH\\nj/\
+JiOhFDZCG9M2KbaRCq8tX5xksMtYto8l3aSoNYbsNbdS0YMnR3HyEIDDSO\\\
+n97UxPzBU8K7gXQ1Ogz7Z9b5EIo/lKZNZIztooCyxrveFyPtIf0awkAkNSlvP\\\
+nfDQj8n6t08tpizkN8mdSfceJvHdnFIOjBTF+0dTjOiLve27Pyd/cT4PjCp8T\\n2/5hyGJw8+\
+rTg8R8Qmtw/ikMVYDvtw/WNPC5IWx8rR9DmsllZf9sadDTk7VB\\n/\
+ROGUuaW4sn2NPC4evXpRoQhPksDH9NjNNios3EFy8GQX26AlYcTDTY9zQxO\\\
+nvoOhUY4qZtwpGpSVuwXvcceQ3TEW4QpXGmT88Jkw342hpjKjib6zNLh2K989\\\
+nlUrkv1hQ64bzNDgq431kL5H/uR51T+leNMBFLStPNDORTCNn+OFLNCg57Xj4\\\
+ndyIThVFNXQN9aZBzNzfimzOR9wGhJllELr0Ndvax0mQi165GpZZAGgjNzXXY\\nTjKQWYTFL+\
+mbNJDqZiczPRjo1VBEFYTSICbV86OCKgOp7GhPdblN7C/OXxea\\\
+nftAR18IBu5fRNBARiXsfuYOO6o8f/miZRoOKBINHLM1aSPd1QtHlBzS4tcnH\\\
+ndElAC2WKf72blkkDPoFXZe57NFFwk73FWC4NzCp/sh8uUUc7dJ3qQ0ppMKZP\\\
+nfxNgqYIQt3tpZQcNrntVDNf5KCC6U0HcwEeifpO3d+Z5yaGMiomL/F9okPmf\\\
+nlumSqyy6dsGLbvedBmufJzfYmkgiw2+Xn8yNEPstfE3JPk0AvS64kazJrgxB\\nn+\
+627jvWj3NZWMvEcymD8lHJnU8yZvADIyqJrLzKcDy07K+ZwCo+RG293ymk\\\
+nDKOFUmNXh7lBNFEy5rq8MozRxmMGGeL/q+g8A7nqwgCueCMrOyu7/x53JLQ8\\\
+nRMmIBimjiDJKKKUoomREUiSUFCVJJSSkY0QRRYqkMkqISIQy3tvH69xzz3n2\\n7+\
+HeA5yXD0h916RBUvmIbdXhxXD7Tdk526U0EOAfPO9apASGkq6xLA4NZuLD\\\
+nQr5pq4F3eG5kiwEN6vM/WDBttaFII0TYcDUNLP3Pnqpw0IF55ZsibgMNCp9e\\nrGpwWgqXJn+\
+Hn1hPg3cR7z85bqFD1X6jEIYtDVYwzcusZlkgKSY3m2BP7b83\\nN/ZIOxu2Z/cGzzjQIPDV006P+\
+xwY7o451uxKg1Mx23Z8MeOBiv27gGBfGohE\\\
+nR8Tdv4DBnvHssd6DNHiQflDAtxeDBwlBBzcdoYF140LCUxeHaf7G0dJjNFD1\\nEw+NDsVhfYOGH+\
+0EDeq+/NWqqsUhwevXcPxJGqR+aiEExQj4KFzj8/cUDZza\\nr+SsNCfgoLH3vtcxNBiO1DNyLiOg/\
+PPq7yvO0eB3yqFu3jABC49LeWUl0MDv\\nDft39RIStir39C1KokHX/\
+HdyCmYkpD8q3HvsMg08PwrVK/qQMLA1svdLGg2O\\nbwlJrT5Hgu7oDnfrazRQ+kGbJ3OXhNBz3C+\
+Pb9AgtyLL988zEuo5Art1btFA\\nI/\
+nL9sB2EhTqmrvicmjwfcaMeWaABJe9Wbum7tIg6HuJmfZvEnKFAj/vfkAD\\nj9d+\
+GuYzJExkmDs3FtDgRXPk4j8UHxgbLvmoX0wDM80dFwmKD2I7hh1ulNKg\\nbW3G9K8Jqh8/\
+Wtku8ZQGhrvdCg2HSNBenLg9sJIGp89mail+IsGnYG9b9zPK\\nXvPf3gytI+HxphXbrF5Q44+Vrh/\
+PJ0FoWPzdo5c0GOJb+cklUbxw9vNWrdc0\\\
+neNLYsM8igIQUZv6bs29ocFFb9hvThoSvNac2T7yjwZrVYuxiGsUrbtuaXNpp\\\
+nwIqBY3OTBATNY9m8/EiD4uznoqK1BPSaiLXRuij9WSTc7D9PgE3k4M6TX2gg\\nP6Iy+\
+sKeAJ1F9w4s/07Jr3A8o7wdh7jN8RPxPyj/dFOi/0jEYTLRL+T7TxrM\\\
+nshkpW61weKm67Ny1SRq4eUUl//eA4s9d8ov//qVBQOzOF35OGFy78fuq7dy/\\n+X5s+\
+wUYBLAe54kuoEOjdkhoeSoP1PTXNB6SpYPL8oNTWvvYEBmkbvdKgQ67\\nls+\
+wF55nwWi5wCemMh3uT3W5691nQq1p1dAnDTooJ3Y95H2ig+8WM4kNPDpU\\nBGq6qM5qQ6XPZsslG+\
+jQaYGT5X8VgJNPthyxpMM29caLIUgOksblHJut6bBm\\nvM3jRagMeAe3ep+\
+xo0NRctdww3cxkIt2jPm5mw6H+y78URP4Zbgna0/dsxN0\\n6PZbNJxzVAy97lu/WSOMDq6M+\
+AI7ISm0gsNsP3aaDs6XZTe5m8mgRQ+/9/PP\\n0kEk1XaRfrUCKka+C1Mu0+\
+Fr1uSDdcfVkWjHMTOfAjoY4PXP+mroaPmR2xLn\\nHtFBWIJet+\
+sGA7nItDXfK6Hk35uUsTKIiYrNdJ1+IjoseOg5E6jKRl96dmvJ\\nVNOp+\
+Jp2jv3KRotCEr4RtZS8b244etzmoD2Fw36HGugALmlHOjV4KMFGTS/x\\nNR0UE6+\
+Z6LXw0JPvltOFb6j1n5opPz/JR3JaORET7+kw5OgdFOOOIcMnbRaK\\nH+nQ06B32+\
+IhhrzshaUNOunw6cwr3e8zGKqIc0s91kuHhpahJeejcDTIvLAr\\ntZ8OoZZpm4/\
+X4UjxWcXSskE6pF+wuCInQqC1u0YGOobpsPCWcYCFMYF8/qrd\\\
+nnxmlQ9PnnF8KRwmUkmQVoPabDhcSU97uyyXQMzx4heEUHTQWzTuxtoNAIy9z\\\
+n5nZO00HT7eDEeRESqXq8rw6do4Pa1Ptxa5xEZoIi0RnzGXBs3WxrAMUXB68u\\\
+nt678jwGfrk5mTx8h0VUDd7keEQZkPjiu+Ynqt+taLrwXFGfAiSix23L3SfT7\\\
+nQOVVnUUMMH49bpdaQyJNsZ+7TWUYUKaz6df+91T9v6nO3CPPgCXbnkxE9v37\\n+\
+8bGHxGKDAhwl4zv/0WizI7gh7dUGKCg1JIS+5filSN3Ap+rUeNsdPsgxRd/\\\
+nZNpX92tS458H5qVS17Q8EUHRpQwYnxtPFZwm0aYNes9ZDAbUmkjq5I2RKPiL\\\
+ne6wFmwFPpOqnUvtJlB1ycfM+HgP6Ugf5r9pJ9Ea5anEszgAUNxlj/pzimcKf\\nHXeXMaBFq/\
+C0dD6JWJs0rjfqMcC+O2wdI5lEtoMb9w6vYMCcTmL2BYq3Qs8c\\n50itYcDAgYXLt28nUa5W7k/\
+MiAHvez7SQ5aRqPVJe9EmEwYsH6xxExcnEW9M\\nz+iCOQNUjto9CrpPoB3n9iwosGJAw+H8UZ/\
+jBDrNSqxvsWHA88FtFd/XEahj\\n16itwjYGvCiTTbjzCkci0xoqejsYkHtKp1/\
+oHI7IS9ad25wYICBkelTOAkfR\\nDblel3czIPCvbnXUYwwVeXzgl+\
+xhgH6BNxLdh6EuQdHxdk8G3JzbdTBQBUP6\\nK/\
+aGqPoywOtWatPdbh76elPzYnowA3ptlk40j7PR4KmuKcFQBoQ5KydMq7DR\\nqGvGTo9wBuR/Na/\
+irmIhAXVNNh5N6cvnu91+bwZSvqRRWXmJAYc4C+RkY3SQ\\nzRn1ka/5DEhr/BROE1BE29w/\
+25oXMWCj606Ls0geOa9NL817zICV/23IpwfL\\\
+nIu85tTNHEANqsnTJuQYJFHFETW1hIwM2Y4Zh8e6/n5btXWLJ6WdA99hKh496\\nolBl+vFB/CAD/\
+uQj+uxbSajTvrJ4fJgBKVsF9HOKpKH1s2rPk98MUNzzoKfe\\\
+nSAFGt6kesxZigvutCd1NSuowpdvx+aEwEyYTNj65ka4BAnJppopiTLgRZZ05\\\
+nnqcJEq9VpLukmRBUty75XoU2MMxUsv3VmeCVPNvKfkAHPu2DRKsWEzaJnIw7\\\
+nc42ys1DqwZU0JmxYI9N4OJoJa5GyoRCXCQM/RqXWWrHB/Gp7pgfGBF6e/8uy\\\
+npRywCU4RbSCZsEPL8JLgJAec9ZXfJa5ggtUf4jRE8cBdoX3ln9VMEDhZaP5p\\nPR/\
+2jV3OcDZiwiHRB0eS5/hw9L7SfroZNW6KPnbmYhAa9745xoIJZlmj5qMz\\nGETsu6w/\
+spEJJ91bH5la4HCRoST02JYJbcqiGw5Q9cjRmXarx56SXzE7tHcx\\\
+nVa8ukuaSjkwwH7za8GUTAYMvYEh/JxOsdZHkzkgCCuas4ne7MmFqW/Ir81IC\\\
+ngnUdyDh3JizQ8DW/OkCAibfHu2IPJuAfOV42CiSIZwQc7fFmgkKK5Ev7NSS0\\\
+nvAtTlTzAhLuKlhX3XKn+Wzz+qb4/E3JNz9psDCfBzfiK6+4AJvi/X6XHu0YC\\\
+nJzDnv7hAJsR9fTaw4TEJY3cfZRcHMcFONuVyWiMJZT3VFj0nmPBspzZHq5OE\\\
+nU0rNPyTCmFBEO2vaSvGCpfXn8/qnmcDY5mbymOIJ2dODy3ZHMuH3fa21NRSP\\ntJdMtcbGMKF/\
+9KTiDMUj10cWBBXHMcHn2+NtThSPeNHk1HrO/9PvRZtvkyQQ\\njpoVEolMMHJ2WpQ2TMKf8zw3/\
+WQmJGfedzzeTUJl7Urh3amUPYU1n8Q2kRA9\\nY5YTe5WyBzzxfV1GwmbSzqo4g9K3jq//\
+hkwSlD13j3RnMkFYdfWRmTMkdF/1\\nvSCRTdn3g/3Qz70k5LQcX65/hwklaWp/OSYk+\
+IvGvHfNY4LTVNfxQlUSVkBy\\\
+ncOwDJlzMuSJy4ScB8w9nqRcXUPvbF9LdUElAQtdTd4lSJujdQSqhOwjYsbhB\\nRL+\
+cCS8cw0PENAnQsmq/41rBhONKDnqqX3DILx77+aiWCXtEHsvM7MTh2I95\\nid11TGhkWp/\
+vVcTBWGeRvkQjEx6eWCUf2YhB8znmCdcWyr+tvLs5GAYpz5Zr\\nxrYygQgwUr9SzAfXv2urH7VT/\
+uIUKlInyofRPc6iEl1MuLrtmcreK1yQXnMh\\n6dEQE+hEZ2dKCAvaDl4z6B5hwtgzgQFJSu5rt+\
+92iI8xIWWivDuxiQGY/HMt\\n1z9M0J21O3FKig42g9N54sIs+PB7+\
+EnuDm2IT9lT66LBAtFDjzcNnVeAI4fD\\nDgZrs0C5U/l1RKgcOG++qn6JxoINhxm29t4ywBF9d+\
+QlhwVga968w0ccXhw1\\nZegZUM8b7VeSqfttOH+7TpT4Zup5ChZOzz4vQP3LQJduy4Ly9RYzt5dQ/\
+CLl\\n2GVkz4IF3UIucXaLUPrzCwZHnFmwI/C91JIPsmiVvuBAlxcLfml4HGsQU0UB\\\
+ni7vNH4WzIGetlt5E3lLk+Gvmd1MENf9Np3LfBRoyeaV0YzCKBSIWf4XuHaIj\\nmTOb/mrGs+\
+CY7ZFeJSYT5f1Gd86mUfMjRAQXbeegxOaObbfSWcBTl5CwU+Si\\\
+n4LxJwcrrLFBjCnsaNnORxR7McSKbBRFVLmO+unzU9zZd3LWQBTTT8LV97Rh6\\\
+n9aC0OLiYBTPlA8abtXFUFNvqdqmUBakLwpdc8MDRKdNFT15WsEBum8LXPf04\\n8tZke36rZsEP/\
+7xF3ToE2jyzTn7+cxbYmMomCjkRSLPwxH69RhaYhn3qVagi\\nkMj5FKXNTZQ885Z0/hqh+\
+GNf0bN9LSyQZ2w6v1mFqo9mzX5nWlngkCHOYhuT\\nqFznx5Lr7Swo5UHoYXcSZQmI1pV9ZIH+\
+QKw07zSJznYsPdzayYKFl4OFLDMo\\nPik20hrtYUFsWwyz/jHV7190ahT/\
+xoJNo4zpm40U3zwUVfEeoPTz6zBO7yLR\\n56ZHe18MseDUr4Mb7IZJdH3ErYD+kwVXlDL4+\
+BSJ3BbJzIsYY0HjSx1UOEvx\\nBe+\
+p1ZcJFvTlGj3vpnij33JfivFfFkxwLy8opngj11vp2zWqb4Q6A/bycRL5\\nRNeQc/\
+PYsLQ2sNWZ4g3s9sFQp//YsCnx0pVlFP/8qtVoKBVhU7y2TKC0mkRF\\nvQ1KyuJscPKM8vt9h+Kh/\
+4L2BC5iQ1mX7+bBOBKt0GE8fCfDBsv+NT+v7yfR\\\
+njPHbuWUKbHgQvitS04xEyCXM8oISG6xM61b5qpEoLJR/+acqG8IukKrJlL5N\\n0ju+\
+WmuwYcBeXeVGOYGEy6OIPG02aKTly6RFEqiuY3mIOJ0Nzb7by+M2Eujs\\n3556LxYbJJ+\
+teHxGikAblc8rvuBS96cEBV1sxJG0wRp3Os6GRMPN26oicZR0\\nOHm2R48NWQ5KLdU/\
+MWSfaGphvJING3W/rSm+hiGVgtFL19awQbG/13qRJYau\\n/bTEnUzZUH61yc0d46Pb++\
+a5vdvMhiiVoX3zpDloX0ze/WV2bDiuM/45yICN\\\
+neDkOMwnb2ZDy8uMXcUcWyv9WmGS9iw2Zu8UNlsUzUJmr14vn+9kgcxOzp5Xo\\\
+noNf2b3ilkWx4HX9zkUiUIpo0yZpKL2fD/IfzvUaSRCC4ND28uoIN6/JGVtl2\\nioMAkSLRX031+\
+VsGNmslSIGw+jlNop4Nb/1Ed5m+lAOFqcAN1a1ssHv095mB\\n5BJIOXDwTV87G3zjbjN+\
+SavDkt79ThKf2GAWdyio94wG6Lxx9bP7wobpuSdP\\nsWAtIO9aXu4bYUPJPOc/\
+HgY0KNJery0xxoZPg29jstTosCLF6C4+wYYvstHr\\\
+nwykONz6zvOLYDBuGO8yljz5kQs0MZpEuwIEjhz4XrqHyxIZD7LdVghw4sHNr\\\
+nhcBWNti4aPSLi3LAs+6F3+fPHGhpVT6IS3DA9bKn0QMqv9pvlJ+xleLAVI3V\\\
+nh35bHuxcKSqdrsABVt9avf8K+dD9QCi1SokD5IhCQzMXgz2MOZ0+VQ5kL34p\\nKncCAx/\
+5MX1cmwOvQwsTuPI4jMb8qLSlcaCo67FlvwMOAfP7LY8xOXBtWGjS\\nMZ3qZwN73l3lcABtdm0J+\
+oxD8PDHXVV8DqSjN5UGqgQI7Gkb+EZwoPXch/Ux\\ntgSc6mg+JL6cA1t2Z8e6xxAQ86I20nYVB+\
+JOv7E8O0iAJFTKHDPkwO32Mo+a\\nxSQkFJWlXTXmgPLcVKybIQkK3Ee0KlMOlPTZGO7cTfXzNx7c/\
+2ZGPe9Q6r17\\nFE+oKeeuELfkgE6UVJU1xRMZ8TerMWuKuwq9pVZQPKEjnLHRdjMHHMV+dXlS\\\
+nPJF9PLXtqC0HRiUdln/4TPHHWKLrVXsOaEdEVkRTPHHfK36w0oED5qLYUADF\\nE8u6og9/\
+c6bkW7HlfQrFE4+2nRYQd+XAucBUx0mKJ1Y0hkRj7hzoVk0Q+vf9\\\
+narnJMTlbDw6MKRfJO06RYFx66OpRbw4ISR6I2T1CQg1+gHHVhwOd+R8X3+wh\\nwTzbM7/\
+SjwNYa5Q27Q0JDWpuq74d4kBCw9DL3nISbBKda8QCOVAd/Pnb95sU\\\
+nX4ltt8GCKPlprdMGMSTYh21p33qCWk9YzuydNwkdk1ZuR09yoFQgvbjGjIRd\\nB8x+\
+XDnFAaYXe1hai4Ser8aBlWc48Mrh3aqnEwQYpzdeZ8VwQKroGdb0jIBr\\\
+n9jsaEuI4UDPUGfXoHAFz0r0Tf85zoL3sreUJyp7O9X5auxM5YCzT5EFQPPnk\\\
+n1IxlfTLlryHpBV0tOKiuiTpCpnHAEE/5nhKHQ/v9ay8Fb3DAZcNub6/fGBh4\\ncSa8b3Igdr9u+\
+PVMDJK1izVbbnMgOL1YlWGNgV3Sq8OZ9zng/f4Dr4ngQ3PQ\\nrIZpOQca7+xgiVBxgOtGW9ytoNY/\
+1nPiFZ8N8T/kD8s/44BI03TRWWsWbHTh\\n1n+t54DTnLb7g+MMqFvnGBDxngNiX+\
+tH3VN0oFK65EXtGGXfdtMF9pKKoFlv\\nOsanuDx7I5Hj8FIeQk81qSX/\
+5cC9ebQbZ07LwpqJvoMe87nQ+U26q/ydBJR0\\\
+nLFZbKMUF58VXnIqtfhvm3wrwN2dzoc7bVerlPlEk7TLvSj6PC7KhP1mVixYh\\nX+\
+XYWmWCC3orTvT2vZVGvNhM1e/6XFh8bsTjgrsCyvF/UxOzjgujEhtTV5qq\\no+\
+urcZUGFy74rjtBoJd0VLlRNPyvGxd664eYr3MZqHtnzwDTgwsnVCrOKUYy\\\
+nkXZYYkmEDxe23ofC23w2Mrngo1Xox4Wjubs9r/1lI7fM9dE9h7hgur7sFLuS\\\
+ngzJrprZDEBd2FO7E9qzhoerW5gqfE1zYhGkpv/zFQ1/67jCvnOTCxVIrDnmD\\\
+nj3TEnKemznCpftJ94dMjGDJR1XNhxHAhTqqpWqoGQ25cqRd2cVzI+c5/oiWN\\\
+noyzryuSHF7lwWzz1k9UVHNXsShXovsSF35vkuiw+4ajX75CHVCoXPAqutL1R\\\
+nIdCCcKvXa65yYXhYov29LYFoF2n6+zO4wNBjZ28+S6B1WXPpqZlc0D7dVkg+\\\
+nJdCeojbhultcIJo1GAd/ECii9sGByRwufK1RbxNWJtHNtuhWWh4XZGJrt/Yb\\\
+nkaimf7eh7QMuiHuGf1m0h0S9f1bdCi/ggs/zoohDESRaIK6wKP8RF14FK45L\\\
+n3SARfcnw4c4SLiz93J/5uZREZrznnyTLueCfvvD5h9ck8jDMWLe6gguXxLqt\\\
+n5nWTKNLmWJ53NReU0okvlhRvZLtsUUip5cLbgoKJ0kkSPffnnHheR+lnRWqB\\nJcUbfeH/\
+9f5u4ELYxqEFsxRviCR+slraxIW5/NKUVzMkYtx8VLilhdK/NN5R\\nMUGt/yh+\
+SVgrF94sOD7xdoha/7nn6fvtXBCeudwm0Umt/9546NNHLth1DrH2\\nUTx0e0DFVqKL8pfyZ/\
+ZjxSSq+ztWtvILF7J8cqNz0kk0IN6o4/WNC2e2p928\\\
+nEEYiUbVbZ5MHuEBLFrcudCERix86VjPEhZao913yq0lkDtsdx0e4sFJj4ZEy\\\
+nORJ5bSKqtce4UKDi/fl+H4FyDn65EPqHC+8OPpnLOk3xxqknf/NmuIBoQ72P\\nKd4YSEza/\
+VGAB6JpCtNGcgRiF5uRK4R5wFhEv9NxEUeWLzRTPUR5IPdu7aiw\\nDY72tf+\
+Zf0mCB18sZ8vahHGUO53b/EuWB9yhSz439mPopUTECq3FPFh+cuWy\\\
+nUhUMDartvG6jzIO97wK9PGL5iGMk7X9XgwcF3j+qFOk8dPd0gPReLg/25Z/X\\\
+nj5Nno8FVTmGnMR6MXr6h+W49C3HGTH7dIHkQkc7wNwhgohxXubedBjyIggih\\\
+nkQo6yjZ8mLxjHQ8GcrtepdF1UObUiPrGnTxIs2eNfbioiL7cb4vf58qDoWaf\\\
+nEpHTCkjbA82LceeB4r2LTCE/OXT93bmeWm8efPB4NfhrtRRKf8i7ZRTIAxgk\\n6S3ts09T9u/\
+j6Z6n9mNoNCy4QBDadbamb7nIg4eyA7EDlsKg1LFSyv8SD8aK\\\
+nLl89dk4Mks3FRvOu8KDr0ONh3fkykEjPKWTk8CBhvF60yUIZWj6dp62/S+03\\\
+n6ann8GZVkEs6esn9Pg+E4oRf1m5VgwShDUevF/Fg5dui4xe1NSG+69sq1Soe\\nFHFtsTU/\
+dOB18qu7K2p4oODW++Vy61JYZPNIbfsLHtioJpz9UkaDuPIIgaRX\\nPJjwuVuWdowBZ1OXVi/\
+q4IHt5e+3NCgOe7lZQpf3mQcpacVdh8OovCs6nmXZ\\\
+nzYOzBSGmJ4y4EB1YfSaqjwfN6hIWsvd4cMZ2t4XgOA+Gj77+uP06BtetOxzd\\nJyn9LH+\
+QlvsLg7INtj61f3kwVSDxxMwIh9a1jSHMOR78p/54zZIYildWrz8f\\nM58PbK/gcaUmHMT10fWh//\
+gQsy7jLF+WoPpOgwLrhdR4q1W09SYCHGnsVlkp\\nPnj2/\
+mEdrSDgiEZmX4AsHypkOau8flH9tPKSP60KfIhQz05cpklCrlyS2Apl\\\
+nPgy8usJvNCehVnLRkrQlfFBfZDDE9aX6eZFI3qwGH0Z+ZFy1OE/C9Px5sEuH\\nD9sra+\
+dr5JGweObopko6H4r7J55n1pBATIy66rD5IDhhmNDSToLVT+9DETw+\\nZH1MGc0ZIMHj+\
+5fTfTgfrL73+en8JiHsq9Mlc10+/NmSf3YNxR9XPr/LztXn\\nw+xSKsH8+77jvXWJ5Co+\
+xJ7R22RN8Ufzm+f1voZ8yGCRT00nSRhqMPrYbMyH\\nmuHlmzoovhF5XvJj2To+2JRpWstT/\
+KNdSQpc2sAH/4sZ47/qSVhTlis9ZcmH\\ny3InAoILKL4oWqrtYMOHTv+7ow+TSTh4/+\
+qyJ1v48GjFsvBrgSTE5Sxep76N\\nDysFX3M3bKX4KjN+\
+28kdfJD02t9XyCah6upCzx4nPuy57Zk0PEvAp+SwY6Yu\\\
+nfPBmX1sg0EjAVMLfmFtufCiPMPn5M5kAudhDVxZ68EFkZ9T4650EbDi5BzX4\\\
+n8MF20GhlVBcObkGfm/j+fIgUIGkn0nA4EWDfcz6ADz6L7x+5tAWHAk/zBXbB\\\
+nfHgTf1UwsAiDV7urFheH8OHDHa3bLq4YDDitYiqH88FBqzG8QBQD9c08y09R\\\
+nfAhvrOysyeBB9AqZhD2X+GChO9bh7E31PctibjxPofSpKYks41iAeEKFrKt8\\\
+nOMNo9ve8w4Rxrd+tPzL5kMSctp5oocMusfYlR/L5cPHJ8Vvq37VBtyPj9pkG\\\
+nPiTwUquqbyuAFM9j8t5rPkh8WTLkc04OBkN469ve8KHp2rdqjp8MZGqXfmG0\\\
+n82FoiYWCkK04yHm3qNf1UvJxJ8QZAr8N/wQLWiwQwOBwYfxj7L0w6sva458y\\nDwNth/\
+qECwxx9K7xxWWeIAYnFXyOWhhIoXyN+D67BRgIyoYuu3JUDnlVq0bc\\nEsfgwZRzAO+\
+5KnovtrzCTAmDBTfsXVq0aKhm2eW+DmUMYv40nT27kI4KnKYX\\n+ali0HU5ce/n73QUf6/S+\
+bI6BmsWRFvevs5EJ9qWRnA1MWhqnE57eZiF9s2L\\\
+nuluhhUFJup5BjykbmW2xnu5fisGqDF0TqxYOWh6cr32CTj3vmvfdrRe4SCdL\\n3kKGiYF3+\
+Wv3R5Y8JDDx4fIKDgYq0eK75ufx0Q91w4pGqm8ZjiDT3rAw1GF2\\nvc+\
+Vj8GWGwOW8UEYKk7x0IshMHA+4HQ4RhZHN6vqndWXUettIoZzd+Do4iAv\\\
+n4qEuBikClvknruIoTD7h7no9DALWfWj8RfGI75rxlg/6GPQkbJico3jEea/9\\\
+n9IEVGGyrOR95ieIRy/hSbaFVGKwjjobdiyEQo/ukP8cQg5AtNxT0hwikIPb1\\nMgJK/\
+pRrckmKJBJaZlax1fjf+obrrYFEo453+vrWUusbqyg7upGo87Sk1HFT\\\
+njPIHw9zCUyRqzPPTk15P6bvuUJNtBonKWlucs8wwyFvvL6tXQqIcAf0IA3NK\\nPs2v+\
+VtfkSiZmXq3wQKD3/N3ZOdQ9X/s17qscCsMPv0IS2VT/GFdPppmQHG0\\naYaAnO4UNT/\
+y6sVhG4qzX8k2/3tfY8EW87NZmzGYEH6U9J7iD9clv8MdtmKw\\\
+nhNurfXCaROXfMoKk7ai4cchdlTBGIuV8q4O12zC4tHwyU7+PRAHBU17Ht2Mw\\nlrFc07OVRK/\
+XZbmSDtR84YIAeiWJONKbdvQ7YhBsVO0emE3xyYfpTenOGCju\\\
+nfZDvEk2iL1nZG2x3UfvP9lMe2Esi8N1qJEbFpX2ijp0SxWupKwQMKnZjcFzW\\nXnFSnkS/hXKxI+\
+4YOB6TF4vvJdDmV9sY3L0YdJOPGr7nEyjvsqBGjwcGxh5n\\\
+nRhWCCLTQ7d7iy14YnDVgTC8xJBCaXCD8nw8Gczrynr9LcKRalT9bcgCDbDsl\\nz6/+\
+OAqMdf7t64fB/fzS0O80HPG1ir52HMIgmrdo8GQ4hqIHXT4mHMZA/kLI\\nx+\
+UcDPUWSbw1C8SgNuY+mXydj65auFcXBGEQ+OzP4TeaPCQeIHfjbBgGArpq\\\
+nkiWvWRQvohTjUxgIx9WW/hpkoqqF+xImT2PgO0gYOQsy0bGrVSfdojAIqrvp\\nm6xOR/21/\
+rtWxWOARKMcbqlooxrlpiWDVyj//COucf2OHApBsckWjzGK70Xr\\\
+nBd5JwcBHdHGqBAO6jFv3bSVZsPv7K/5WGQbfn0b3EdvlgbN8R5QgwsDlkXTU\\\
+n2AslaLtDO1Zag4Eax1naj9CEtS+2H/Z8jgG/oyBJcbUW5PWe9V9cR9XhYjzv\\n1VptOK35y+\
+tgAwZ+Ec/Dok2WAnHpqQO7hfKf8LWrDSSYcKVgdNv7txjYKOF0\\n51EmiDQv3XqmFYPPrMSDfU0s+\
+Cx+1rKnHQOvn7jt/hCq72I9NTvfQflzzN+l\\nYlZcKFo/amL4CYPq5D1ftspRnBBmvzq1C4Nxe+\
+4eo3N8mEiPMdjQg8FPo3XM\\nDVSecX1SrjvxBYN5ERrPA45Q/\
+eSkDm9LHwZi2LcmaSUcMuXtWfMGqHi0trF1\\\
+ndsNBioyh3ftO5f2Abwb9d3Do3f9TTWyYiq8aefZxPgGbYnRUHo9gcMzm+ktP\\\
+nbwLKsrct3juKwYsurzmHGwQwaqJl5ccwMLTSylvfSsCFnieLqsYp/3WXuK4p\\\
+nTMKswE8xvwkM3ggdOP2ZIMFLTUdEfQqDfQFVX4/sIOHtym1CDX8oezbW6XYf\\\
+nJwG2RwsETVP564XLK4UrJNw5/GSaMUvlw9uMccliEhQujky+m8Ngc+/Em+pG\\nqv4/0B4/\
+NQ8HBV2tU2QXVc8b7X4SgjjooXDRbcNUfR6MGuoUwqHY2Hk75995\\\
+nWguf9MctwGHf53mbHlA8wKePfF0lgsN4rDH68u+8cRPt7oGFOMwXKnGrmSbh\\\
+nP1e7T8liOASLvxuwGyfBNySqfZ0EDj0bHg5d6iehI63s3ZgkDvHe1b9j3pOw\\nvmS4+\
+boUDqb9pseXPyMhv1XrlY0MDuTuE19Tc0lQG7etn5XF4dOr+pCKcyRE\\nyUTV5srjcC/3+\
+Jm7PiSM8cuqdizGwfNAsObeDSTstBp+KkLZbfHp8h2/1Umo\\\
+n89IqK1LGIQOPobmNEqAbaVvsporD3/sxjiWIgGtZkQUyajiU/nenSDCGALGq\\\
+n0vtIHYeZvupGC4rvDnf+yPXRxAEcdVTTKf6zUrHNqtPBYXtG4eErZ3FI/sJD\\\
+nDjQcIkyd8n3McPhyV+TDIB0Hr4uvdwtQeg6GMqlFbBxaHKYOpVJ5JdddO3gL\\\
+njoNO7r7BFBoPJnkzSV8IHJpdc7cc3s8Fk8l3DwKW4VDX+v3TizwOfIiO/nZJ\\\
+nDwfb2XNlnppsEL3/c3PHahwu64+ZFtXRwe5o/f79hjg0FKjPC+inwXXjrMhZ\\\
+nwGGPTJLTV0EaGLy1L9cwofQxZ2wbydEBjz9Pme7mOKzgPAoo36QBtSZxAj/s\\\
+ncPgYEnX8KEsKZCQ9VELscTj25GK3vKw4OLcaLZfagUO73n7h0Xph+O057k04\\\
+nUfKI79ym6jprSDvn2Hp4Nw6HU8PnWgSbnp56z8qbO4ADj7lFc/kaGfT6utCL\\neD9q/\
+OChojJ7OaS671OP5kEcLlZ0bPc9oIAezp5XMjmMg/l1wysN55RRt/bU\\\
+nqchgHELcBXRemmki3lBzutIJHI7qGwQ5GWmhY0W5JTkhlH8eNwoJXa6NZDbs\\\
+nGnkZhgP32OLRKvmlyMin1kE6CgeZ9yaqu28w0J+2/nXV0TgoVtTa3YhlooK1\\n4sQRym7SuheV1/\
+izEE1pk8jHczis3zx3rITJQZ3hB3+dO4+Dir7T3xXTHHT5\\nR+\
+In4ws4OGyd7NrynIvEq9sLspMoO9968jPVko9qeDPpDsk4XPCPu7ViPoZC\\nLqvHSKbg8J+\
+VeO2VHRga9XFzOXQFh3lhtf8dE6D6z/cRlvR0HLL/vj/RaIUj\\nd5Pbeu3XKP8WP6FjcwlHbUo/\
+JCCT8qdqi/cpagRKOCU1NZqFw1rDg4LrHAlk\\\
+nMUx8ybqFw1nBqqTuRAIJ7bB9ZX8bBxHCtm13PYHKq4+UiFF56VDc+fEn0wQK\\\
+n5KdklefisMSkbkEvk0R4Slm8Xx71/IpM6ebN/95//Bykcx8HTGej2NEj/76H\\\
+nnLe39QEOR4qOtTdfIpFzu/bm6Ic4+Eti29sekmix6brVqwspfXtttwuvp+r1\\nPQ/GSBEVXz+\
+WXmr8RKJo5RjZG8U4nA/C2gqHSGRy+u6sbQkOPi2+jbqTJJoZ\\nftUvUoZD2bdx+r/\
+fXxTtGG0pfYLDSXHPs1T/gXyfySGfpzgYKe64ojdDIham\\nd0ezgsq7q7f+/vd9aU/K9qSWSsq+\
+d0o5RwdIlPZf8Mkz1dT60wdfnWgnkZ3v\\n1X0raqjrk9Z7NGtIJPUBbRuqxWFp1Ho/\
+97skemHaY3ztBQ72747vtYknUdj9\\n/\
+3hb6nEQChQu6vMh0SoVhtKCBhwS1p8s191A8cJpc6HHjTiE7fJ5a6hOonsj\\n+4a9X+Mg+\
+X0XSP0kkIfDuXa1Zkre60Pkg3ICadU8eNb0BgfXWK8mbiSBOrCW\\n+6fe4vDU9ahOghWBElN/p+\
+q14nCV46zxXZJAIn4r/a+04/Dh5JmtD0/jqPKD\\nk5NNBw75eZWfYCWOgtaFmgl+ovrQCYl7c4MY+\
+qHyTM2T6lu8HjWqbzPFUHbE\\\
+nt4WqPTgMSFgkM9v4yOXnwvHGLzjIShumparxUUvNxvplfTj4xteyF17iojjc\\nr+\
+hbPxUPZzasdnjBQevTLmSkfMfh/qnGUZtxNirxazsiMIxDzvCk1JcVLJSu\\\
+n6qrzchyHh4d411TDaGgFyea5TuDAtOLPe3FpKWrZMKY3OYmDWeaXKsvbOkjk\\\
+nSISFzjTVR0HD9wSkhXybcvyD5xPAFRUyTYtegiDiF+IsIkAge25xmuVC1J5W\\\
+nVlcpRYBJgYrozzEhdOjh6RZ7GQIkTtWUrLosgLI7F/edkiegsfN51ya34afS\\nK1ct+\
+qhCgGiKdaa++y/D7uFTTrEMAo6L33VwXaIAwQs27tVmEaBety5LXE8R\\nFJYs9nvMJiD+\
+ZISIhKUymJvfPvWVR4DBT+Wjh/eoQX5mw53VugQMzJwunmJo\\\
+ng2VpUuGb5dT8fOPF2Ut0oLdp51NPfQL2Ff7JOSy5FJTnfjYnriSgM8e4qLSH\\\
+nBuHbFf4MGRHAGqns/s+eBWq+nwVPrSXgl8sjnyYGG4ojsiWUTQko6TjU5zLG\\nhsGHKzT/\
+nWO050hUh24QFyLqBNkdG6g6YxEozVvOA42ul8v8LQhY8/TTo63f\\\
+nebBVcqfZ1Y0EBDN3BTZRvPJDh7F5mQ0BW+8+VzI5iEHkyp8OdVSdMk3Lyomp\\nwKDMI/\
+zA760EBLq0fXfaioNdiOXRs3aUfBPmti+pPDWSKB+uZU/AZObHpa3v\\nqTpUdStpowMBNg4no+\
+Op5zRyJjM7HKnrxAMKameo5ySZPfRyJkDtKOvh6scE\\naAlcrpik+\
+uiqH6lKvd8IqPfsfxXhQsBLnd6bkrIkHHpj8EluNwFH66ad7q2g\\n6vfq6MHrbgTIXFLvR84kPL/\
+Z/gfbQ0Bau27qqhAS/KXYC5/uJeDdO1E/1TQS\\\
+nVI8FLbbyJMDrppeMQyEJz3rql37wIsA7WP3NrzoSfKxUl3nuIyBb8tXD7g4S\\nFB/\
+tM57YT0CdQLGrzncSKjWe2Jw+QEAy13pVEcUf+6Ildsr6EfDgQZlFEsUn\\nCmNO+\
+zP8CchN17f4d57FU6e8IP4hAthW6zNXUdcetbNRTwIIOMR9e2D+XxJk\\ncOtkiyME+C0jDsv/\
+IqEsJf3m+0AChisHeUe+kbBHaKRg7zECRLTPImYbCVI+\\\
+nUDUeRMCBDJYARvHM49b4pvDjBAzaDfvG5pHgatT1WTqEgPbHe9euu0iC+B38\\\
+nR3ooAQ2LK7buPExCkVzYNDeMAAeVbu6nrSTsOtEsWhZO6SPSbf4LPgmifVpK\\n5qcp+\
+XYduEejePHhpoP0tggCijL9SmbbCXAsrdLdE0lA/sgT6+13CFiwVM5k\\\
+nLIqAq6SwkSG17x2TBbukYgnI2bT13hthAoRc/ztwNY6ASu9tf5PqcMirtz3O\\niSdg/\
+2TQ6kVU3ZyX/vuy2QVqv3F/hKwpjswRWZ/97iIBq5Pn9LFCDLb6Xypy\\\
+nSyJgrUZp6RTVR2Wb6r8JvUytG6D2ejaSD5vvRXZJphKgPDYv+2EHD/4qvh9O\\nS6P0ERquks/\
+iwcbBo+KP0wnQURS6LVXEgfGEUtOfWQTsgufXeXFMuDottjXk\\nFgHR69UFBYsZYLbH0VXiNgG+\
+ahGKJh/pkGYwc4KZS8AWjwzGPWUaGHeuKXbJ\\np/xt23eX5+5aEM+tZDWXE/\
+B0VaR71HM5yNZ3WBhGcR9ncpjucloGnq4d+4ZX\\nErCqYn0Xf40U/NhOyzr/\
+jPKHUrsQZwthsIiIVt/0khovEPLhN3cbLvi8We71\\neyqfzZCrbi6TQksGvo+\
+GfCDAzkva6luQDFo2fqqJ/5HSl72Hu+ZTObRb7FHc\\nuU4C0uc+fojUU0JIT2WhNRU3YtqRGVY/\
+NVCbccG32T7KLiY+laKzmmjYyqom\\\
+nb4CAoMRvdh0LtJGaW0i45A8CQmdMJ96JLUVB8T0zDWMEhGyd1VT4yEAJqcEd\\\
+nx38TcGf3UXCqZqKcm/Kl3EkCbq85wxW+yUJtZesDY/8SYLtghzjaxkEjtZ12\\\
+nq2cISEm8fcKXzkXCb47qDs0ScOWX3tuaES5a3n9n1HI+Cey3/tqPDvCR1ZhJ\\n07QgCaE2i9+\
+dkMGQ29zHe7n/kdBaWHIzwxNDF+Sl9osvpOKiqrxKWQJHORq3\\nLcpESSjN5/lbbafqGduYtU+\
+cBMe1zwKLM3A0YnToW/0iym9P1q2folH1z0qi\\\
+nJkiahJxbrcL5uwmkbn8zk03lkb1FqfKeaQRavtsw/IMcCS78EnmZJgJt9Glz\\\
+niVEgYdvBeecy5pHI/agfrFQkoe/hwKA4j0TBp0TVvyv9i6O+k+Z2JLp47sZM\\\
+nigrV1xwJjdp0jER3UlZ1mC8hITBUn6WcQqLKrLclf9RIsPU0O3KlkETt930u\\n52iQsMFQzf/\
+tSxL9LBUO3KFFgv6qXLEnn0kkUnvNTlSHBIORsKU2P0ik0Wyg\\nW7KUhDWzRQkxFN/\
+ofWyW9aKTEG2QoLif4puNfd6jSkzq/tlFB/6dz7Xnl1DT\\\
+nCxYJBdk6RmoU3zjnmDQ6cqj5u2nTMRTf2Lmcqh/mkrA1QpmHDVLzFaufh1Fx\\\
+nz34h3yhO8dW6V4I18jiV97aURev8+x4nYm1VNtUnPj/y9MWxIhItXx2OVi4j\\n4dxj/VuyV/\
+69P1r5pFGX6iOx7rFfISSi3Zlf6qJHwv5gjoHmThKpuRoXj+mT\\\
+n4HeAyMtYQSIFpbDCM1TelsmIhmAZEkm+rshXXkXlLdpEbHEvgRacmXf/7moS\\nBO/+6nF+\
+RKDZ1UZ3wZDKs6C1JvAUgX6Phea8ARI2Cl0ykdxIoK+uAllTa0kQ\\\
+n63q6of0djjqU4PpZUxIsPYq/0pJw1PI6JF19PQnx93XdlmzGUfWaucum5iTk\\\
+ntlzZsAphqGx8zaU2CxLmbd/pFOqPoYLcExe9rai68F4mO0sTQ5nKs3HnbUiI\\\
+n49ll3hjiobSm1Wd1NlP7TVRYNmrAQxcjj0c92kLCpQHH2lOhXHTq93T4RztK\\n/7yT5YIzbOTW/\
+DeQ6UTlYYdOs/BHDOQYtfJwGVWnvLq0jgm109FWCDpovYvK\\nw786189N0JBJ3p/\
+9AbtJOPnSV0qSvhTpRE+5VnhS+wv5gB+000Q9RhOW26k8\\n/\
+r7aRcp9vQxyfTCqEUX1rX4xhdvlzaVgX9iWafPzJHB+mz/ec1sGArYUtIpf\\nIOGli2/\
+hRiF5iBwPiItPIiFSUPTC7RwlyDOY+nuJ6usF7GrytGw1oVh0R+v2\\ndBJmitC7EG8tqPhQkq+\
+SQUKCQ+TqsOPa0HI82DM9kwSna6ZVhy4shamKuXc3\\n75CwvDmuxTiUCfMv7Mr3uEvpV0ts7fg+\
+Foi7VcSy7pEgoYL5eWxhg9qCcJO8\\nfBIG9RfcLhbnAqO1R923gASk3+3M/\
+cwFPNvkL15E1U3HPaYJOTwwMV+QX/iY\\\
+nBLtihuAjeQw2quyNPVJKgt7LJ6MmvhhsG6z1MHhCQstytuhIDQZecVHqTxBV\\nJ2+\
+Z5lp6UH3KzoE/Jyop+f1PSLfl43Acs3gH1STsKLzjuGwKh/hm8djqWhI+\\\
+nfPFbonaUyls39ntEvCBhof1n21gqz9841LjWrJ4ETTupeeepvJprylcXbSAh\\\
+nxikrSZXKC0UK8X/qG0moe1KYpmNCyfFt5G3sv/8Toh6Rc9WbhBfFmx5YN5Mw\\ncmjW62QcCc1R+\
+WelW0gIe/7panUuCR07ZD3evCXBbXO+mksNCb3sQ2sTWyn5\\nfUM7bD6QMDzdorbtPVWXZVZ+\
+jaP4Y7JB948i9fPx1QMui/+dJ56e9Lad4pSU\\ngIvJ32aoOPCduJ/2iYrfgp7Bf++\
+PyhnZn3XuJKGrL6JzOzWuJvN4r0Y3CXiL\\ntew0xS/\
+0HqW13T3UPEOJtb39JGAFx9Qyv5JgfknTQoVad8XpD1PuFIdMi7zT\\\
+nTq8iYa3dqrd06j7pNV5dh29TcUa/cr9/gIQl05352dGUnSZnYu4MkpA0ENW5\\nci8JO1847/\
+13bsadNrM6fSqOPVKeGvNHSGgbSPmaLUPxmbeG2s+fJMgyd5Qm\\\
+ndVEcuurkVD7FQRvHDL9KUHX3tER3yyFqn5lTNDEViqviPhnfX07JfW6DRGc9\\\
+nSXHKvRsxk5OUv65vVeP/xOF6qNDekj8kvFnRErE1B4c7m9yNgykuC173X5vl\\\
+nThwKtGqWrJml7FtGf8WUwqH8F23q33fB57LDNWfLMPgfJy3DZA==\\n      \\\"]]}}},\\n  \
+AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],\\n  Axes->True,\\n \
+ AxesOrigin->{0, 0},\\n  PlotRange->{All, All},\\n  \
+PlotRangeClipping->True,\\n  PlotRangePadding->{Automatic, Automatic}]], \
+\\\"Output\\\",\\n CellChangeTimes->{3.4941670604568167`*^9, \
+3.494167141595954*^9, \\n  3.4941789048121853`*^9, \
+3.5775491591298018`*^9}]\\n}, Open  \
+]],\\n\\nCell[CellGroupData[{\\n\\nCell[BoxData[\\n \
+RowBox[{\\\"Manipulate\\\", \\\"[\\\", \\\"\\\\[IndentingNewLine]\\\", \\n  \
+RowBox[{\\n   RowBox[{\\n    RowBox[{\\\"g\\\", \\\"=\\\", \\\"9.8\\\"}], \
+\\\";\\\", \\\" \\\", \\n    RowBox[{\\\"l\\\", \\\"=\\\", \\\"0.5\\\"}], \
+\\\";\\\", \\\" \\\", \\n    RowBox[{\\\"omega\\\", \\\"=\\\", \\n     \
+SqrtBox[\\n      RowBox[{\\\"(\\\", \\n       RowBox[{\\\"g\\\", \\\"/\\\", \
+\\\"l\\\"}], \\\")\\\"}]]}], \\\";\\\", \\\"\\\\[IndentingNewLine]\\\", \\n   \
+ RowBox[{\\\"Module\\\", \\\"[\\\", \\\"\\\\[IndentingNewLine]\\\", \\n     \
+RowBox[{\\n      RowBox[{\\\"{\\\", \\n       RowBox[{\\\"result\\\", \\\" \\\
+\", \\\"=\\\", \\\" \\\", \\n        RowBox[{\\\"NDSolve\\\", \\\"[\\\", \\n  \
+       RowBox[{\\n          RowBox[{\\\"{\\\", \\n           RowBox[{\\n      \
+      RowBox[{\\n             RowBox[{\\n              \
+RowBox[{\\\"\\\\[Theta]\\\", \\\"''\\\"}], \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \
+\\\"\\\\[Equal]\\\", \\n             RowBox[{\\n              RowBox[{\\\"-\\\
+\", \\n               RowBox[{\\\"(\\\", \\n                \
+RowBox[{\\\"g\\\", \\\"/\\\", \\\"l\\\"}], \\\")\\\"}]}], \\\"*\\\", \\n      \
+        RowBox[{\\\"Sin\\\", \\\"[\\\", \\n               \
+RowBox[{\\\"\\\\[Theta]\\\", \\\"[\\\", \\\"t\\\", \\\"]\\\"}], \
+\\\"]\\\"}]}]}], \\\",\\\", \\n            RowBox[{\\n             RowBox[{\\\
+\"\\\\[Theta]\\\", \\\"[\\\", \\\"0\\\", \\\"]\\\"}], \\\"\\\\[Equal]\\\", \\\
+\"\\\\[Theta]0\\\"}], \\n            \\\",\\\", \\n            RowBox[{\\n    \
+         RowBox[{\\n              RowBox[{\\\"\\\\[Theta]\\\", \\\"'\\\"}], \
+\\\"[\\\", \\\"0\\\", \\\"]\\\"}], \\\"\\\\[Equal]\\\", \\n             \
+\\\"\\\\[Omega]0\\\"}]}], \\\"}\\\"}], \\\",\\\", \\\"\\\\[Theta]\\\", \
+\\\",\\\", \\\" \\\", \\n          RowBox[{\\\"{\\\", \\n           \
+RowBox[{\\\"t\\\", \\\",\\\", \\\" \\\", \\\"0\\\", \\\",\\\", \\\"20\\\"}], \
+\\\"}\\\"}]}], \\\"]\\\"}]}], \\\"}\\\"}], \\n      \\\",\\\", \
+\\\"\\\\[IndentingNewLine]\\\", \\n      RowBox[{\\\"Plot\\\", \\\"[\\\", \\n \
+      RowBox[{\\n        RowBox[{\\\"{\\\", \\n         RowBox[{\\n          \
+RowBox[{\\n           RowBox[{\\\"(\\\", \\n            RowBox[{\\\"180\\\", \
+\\\"/\\\", \\\"Pi\\\"}], \\\")\\\"}], \\\" \\\", \\\"\\\\[Theta]0\\\", \\\" \
+\\\", \\n           RowBox[{\\\"Cos\\\", \\\"[\\\", \\n            RowBox[{\\\
+\"omega\\\", \\\"*\\\", \\\"t\\\"}], \\\"]\\\"}]}], \\\",\\\", \\n          \
+RowBox[{\\n           RowBox[{\\n            RowBox[{\\\"(\\\", \\n           \
+  RowBox[{\\\"180\\\", \\\"/\\\", \\\"Pi\\\"}], \\\")\\\"}], \\\"*\\\", \\\" \
+\\\", \\n            RowBox[{\\\"\\\\[Theta]\\\", \\\"[\\\", \\\"t\\\", \\\"]\
+\\\"}]}], \\\"/.\\\", \\\"result\\\"}]}], \\\"}\\\"}], \\n        \\\",\\\", \
+\\n        RowBox[{\\\"{\\\", \\n         RowBox[{\\\"t\\\", \\\",\\\", \\\"0\
+\\\", \\\",\\\", \\\"20\\\"}], \\\"}\\\"}], \\\",\\\", \\n        \
+RowBox[{\\\"PlotStyle\\\", \\\"\\\\[Rule]\\\", \\\" \\\", \\n         \
+RowBox[{\\\"{\\\", \\n          RowBox[{\\n           RowBox[{\\\"{\\\", \
+\\\"Blue\\\", \\\"}\\\"}], \\\",\\\", \\n           RowBox[{\\\"{\\\", \\n    \
+        RowBox[{\\\"Dashed\\\", \\\",\\\", \\\"Red\\\"}], \\\"}\\\"}]}], \
+\\\"}\\\"}]}], \\\",\\\", \\n        RowBox[{\\\"PlotRange\\\", \
+\\\"\\\\[Rule]\\\", \\\" \\\", \\\"All\\\"}], \\\",\\\", \\n        \
+RowBox[{\\\"AxesLabel\\\", \\\"\\\\[Rule]\\\", \\n         RowBox[{\\\"{\\\", \
+\\n          RowBox[{\\\"\\\\\\\"\\\\<t (s)\\\\>\\\\\\\"\\\", \\\",\\\", \\\"\
+\\\\\\\"\\\\<\\\\[Theta] (rad)\\\\>\\\\\\\"\\\"}], \\\"}\\\"}]}], \\n        \
+\\\",\\\", \\n        RowBox[{\\\"PlotRange\\\", \\\"\\\\[Rule]\\\", \\n      \
+   RowBox[{\\\"{\\\", \\n          RowBox[{\\n           RowBox[{\\\"{\\\", \
+\\n            RowBox[{\\\"0\\\", \\\",\\\", \\\"20\\\"}], \\\"}\\\"}], \\\",\
+\\\", \\n           RowBox[{\\\"{\\\", \\n            RowBox[{\\n             \
+RowBox[{\\\"-\\\", \\\"20\\\"}], \\\",\\\", \\\"20\\\"}], \\\"}\\\"}]}], \
+\\\"}\\\"}]}], \\\",\\\", \\n        RowBox[{\\\"ImageSize\\\", \
+\\\"\\\\[Rule]\\\", \\n         RowBox[{\\\"{\\\", \\n          \
+RowBox[{\\\"500\\\", \\\",\\\", \\\"300\\\"}], \\\"}\\\"}]}]}], \
+\\\"]\\\"}]}], \\\"]\\\"}]}], \\\",\\\", \\n   \
+\\\"\\\\[IndentingNewLine]\\\", \\n   RowBox[{\\\"{\\\", \\n    RowBox[{\\n   \
+  RowBox[{\\\"{\\\", \\n      RowBox[{\\\"l\\\", \\\",\\\", \\\"0.5\\\", \
+\\\",\\\", \\\"\\\\\\\"\\\\<length (m)\\\\>\\\\\\\"\\\"}], \\\"}\\\"}], \\\",\
+\\\", \\\"0\\\", \\n     \\\",\\\", \\\"2\\\", \\\",\\\", \\n     \
+RowBox[{\\\"Appearance\\\", \\\"\\\\[Rule]\\\", \\\"\\\\\\\"\\\\<Labeled\\\\>\
+\\\\\\\"\\\"}]}], \\\"}\\\"}], \\\",\\\", \\n   RowBox[{\\\"{\\\", \\n    \
+RowBox[{\\n     RowBox[{\\\"{\\\", \\n      RowBox[{\\\"\\\\[Theta]0\\\", \
+\\\",\\\", \\n       RowBox[{\\\"20\\\", \\\"*\\\", \\n        RowBox[{\\\"Pi\
+\\\", \\\"/\\\", \\\"180\\\"}]}], \\\",\\\", \\\"\\\\\\\"\\\\<initial angle \
+(rad)\\\\>\\\\\\\"\\\"}], \\n      \\\"}\\\"}], \\\",\\\", \\\".1\\\", \
+\\\",\\\", \\n     RowBox[{\\\"\\\\[Pi]\\\", \\\"/\\\", \\\"2\\\"}], \
+\\\",\\\", \\n     RowBox[{\\\"Appearance\\\", \\\"\\\\[Rule]\\\", \\\"\\\\\\\
+\"\\\\<Labeled\\\\>\\\\\\\"\\\"}]}], \\\"}\\\"}], \\\",\\\", \\n   \
+\\\"\\\\[IndentingNewLine]\\\", \\n   RowBox[{\\\"{\\\", \\n    RowBox[{\\n   \
+  RowBox[{\\\"{\\\", \\n      RowBox[{\\\"\\\\[Omega]0\\\", \\\",\\\", \
+\\\"0\\\", \\\",\\\", \\\"\\\\\\\"\\\\<initial speed \
+(rad/s)\\\\>\\\\\\\"\\\"}], \\n      \\\"}\\\"}], \\\",\\\", \\\"0\\\", \\\",\
+\\\", \\\"10.\\\", \\\",\\\", \\n     RowBox[{\\\"Appearance\\\", \
+\\\"\\\\[Rule]\\\", \\\"\\\\\\\"\\\\<Labeled\\\\>\\\\\\\"\\\"}]}], \
+\\\"}\\\"}]}], \\n  \\\"]\\\"}]], \\\"Input\\\",\\n \
+CellChangeTimes->{{3.577478475599698*^9, 3.5774784997979183`*^9}, {\\n   \
+3.577478534848688*^9, 3.577478567062739*^9}, 3.577490072664493*^9, {\\n   \
+3.577502720630567*^9, 3.5775027514202127`*^9}, 3.5775030057285748`*^9, \\n   \
+3.577503078429886*^9, {3.577503108611413*^9, 3.577503166858922*^9}, {\\n   \
+3.577549179281249*^9, 3.577549221102922*^9}, {3.577549268358193*^9, \\n   \
+3.577549405114224*^9}, {3.577549553049855*^9, 3.577549582375984*^9}, \\n   \
+3.577549627541086*^9, {3.57754973813801*^9, 3.577549829233026*^9}, {\\n   \
+3.57754987411872*^9, 3.5775499131013613`*^9}, {3.577549955916011*^9, \\n   \
+3.5775499892251*^9}, {3.577550221132785*^9, 3.5775502214075537`*^9}, {\\n   \
+3.577550744443714*^9, 3.5775508053235483`*^9}}],\\n\\nCell[BoxData[\\n \
+TagBox[\\n  StyleBox[\\n   DynamicModuleBox[{$CellContext`l$$ = 0.5, \
+$CellContext`\\\\[Theta]0$$ = \\n    Rational[1, 9] Pi, \
+$CellContext`\\\\[Omega]0$$ = 0, Typeset`show$$ = True, \\n    \
+Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = \\\"Menu\\\", \\n    \
+Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = \\n    \\\"\\\\\\\
+\"untitled\\\\\\\"\\\", Typeset`specs$$ = {{{\\n       \
+Hold[$CellContext`l$$], 0.5, \\\"length (m)\\\"}, 0, 2}, {{\\n       \
+Hold[$CellContext`\\\\[Theta]0$$], Rational[1, 9] Pi, \\n       \\\"initial \
+angle (rad)\\\"}, 0.1, Rational[1, 2] Pi}, {{\\n       \
+Hold[$CellContext`\\\\[Omega]0$$], 0, \\\"initial speed (rad/s)\\\"}, 0, \
+10.}}, \\n    Typeset`size$$ = {500., {148., 152.}}, Typeset`update$$ = 0, \
+\\n    Typeset`initDone$$, Typeset`skipInitDone$$ = True, \
+$CellContext`l$4375$$ =\\n     0, $CellContext`\\\\[Theta]0$4376$$ = 0, \
+$CellContext`\\\\[Omega]0$4377$$ = 0}, \\n    \
+DynamicBox[Manipulate`ManipulateBoxes[\\n     1, StandardForm, \\n      \
+\\\"Variables\\\" :> {$CellContext`l$$ = 0.5, $CellContext`\\\\[Theta]0$$ = \
+\\n        Rational[1, 9] Pi, $CellContext`\\\\[Omega]0$$ = 0}, \\n      \
+\\\"ControllerVariables\\\" :> {\\n        Hold[$CellContext`l$$, \
+$CellContext`l$4375$$, 0], \\n        Hold[$CellContext`\\\\[Theta]0$$, \
+$CellContext`\\\\[Theta]0$4376$$, 0], \\n        \
+Hold[$CellContext`\\\\[Omega]0$$, $CellContext`\\\\[Omega]0$4377$$, 0]}, \\n  \
+    \\\"OtherVariables\\\" :> {\\n       Typeset`show$$, \
+Typeset`bookmarkList$$, Typeset`bookmarkMode$$, \\n        \
+Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, \\n        \
+Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,\\n     \
+    Typeset`skipInitDone$$}, \\n      \\\"Body\\\" :> ($CellContext`g = 9.8; \
+$CellContext`l$$ = \\n        0.5; $CellContext`omega = \
+($CellContext`g/$CellContext`l$$)^\\n         Rational[1, 2]; \\n       \
+Module[{$CellContext`result$ = \\n          NDSolve[{\\n            \
+Derivative[\\n              2][$CellContext`\\\\[Theta]][$CellContext`t] == \
+\\\\\\n(-($CellContext`g/$CellContext`l$$)) Sin[\\n                \
+$CellContext`\\\\[Theta][$CellContext`t]], $CellContext`\\\\[Theta][\\n       \
+       0] == $CellContext`\\\\[Theta]0$$, \\n             \
+Derivative[1][$CellContext`\\\\[Theta]][\\n              0] == \
+$CellContext`\\\\[Omega]0$$}, $CellContext`\\\\[Theta], \
+\\\\\\n{$CellContext`t, 0, 20}]}, \\n         Plot[{(180/Pi) \
+$CellContext`\\\\[Theta]0$$ \\n           Cos[$CellContext`omega \
+$CellContext`t], \\n           \\n           ReplaceAll[(180/\\n             \
+Pi) $CellContext`\\\\[Theta][$CellContext`t], \\\\\\n$CellContext`result$]}, \
+{$CellContext`t, 0, 20}, \\n          PlotStyle -> {{Blue}, {Dashed, Red}}, \
+PlotRange -> All, \\n          AxesLabel -> {\\\"t (s)\\\", \\\"\\\\[Theta] \
+(rad)\\\"}, \\n          PlotRange -> {{0, 20}, {-20, 20}}, ImageSize -> \
+{500, 300}]]), \\n      \\\"Specifications\\\" :> {{{$CellContext`l$$, 0.5, \
+\\\"length (m)\\\"}, 0, 2, \\n         Appearance -> \\n         \
+\\\"Labeled\\\"}, {{$CellContext`\\\\[Theta]0$$, Rational[1, 9] Pi, \\n       \
+   \\\"initial angle (rad)\\\"}, 0.1, Rational[1, 2] Pi, Appearance -> \\n    \
+     \\\"Labeled\\\"}, {{$CellContext`\\\\[Omega]0$$, 0, \\\"initial speed \
+(rad/s)\\\"}, \\n         0, 10., Appearance -> \\\"Labeled\\\"}}, \
+\\\"Options\\\" :> {}, \\n      \\\"DefaultOptions\\\" :> {}],\\n     \
+ImageSizeCache->{543., {219., 225.}},\\n     SingleEvaluation->True],\\n    \
+Deinitialization:>None,\\n    DynamicModuleValues:>{},\\n    \
+SynchronousInitialization->True,\\n    \
+UnsavedVariables:>{Typeset`initDone$$},\\n    \
+UntrackedVariables:>{Typeset`size$$}], \\\"Manipulate\\\",\\n   \
+Deployed->True,\\n   StripOnInput->False],\\n  \
+Manipulate`InterpretManipulate[1]]], \\\"Output\\\",\\n \
+CellChangeTimes->{{3.577503168951933*^9, 3.5775031800122957`*^9}, \\n   \
+3.5775496308879547`*^9, {3.577549817433275*^9, 3.577549831097909*^9}, \\n   \
+3.577549914925475*^9, {3.57754995775905*^9, 3.577549989572948*^9}, \\n   \
+3.577550763233276*^9, 3.577550806163776*^9}]\\n}, Open  \
+]]\\n},\\nWindowSize->{799, 739},\\nWindowMargins->{{20, Automatic}, \
+{Automatic, 0}},\\nFrontEndVersion->\\\"8.0 for Mac OS X x86 (32-bit, 64-bit \
+Kernel) (August 26, \
+\\\\\\n2012)\\\",\\nStyleDefinitions->\\\"Default.nb\\\"\\n]\\n(* End of \
+Notebook Content *)\\n\\n(* Internal cache information *)\\n(*CellTagsOutline\
+\\nCellTagsIndex->{}\\n*)\\n(*CellTagsIndex\\nCellTagsIndex->{}\\n*)\\n(*\
+NotebookFileOutline\\nNotebook[{\\nCell[545, 20, 2453, 60, 148, \
+\\\"Input\\\"],\\nCell[3001, 82, 1272, 29, 54, \\\"Input\\\"],\\nCell[4276, \
+113, 1142, 25, 43, \\\"Input\\\"],\\nCell[CellGroupData[{\\nCell[5443, 142, \
+364, 7, 43, \\\"Input\\\"],\\nCell[5810, 151, 79030, 1301, 231, \
+\\\"Output\\\"]\\n}, Open  ]],\\nCell[CellGroupData[{\\nCell[84877, 1457, \
+4320, 109, 196, \\\"Input\\\"],\\nCell[89200, 1568, 3656, 70, 461, \\\"Output\
+\\\"]\\n}, Open  ]]\\n}\\n]\\n*)\\n\\n(* End of internal cache information *)\
+\>\""], "Input"]
+},
+WindowSize->{740, 592},
+WindowMargins->{{20, Automatic}, {Automatic, 44}},
+FrontEndVersion->"9.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (January 25, \
+2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 103694, 1556, 25750, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
