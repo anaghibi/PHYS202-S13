@@ -1,0 +1,10 @@
+Unfortunately I was not able to get my code working correctly in order to 
+graph and see the relationship between current, density, and the parameters
+of the STCA/ASEP functions.
+
+I believe the random slow downs in the STCA model would cause a decrease in 
+the current flow. Also, the density is effected by the number of cars on
+the road and the length of the road, which are parameters of the STCA/ASEP
+functions. The higher the density the slower the traffic.
+
+
